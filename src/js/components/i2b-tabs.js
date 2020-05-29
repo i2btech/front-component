@@ -18,7 +18,7 @@ export default $.fn.i2bTabs = function (options) {
 			dtCont: 'data-open',
 			dtGroupOpen: 'data-group',
 			dtGroupCont: 'group-cont',
-			active: 'active'
+			active: 'tab--active'
 		}, options);
 
 	if (typeof options == 'string') {

@@ -4,13 +4,31 @@
 	font-family: Arial;
 	font-size: 13px;
 
-	.tabs-link {
+	&__link {
 		display: block;
 		font-size: 0;
 		background-color: #000;
 	}
 
-	.tab-link {
+	&-vtl {
+		.tabs__link {
+			float: left;
+			width: 15%;
+		}
+
+		.tab__link {
+			display: block;
+		}
+
+		.tab__content {
+			float: left;
+			width: 85%;
+		}
+	}
+}
+
+.tab {
+	&__link {
 		display: inline-block;
 		padding: 10px;
 		font-size: 13px;
@@ -18,35 +36,19 @@
 		background-color: black;
 		cursor: pointer;
 
-		&.active {
+		&.tab--active {
 			background-color: red;
 		}
 	}
 
-	.tab-content {
+	&__content {
 		display: none;
 		padding: 20px;
 		-webkit-animation: fadeEffect 1s;
 		animation: fadeEffect 1s;
 
-		&.active {
+		&.tab--active {
 			display: block;
-		}
-	}
-
-	&.-vtl {
-		.tabs-link {
-			float: left;
-			width: 20%;
-		}
-
-		.tab-link {
-			display: block;
-		}
-
-		.tab-content {
-			float: left;
-			width: 80%;
 		}
 	}
 }

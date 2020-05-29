@@ -1,34 +1,54 @@
+$alert: map-get($components, 'alert');
+$alert-text-size: map-get($alert, 'font-size');
+$alert-success: map-get($alert, 'success');
+$alert-danger: map-get($alert, 'danger');
+$alert-warning: map-get($alert, 'warning');
+$alert-info: map-get($alert, 'info');
+
 .alert {
   display: block;
   position: relative;
   padding: 10px 35px 10px 10px;
   font-size: $alert-text-size;
 
-  &.-xs {
+  &--xs {
     padding: 5px 10px;
     font-size: $alert-text-size - 1;
   }
 
-  &.-success {
-    color: $alert-success-text-color;
-    background-color: $alert-success-bg-color;
+  &--success {
+		background-color: map-get($alert-success, 'background');
+    color: map-get($alert-success, 'color');
   }
-  &.-danger {
-    color: $alert-danger-text-color;
-    background-color: $alert-danger-bg-color;
+  &--danger {
+		background-color: map-get($alert-danger, 'background');
+    color: map-get($alert-danger, 'color');
   }
-  &.-warning {
-    color: $alert-warning-text-color;
-    background-color: $alert-warning-bg-color;
+  &--warning {
+		background-color: map-get($alert-warning, 'background');
+    color: map-get($alert-warning, 'color');
   }
-  &.-info {
-    color: $alert-info-text-color;
-    background-color: $alert-info-bg-color;
+  &--info {
+		background-color: map-get($alert-info, 'background');
+    color: map-get($alert-info, 'color');
   }
 
-  .btn-close {
+  .alert__btn-close {
     position: absolute;
     top: 5px;
-    right: 8px;
+		right: 8px;
+
+		padding: 5px;
+		font-size: 21px;
+		font-weight: 700;
+		line-height: .7;
+		color: #000;
+		border: none;
+		background: none;
+		text-shadow: 0 1px 0 #fff;
+		opacity: .2;
+		text-decoration: none;
+		cursor: pointer;
+		outline: none;
   }
 }

@@ -209,5 +209,5 @@ export const clean = () => del([ bases.dist ]);
 
 export default gulp.series(clean, gulp.parallel(pug_task, sass_task, images, fonts_copy, scripts_libs_copy, scripts, browser_sync, watch_task));
 export const start = gulp.series(browser_sync, watch_task);
-export const build = gulp.series(pug_task, sass_task, images, fonts_copy, scripts_libs_copy, scripts, connect_server);
+export const build = gulp.series(pug_task, sass_task, images, fonts_copy, scripts_libs_copy, scripts);
 export const prod = gulp.series(pug_task, css_min, images, fonts_copy, scripts_libs_copy, script_min);

@@ -20,8 +20,10 @@
 			padding-left: 16px
 		}
 	}
+}
 
-	&.-hoverable {
+.table {
+	&--hoverable {
 		tbody {
 			tr:hover {
 				background-color: #CCC;
@@ -29,19 +31,18 @@
 		}
 	}
 
-	&.-striped {
+	&--striped {
 		tbody {
 			tr:nth-child(even) {
 				background-color: #F1F1F1;
 			}
 		}
 	}
-}
 
-.-bordered,
-.table-all {
-	tr {
-		border-bottom: 1px solid #DDD;
+	&--bordered {
+		tr {
+			border-bottom: 1px solid #DDD;
+		}
 	}
 }
 
@@ -49,6 +50,7 @@
 	border: 1px solid #CCC;
 
 	tr {
+		border-bottom: 1px solid #DDD;
 		&:nth-child(odd) {
 			background-color: #FFF;
 		}

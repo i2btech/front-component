@@ -11,8 +11,8 @@ $theme: (
 	),
 	columns: 12,
   colors: (
-		default: #FF9800,
-    primary: #2196F3,
+		default: #D71F26,
+    primary: #767676,
 		secondary: #4CAF50,
 		danger: #721c24,
 		black: #000,
@@ -27,6 +27,7 @@ $theme: (
 	fontSizes: (
 		default: 14px,
 		11: 11px,
+		12: 12px,
     15: 15px,
     16: 16px,
     18: 18px
@@ -127,3 +128,26 @@ $theme: (
 		5: 5px
 	)
 );
+
+// Components
+$components: (
+	alert: (
+		font-size: 13px,
+		success: (
+			background: #D4EDDA,
+			color: #155724,
+		),
+		danger: (
+			background: #F8D7DA,
+			color: #721C24,
+		),
+		warning: (
+			background: #FFF3CD,
+			color: #856404,
+		),
+		info: (
+			background: #D1ECF1,
+			color: #0C5460,
+		)
+	)
+)
