@@ -1,0 +1,54 @@
+// stylelint-disable declaration-no-important
+
+// Common values
+
+// Sass list not in variables since it's not intended for customization.
+$grid-breakpoints: map-get($theme, 'screens');
+$positions: map-get($theme, 'positions');
+$z-index: map-get($theme, 'zIndex');
+
+@each $bp in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($bp) {
+		$infix: breakpoint-infix($bp, $grid-breakpoints);
+
+		@each $attr, $value in $positions {
+			.#{$infix}position-#{$attr} { position: $value !important; }
+		}
+	}
+}
+
+// Shorthand
+
+.fixed-top {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: map-get($z-index, 'default');
+}
+
+.fixed-bottom {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: map-get($z-index, 'default');
+}
+
+.sticky-top {
+	@supports (position: sticky) {
+		position: sticky;
+		top: 0;
+		z-index: map-get($z-index, 'default');
+	}
+}
+
+@include media-breakpoint-down(lg) {
+	.fixed-bottom-mob {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: map-get($z-index, 'default');
+	}
+}
