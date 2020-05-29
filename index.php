@@ -1,1 +1,0 @@
-<?php include_once("./dev/index.html"); ?>
