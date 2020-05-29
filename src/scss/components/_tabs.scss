@@ -1,0 +1,62 @@
+.tabs {
+	display: block;
+	width: 100%;
+	font-family: Arial;
+	font-size: 13px;
+
+	.tabs-link {
+		display: block;
+		font-size: 0;
+		background-color: #000;
+	}
+
+	.tab-link {
+		display: inline-block;
+		padding: 10px;
+		font-size: 13px;
+		color: #FFF;
+		background-color: black;
+		cursor: pointer;
+
+		&.active {
+			background-color: red;
+		}
+	}
+
+	.tab-content {
+		display: none;
+		padding: 20px;
+		-webkit-animation: fadeEffect 1s;
+		animation: fadeEffect 1s;
+
+		&.active {
+			display: block;
+		}
+	}
+
+	&.-vtl {
+		.tabs-link {
+			float: left;
+			width: 20%;
+		}
+
+		.tab-link {
+			display: block;
+		}
+
+		.tab-content {
+			float: left;
+			width: 80%;
+		}
+	}
+}
+
+@-webkit-keyframes fadeEffect {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}

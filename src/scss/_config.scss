@@ -1,0 +1,269 @@
+//-
+//- Grids
+//-
+
+$grid-columns:      12 !default;
+$grid-gutter-width: 20px !default;
+
+//-
+//- Breakpoints
+//-
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+//-
+//- Container
+//-
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+
+$theme: (
+	screens: (
+		sm: '640px',
+		md: '768px',
+		lg: '1024px',
+		xl: '1280px',
+	),
+  colors: (
+    primary: #000,
+    secondary: #0099FF
+  ),
+	fontSizes: (
+    13: 13px,
+    15: 15px,
+    18: 18px
+	),
+	fontWeight: (
+		hairline: '100',
+		thin: '200',
+		light: '300',
+		normal: '400',
+		medium: '500',
+		semibold: '600',
+		bold: '700',
+		extrabold: '800',
+		black: '900'
+	),
+	width: (
+		auto: 'auto',
+		full: '100%',
+		screen: '100vw',
+		'1': '20%',
+		'2': '40%',
+		'3': '60%',
+		'4': '80%',
+	),
+	height: (
+		auto: 'auto',
+		full: '100%',
+    screen: '100vh'
+	),
+	margin: (
+		auto: 'auto',
+		0: 0,
+		5: 5px,
+    10: 10px,
+    15: 15px,
+    20: 20px
+	),
+	padding: (
+		0: 0,
+		5: 5px,
+    10: 10px,
+    15: 15px,
+    20: 20px
+	),
+	zIndex: (
+		auto: 'auto',
+		'0': '0',
+		'10': '10',
+		'20': '20',
+		'30': '30',
+		'40': '40',
+		'50': '50',
+	)
+);
+
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: () !default;
+$sizes: map-merge((
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%,
+  auto: auto
+), $sizes);
+
+//-
+//- Colors
+//-
+
+$color-black: #000 !default;
+$color-white: #FFF !default;
+$color-green: #4CAF50 !default;
+$color-blue: #2196F3 !default;
+$color-red: #F93449 !default;
+$color-orange: #FF9800 !default;
+$color-grey: #969696 !default;
+$color-grey-light: #F1F1F1 !default;
+$color-grey-dark: #222 !default;
+
+$color-default: $color-white;
+$color-primary: $color-red;
+$color-secondary: $color-grey;
+
+$colors: () !default;
+$colors: map-merge((
+  "black":      $color-black,
+  "white":      $color-white,
+  //"green":      $color-green,
+  //"blue":       $color-blue,
+  "red":        $color-red,
+  //"orange":     $color-orange,
+  "grey":     	$color-grey,
+  "grey-light": $color-grey-light,
+  "grey-dark":  $color-grey-dark,
+
+  "default": $color-default,
+  "primary": $color-primary,
+  "secondary": $color-secondary
+), $colors);
+
+//-
+//- Spacing
+//-
+
+$spacing: (5, 10, 15, 20, 30) !default;
+
+//-
+//- Font
+//-
+
+$font-family-pt-sans: 'PT Sans', sans-serif, Arial;
+$font-family-pt-sans-bold: 'PT Sans Bold', sans-serif, Arial;
+$font-family-pt-sans-italic: 'PT Sans Italic', sans-serif, Arial;
+$font-family-pt-sans-bold-italic: 'PT Sans Bold Italic', sans-serif, Arial;
+$font-family-pt-sans-narrow: 'PT Sans Narrow', sans-serif, Arial;
+$font-family-icons: icomoon;
+
+$font-family-muli: Muli;
+$font-family-vr: 'Varela Round';
+
+//-
+//- Sizes
+//-
+
+$font-size-h1: 30px;
+$font-size-h2: 28px;
+$font-size-h3: 26px;
+$font-size-h4: 24px;
+$font-size-h5: 20px;
+$font-size-h6: 18px;
+
+$font-size-xs: 11px;
+$font-size-sm: 13px;
+$font-size-md: 15px;
+$font-size-lg: 18px;
+$font-size-xlg: 22px;
+
+$font-sizes: (12, 13);
+
+//-
+//- Fonts
+//-
+
+$font-weight-light:  		300 !default;
+$font-weight-normal: 		400 !default;
+$font-weight-semibold: 	600 !default;
+$font-weight-bold:			700 !default;
+
+$text-color-muted: $color-grey-light !default;
+
+//- Padding
+
+$padding-vertical: 5px !default;
+$padding-horizontal: 10px !default;
+
+$padding-lg-vertical:    10px !default;
+$padding-lg-horizontal:  16px !default;
+
+$padding-md-vertical:    8px !default;
+$padding-md-horizontal:  13px !default;
+
+$padding-sm-vertical:       1px !default;
+$padding-sm-horizontal:     5px !default;
+
+//-
+//- Select
+//-
+
+$color-red-error: rgb(185, 74, 72);
+$color-grey-arrow: rgba(204, 204, 204, 0.2);
+
+$width-default: 220px; // 3 960px-grid columns
+
+$zindex-select-dropdown: 1060; // must be higher than a modal background (1050)
+
+//-
+//- Inputs Text
+//-
+
+$input-text-font-family: $font-family-muli;
+$input-text-color: #6A6768;
+$input-text-bg: #FBF5F6;
+$input-text-border: #CECECE;
+$input-text-border-error: #D88676;
+
+$text-color-error: #FF0000;
+
+//-
+//- Alerts
+//-
+
+$alert-text-size: 13px;
+
+$alert-success-text-color: #155724;
+$alert-success-bg-color: #D4EDDA;
+
+$alert-danger-text-color: #721C24;
+$alert-danger-bg-color: #F8D7DA;
+
+$alert-warning-text-color: #856404;
+$alert-warning-bg-color: #FFF3CD;
+
+$alert-info-text-color: #0C5460;
+$alert-info-bg-color: #D1ECF1;
+
+//-
+//- Breadcrumb
+//-
+
+$bc-link-color: #007BFF;
+$bc-link-color-active: #868E96;
+$bc-txt-size: 13px;
+$bc-padding: 5px;
+
+//-
+//- Z-index master list
+//-
+
+$zindex-dropdown:                   1000 !default;
+$zindex-sticky:                     1020 !default;
+$zindex-fixed:                      1030 !default;
+$zindex-modal-backdrop:             1040 !default;
+$zindex-modal:                      1050 !default;
+$zindex-popover:                    1060 !default;
+$zindex-tooltip:                    1070 !default;
+
+$enable-gradients:          false !default;

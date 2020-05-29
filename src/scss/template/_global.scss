@@ -1,0 +1,29 @@
+// ===========
+// Proyecto:
+// Fecha Inicio:
+// Email Desarrollador:
+// ===========
+
+@import "./../config";
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+}
+
+#home {
+	.menus {
+		width: 210px;
+	}
+}
+
+#content {
+	padding-top: 62px;
+}
+
+.col-mnv {
+  top: 58px;
+	bottom: 0;
+	overflow-y: auto;
+}

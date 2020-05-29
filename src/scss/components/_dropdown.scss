@@ -1,0 +1,41 @@
+.btn-menu {
+	position: relative;
+	transition: opacity .5s ease 0s;
+	z-index: 10;
+
+	&.active {
+		opacity: .5;
+	}
+}
+
+.nav-menu {
+	position: absolute;
+	min-width: 200px;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .5s ease;
+	z-index: 11;
+
+	&.active {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #000;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 9;
+	transition: opacity .5s ease 0s;
+
+	&.active {
+		visibility: visible;
+		opacity: .5;
+	}
+}

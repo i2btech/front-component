@@ -1,0 +1,34 @@
+.alert {
+  display: block;
+  position: relative;
+  padding: 10px 35px 10px 10px;
+  font-size: $alert-text-size;
+
+  &.-xs {
+    padding: 5px 10px;
+    font-size: $alert-text-size - 1;
+  }
+
+  &.-success {
+    color: $alert-success-text-color;
+    background-color: $alert-success-bg-color;
+  }
+  &.-danger {
+    color: $alert-danger-text-color;
+    background-color: $alert-danger-bg-color;
+  }
+  &.-warning {
+    color: $alert-warning-text-color;
+    background-color: $alert-warning-bg-color;
+  }
+  &.-info {
+    color: $alert-info-text-color;
+    background-color: $alert-info-bg-color;
+  }
+
+  .btn-close {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+  }
+}

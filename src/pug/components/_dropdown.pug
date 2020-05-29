@@ -1,0 +1,26 @@
+h2 Dropdown
+
+h5.mt-30 Normal
+
+.mt-10
+	button.btn.btn-menu.bg-red.text-white(data-js="dropdown" data-open="#menu1") Dropdown Normal
+
+	.bar.nav-menu#menu1.-vert.bg-black.text-white
+		a(href="javascript:;").bar-item.button.active Home
+		a(href="#").bar-item.button Link 1
+		a(href="#").bar-item.button Link 2
+		a(href="#").bar-item.button Link 3
+
+
+h5.mt-30 Con Overlay
+
+.mt-10
+	button.btn.btn-menu.bg-red.text-white(data-js="ddoverlay" data-open="#menu2") Dropdown Overlay
+
+	.bar.nav-menu#menu2.-vert.bg-black.text-white
+		a(href="javascript:;").bar-item.button.active Home
+		a(href="#").bar-item.button Link 1
+		a(href="#").bar-item.button Link 2
+		a(href="#").bar-item.button Link 3
+
+.overlay

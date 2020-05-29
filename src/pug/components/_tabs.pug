@@ -1,0 +1,22 @@
+h2 Tabs
+h5.mt-10 Tab default
+.mt-10
+  .tabs.bd
+    .tabs-link
+      .tab-link.active(data-js="tab" data-open="#tab-1" data-group="tabs") Tab 1
+      .tab-link(data-js="tab" data-open="#tab-2" data-group="tabs") Tab 2
+      .tab-link(data-js="tab" data-open="#tab-3" data-group="tabs") Tab 3
+    .tab-content#tab-1.active(group-cont="tabs") Tab Contenido 1
+    .tab-content#tab-2(group-cont="tabs") Tab Contenido 2
+    .tab-content#tab-3(group-cont="tabs") Tab Contenido 3
+
+h5.mt-10 Tab vertical
+.mt-10
+  .tabs.row.-vtl.bd
+    .tabs-link
+      .tab-link.active(data-js="tab" data-open="#tab2-1" data-group="tabs2") Tab 1
+      .tab-link(data-js="tab" data-open="#tab2-2" data-group="tabs2") Tab 2
+      .tab-link(data-js="tab" data-open="#tab2-3" data-group="tabs2") Tab 3
+    .tab-content#tab2-1.active(group-cont="tabs2") Tab Contenido 1
+    .tab-content#tab2-2(group-cont="tabs2") Tab Contenido 2
+    .tab-content#tab2-3(group-cont="tabs2") Tab Contenido 3

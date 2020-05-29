@@ -1,0 +1,72 @@
+//
+// Margins and paddings
+//
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		@each $i in $spacing {
+			.m#{$infix}-#{$i},
+			.my#{$infix}-#{$i},
+			.mt#{$infix}-#{$i} {
+				margin-top: #{$i}px;
+			}
+			.m#{$infix}-#{$i},
+			.my#{$infix}-#{$i},
+			.mb#{$infix}-#{$i} {
+				margin-bottom: #{$i}px;
+			}
+			.m#{$infix}-#{$i},
+			.mx#{$infix}-#{$i},
+			.ml#{$infix}-#{$i} {
+				margin-left: #{$i}px;
+			}
+			.m#{$infix}-#{$i},
+			.mx#{$infix}-#{$i},
+			.mr#{$infix}-#{$i} {
+				margin-right: #{$i}px;
+			}
+			.p#{$infix}-#{$i},
+			.py#{$infix}-#{$i},
+			.pt#{$infix}-#{$i} {
+				padding-top: #{$i}px;
+			}
+			.p#{$infix}-#{$i},
+			.py#{$infix}-#{$i},
+			.pb#{$infix}-#{$i} {
+				padding-bottom: #{$i}px;
+			}
+			.p#{$infix}-#{$i},
+			.px#{$infix}-#{$i},
+			.pl#{$infix}-#{$i} {
+				padding-left: #{$i}px;
+			}
+			.p#{$infix}-#{$i},
+			.px#{$infix}-#{$i},
+			.pr#{$infix}-#{$i} {
+				padding-right: #{$i}px;
+			}
+		}
+
+		.ml#{$infix}-auto,
+		.mx#{$infix}-auto {
+			margin-left: auto;
+		}
+
+		.mr#{$infix}-auto,
+		.mx#{$infix}-auto {
+			margin-right: auto;
+		}
+
+		.mt#{$infix}-auto,
+		.my#{$infix}-auto {
+			margin-top: auto;
+		}
+
+		.mb#{$infix}-auto,
+		.my#{$infix}-auto {
+			margin-bottom: auto;
+		}
+	}
+}

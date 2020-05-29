@@ -1,0 +1,33 @@
+.bd {
+	border: 1px solid #CCC !important;
+	&-y,
+	&-top {
+		border-top: 1px solid #CCC !important;
+	}
+	&-y,
+	&-bottom {
+		border-bottom: 1px solid #CCC !important;
+	}
+	&-x,
+	&-left {
+		border-left: 1px solid #CCC !important;
+	}
+	&-x,
+	&-right {
+		border-right: 1px solid #CCC !important;
+	}
+
+	$i: 0;
+	@while $i <= 5 {
+		&-#{$i} {
+			border-width: #{$i}px !important;
+		}
+		$i: $i + 1;
+	}
+
+	@each $color, $value in $colors { //$theme-colors
+		&-#{$color} {
+			border-color: $value !important;
+		}
+	}
+}

@@ -1,0 +1,31 @@
+.breadcrumb {
+  padding: 0;
+  list-style: none;
+	font-size: 0;
+
+  a {
+    color: $bc-link-color;
+		text-decoration: none;
+
+    &:hover {
+      color: darken($bc-link-color, 15%);
+    }
+	}
+
+  .item {
+    display: inline-block;
+    font-size: $bc-txt-size;
+		color: $bc-link-color-active;
+
+    + .item:before {
+      display: inline-block;
+      padding-right: $bc-padding;
+      padding-left: $bc-padding;
+      color: $bc-link-color-active;
+      content: "/";
+    }
+    // &.active {
+    //   color: $bc-link-color-active;
+    // }
+  }
+}

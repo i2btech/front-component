@@ -1,0 +1,18 @@
+/*
+ * Clearfix
+ */
+ .clear,
+ .container,
+ .panel,
+ .row,
+ .row-pd,
+ .row-padding,
+ .cell-row,
+ .bar {
+	 &:after,
+	 &:before {
+		 content: "";
+		 display: table;
+		 clear: both;
+	 }
+ }

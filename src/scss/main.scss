@@ -1,0 +1,69 @@
+// ===========
+// Proyecto:
+// Fecha Inicio:
+// Email Desarrollador:
+// ===========
+
+//- Vars
+@import "config";
+
+//- Mixins
+@import "inc/mixins";
+@import "components/mixins/breakpoints";
+@import "components/mixins/hover";
+@import "components/mixins/background-variant";
+@import "components/mixins/text-emphasis";
+@import "components/mixins/text-truncate";
+@import "components/mixins/text-hide";
+// @import "components/mixins/grid-framework"; //Grid Normal
+@import "components/mixins/grid-framework-flex"; //Grid FlexBox
+@import "components/mixins/grid";
+
+
+//- Sprite
+//@import "inc/sprite";
+//@include sprites($spritesheet-sprites);
+
+//- Components
+@import "components/normalize";
+@import "components/fonts";
+@import "components/buttons";
+@import "components/panels";
+@import "components/cards";
+// @import "components/grid"; //Grid Normal
+@import "components/grid-flex"; //Grid FlexBox
+@import "components/tables";
+@import "components/tooltips";
+@import "components/navigation";
+@import "components/alerts";
+@import "components/tabs";
+@import "components/breadcrumb";
+@import "components/collapse";
+@import "components/dropdown";
+@import "components/modal";
+@import "components/forms";
+@import "components/lazyload";
+@import "components/quickcart";
+
+//- Helpers
+@import "components/utilities/align";
+@import "components/utilities/background";
+@import "components/utilities/borders";
+@import "components/utilities/clear";
+@import "components/utilities/display";
+@import "components/utilities/flex";
+@import "components/utilities/float";
+@import "components/utilities/images";
+@import "components/utilities/position";
+@import "components/utilities/sizing";
+@import "components/utilities/spacing";
+@import "components/utilities/texts";
+
+//- Template del sitio
+@import "template/header.scss";
+@import "template/footer.scss";
+@import "template/global.scss";
+
+body {
+	//background: blue;
+}

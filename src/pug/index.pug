@@ -1,0 +1,120 @@
+//-
+	* Nombre proyecto:
+	* Fecha inicio:
+	* Email desarrollador:
+	* Descripción:
+	* Dependencias:
+	* Dónde se utiliza/requiere:
+
+extends ./inc/_layout
+
+block variables
+	- var title = 'Home | ' + siteTitle
+
+block wBody
+	main#home.home
+		.container-fluid
+			.row
+				.col-md-2.col-mnv.position-fixed.bg-grey-dark
+					//- Menú Navegación
+					.bar.bg-grey-dark.text-white.fz-14.-vert.pt-15.pb-15
+						a(href="demo.html").bar-item.button Demo Ecommerce
+						a(href="#buttons" data-js="sctop").bar-item.button Buttons
+						a(href="#buttons" data-js="sctop").bar-item.button Links
+						a(href="#panels" data-js="sctop").bar-item.button Panels
+						a(href="#cards" data-js="sctop").bar-item.button Cards
+						a(href="#grids" data-js="sctop").bar-item.button Grid
+						a(href="#responsive" data-js="sctop").bar-item.button Responsive
+						a(href="#alerts" data-js="sctop").bar-item.button Alerts
+						a(href="#tabs" data-js="sctop").bar-item.button Tabs
+						a(href="#progress-bar" data-js="sctop").bar-item.button Progress Bar
+						a(href="#tables" data-js="sctop").bar-item.button Tables
+						a(href="#tooltips" data-js="sctop").bar-item.button Tooltips
+						a(href="#navigation" data-js="sctop").bar-item.button Navigation
+						a(href="#pagination" data-js="sctop").bar-item.button Pagination
+						a(href="#breadcrumb" data-js="sctop").bar-item.button Breadcrumb
+						a(href="#collapse" data-js="sctop").bar-item.button Collapse
+						a(href="#dropdown" data-js="sctop").bar-item.button Dropdown
+						a(href="#modal" data-js="sctop").bar-item.button Modal
+						a(href="#form" data-js="sctop").bar-item.button Form
+						a(href="lazyload.html").bar-item.button LazyLoad
+
+				.col-md-10.offset-md-2.p-20
+					h1 Componentes basicos
+
+					//- Botones
+					section#buttons.mt-50.pb-30.bd-bottom
+						include ./components/_buttons
+
+					//- Paneles
+					section#panels.mt-50.pb-30.bd-bottom
+						include ./components/_panels
+
+					//- Cards
+					section#cards.mt-50.pb-30.bd-bottom
+						include ./components/_cards
+
+					//- Grillas
+					section#grids.mt-50.pb-30.bd-bottom
+						include ./components/_grids
+
+					//- Responsive
+					section#responsive.mt-50.pb-30.bd-bottom
+						include ./components/_responsive
+
+					//- Alertas
+					section#alerts.mt-50.pb-30.bd-bottom
+						include ./components/_alerts
+
+					//- Tabs
+					section#tabs.mt-50.pb-30.bd-bottom
+						include ./components/_tabs
+
+					//- Barra de progreso
+					section#progress-bar.mt-50.pb-30.bd-bottom
+						include ./components/_progress-bar
+
+					//- Tablas
+					section#tables.mt-50.-mb30.bd-bottom
+						include ./components/_tables
+
+					//- Tooltips
+					section#tooltips.mt-50.pb-30.bd-bottom
+						include ./components/_tooltips
+
+					//- Navegación
+					section#navigation.mt-50.pb-30.bd-bottom
+						include ./components/_navigation
+
+					//- Paginación
+					section#pagination.mt-50.pb-30.bd-bottom
+						include ./components/_pagination
+
+					//- Camino de migas
+					section#breadcrumb.mt-50.pb-30.bd-bottom
+						include ./components/_breadcrumb
+
+					//- Collapse
+					section#collapse.mt-50.pb-30.bd-bottom
+						include ./components/_collapse
+
+					//- Dropdown
+					section#dropdown.mt-50.pb-30.bd-bottom
+						include ./components/_dropdown
+
+					//- Modals
+					section#modal.mt-50.pb-30.bd-bottom
+						include ./components/_modal
+
+					//- Formulario
+					section#form.mt-50.pb-30.bd-bottom
+						include ./components/_forms
+
+block wScripts
+	//-script(src='js/i2b-tabs.js')
+	//-script(src='js/i2b-collapse.js')
+	//-script(src='js/i2b-dropdown.js')
+	//-script(src='js/i2b-modal.js')
+	//-script(src='js/i2b-select.js')
+	//-script(src='js/i2b-form.js')
+	//-script(src='js/i2b-scroll.js')
