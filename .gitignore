@@ -1,11 +1,1 @@
-.DS_Store
-.svn
 node_modules
-bower_components
-.sass-cache
-*.log
-TEMP.txt
-dev/
-prod/
-
-# added: don't version compilated files
