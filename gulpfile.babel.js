@@ -1,7 +1,7 @@
 import gulp, { watch, series } from 'gulp';
-//import connect from 'gulp-connect';
+import connect from 'gulp-connect';
 import plumber from 'gulp-plumber';
-//import findPort from 'find-port';
+import findPort from 'find-port';
 import browserSync from 'browser-sync';
 import sourcemaps from 'gulp-sourcemaps';
 import sass from 'gulp-sass';
@@ -19,10 +19,10 @@ import webpack from 'webpack';
 import webpackConfig from './webpack.config.js';
 
 //Variables de Templates
-/*let server_port = 8080;
+let server_port = 8080;
 findPort(server_port, server_port + 10, function(ports) {
 	server_port = ports[0];
-});*/
+});
 
 const bases = {
 	src: 'src/',
@@ -46,13 +46,13 @@ const paths = {
 };
 
 //Livereload - Watch Taks HTML - CSS
-/*export function connect_server() {
+export function connect_server() {
 	return connect.server({
-		root: bases.src,
+		root: bases.dist,
 		port: server_port,
 		livereload: true
 	});
-}*/
+}
 
 // Reload Server Function
 /*export function reload_server() {
@@ -209,5 +209,5 @@ export const clean = () => del([ bases.dist ]);
 
 export default gulp.series(clean, gulp.parallel(pug_task, sass_task, images, fonts_copy, scripts_libs_copy, scripts, browser_sync, watch_task));
 export const start = gulp.series(browser_sync, watch_task);
-export const build = gulp.series(pug_task, sass_task, images, fonts_copy, scripts_libs_copy, scripts);
+export const build = gulp.series(pug_task, sass_task, images, fonts_copy, scripts_libs_copy, scripts, connect_server);
 export const prod = gulp.series(pug_task, css_min, images, fonts_copy, scripts_libs_copy, script_min);
