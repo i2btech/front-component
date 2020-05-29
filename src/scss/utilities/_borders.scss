@@ -1,0 +1,37 @@
+$grid-breakpoints: map-get($theme, 'screens');
+$colors: map-get($theme, 'colors');
+$borders: map-get($theme, 'borders');
+
+.bd {
+	border: 1px solid #CCC !important;
+	&-y,
+	&-top {
+		border-top: 1px solid #CCC !important;
+	}
+	&-y,
+	&-bottom {
+		border-bottom: 1px solid #CCC !important;
+	}
+	&-x,
+	&-left {
+		border-left: 1px solid #CCC !important;
+	}
+	&-x,
+	&-right {
+		border-right: 1px solid #CCC !important;
+	}
+}
+
+@each $bp in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($bp) {
+    $infix: breakpoint-infix($bp, $grid-breakpoints);
+
+		@each $attr, $value in $borders {
+			.#{$infix}bd-#{$attr} { border-width: $value !important; }
+		}
+
+		@each $attr, $value in $colors {
+			.#{$infix}bd-#{$attr} { border-color: $value !important; }
+		}
+	}
+}

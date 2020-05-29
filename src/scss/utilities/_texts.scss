@@ -1,0 +1,67 @@
+$grid-breakpoints: map-get($theme, 'screens');
+$colors: map-get($theme, 'colors');
+$font-sizes: map-get($theme, 'fontSizes');
+$line-heights: map-get($theme, 'lineHeights');
+$font-weights: map-get($theme, 'fontWeight');
+
+.text {
+	font-size: map-get($font-sizes, 'default');
+	line-height: map-get($line-heights, 'default');
+	color: map-get($colors, 'default');
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		/*
+		* Sizes
+		*/
+    @each $attr, $value in $font-sizes {
+      .#{$infix}fz-#{$attr} { font-size: #{$value} !important; }
+		}
+
+		/*
+		* Colors
+		*/
+		@each $attr, $value in $colors {
+			@include text-emphasis-variant(".#{$infix}text-#{$attr}", $value);
+		}
+
+		/*
+		* Line Heights
+		*/
+		@each $attr, $value in $line-heights {
+			.#{$infix}lh-#{$attr} { line-height: $value; }
+		}
+
+		/*
+		* Alignments
+		*/
+		$aligns: (left: left, right: right, center: center);
+		@each $attr, $value in $aligns {
+			.#{$infix}text-#{$attr} { text-align: $value !important; }
+		}
+
+		/*
+		* Bolds
+		*/
+		@each $attr, $value in $font-weights {
+			.#{$infix}fw-#{$attr} { font-weight: $value !important; }
+		}
+  }
+}
+
+.text-dn { text-decoration: none !important; }
+.text-du { text-decoration: underline !important; }
+
+.text-justify  { text-align: justify !important; }
+.text-nowrap   { white-space: nowrap !important; }
+.text-truncate { @include text-truncate; }
+
+// Transformation
+.text-lowercase  { text-transform: lowercase !important; }
+.text-uppercase  { text-transform: uppercase !important; }
+.text-capitalize { text-transform: capitalize !important; }
+
+.text-hide { @include text-hide(); }

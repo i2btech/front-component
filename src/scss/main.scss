@@ -1,3 +1,5 @@
+//@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+
 // ===========
 // Proyecto:
 // Fecha Inicio:
@@ -8,62 +10,55 @@
 @import "config";
 
 //- Mixins
-@import "inc/mixins";
-@import "components/mixins/breakpoints";
-@import "components/mixins/hover";
-@import "components/mixins/background-variant";
-@import "components/mixins/text-emphasis";
-@import "components/mixins/text-truncate";
-@import "components/mixins/text-hide";
-// @import "components/mixins/grid-framework"; //Grid Normal
-@import "components/mixins/grid-framework-flex"; //Grid FlexBox
-@import "components/mixins/grid";
-
-
-//- Sprite
-//@import "inc/sprite";
-//@include sprites($spritesheet-sprites);
+@import "mixins/breakpoints";
+@import "mixins/hover";
+@import "mixins/background-variant";
+@import "mixins/text-emphasis";
+@import "mixins/text-truncate";
+@import "mixins/text-hide";
+@import "mixins/grid-framework-flex"; //Grid FlexBox
+@import "mixins/grid";
 
 //- Components
-@import "components/normalize";
-@import "components/fonts";
 @import "components/buttons";
-@import "components/panels";
-@import "components/cards";
-// @import "components/grid"; //Grid Normal
-@import "components/grid-flex"; //Grid FlexBox
-@import "components/tables";
-@import "components/tooltips";
 @import "components/navigation";
-@import "components/alerts";
-@import "components/tabs";
-@import "components/breadcrumb";
-@import "components/collapse";
-@import "components/dropdown";
-@import "components/modal";
-@import "components/forms";
-@import "components/lazyload";
-@import "components/quickcart";
+@import "components/panels";
 
-//- Helpers
-@import "components/utilities/align";
-@import "components/utilities/background";
-@import "components/utilities/borders";
-@import "components/utilities/clear";
-@import "components/utilities/display";
-@import "components/utilities/flex";
-@import "components/utilities/float";
-@import "components/utilities/images";
-@import "components/utilities/position";
-@import "components/utilities/sizing";
-@import "components/utilities/spacing";
-@import "components/utilities/texts";
+//- Utilities
+@import "utilities/normalize";
+@import "utilities/grid-flex"; //Grid FlexBox
 
-//- Template del sitio
-@import "template/header.scss";
-@import "template/footer.scss";
-@import "template/global.scss";
+@import "utilities/align";
+@import "utilities/background";
+@import "utilities/borders";
+@import "utilities/clear";
+@import "utilities/display";
+@import "utilities/flex";
+@import "utilities/float";
+@import "utilities/images";
+@import "utilities/position";
+@import "utilities/sizing";
+@import "utilities/spacing";
+@import "utilities/texts";
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
 
 body {
-	//background: blue;
+  position: relative;
+  font-family: 'Lato', Arial;
+  line-height: 1.2;
+}
+
+#content {
+	padding-top: 62px;
+}
+
+.col-mnv {
+  top: 58px;
+	bottom: 0;
+	overflow-y: auto;
 }

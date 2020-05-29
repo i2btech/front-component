@@ -1,3 +1,6 @@
+$colors: map-get($theme, 'colors');
+$color-default: map-get($theme, 'default');
+
 //-
 //- Buttons
 //-
@@ -29,7 +32,7 @@
     background-color: #CCC;
   }
 
-  &.disabled,
+  &.btn--disabled,
   &:disabled {
     cursor: not-allowed;
     opacity: .3;
@@ -43,10 +46,10 @@
     }
   }
 
-  &.-sm  { font-size: 11px; }
-  &.-md  { font-size: 15px; }
-  &.-lg  { font-size: 18px; }
-  &.-xlg { font-size: 22px; }
+  &--sm  { font-size: 11px; }
+  &--md  { font-size: 15px; }
+  &--lg  { font-size: 18px; }
+  &--xlg { font-size: 22px; }
 }
 
 .btn-link {
@@ -57,19 +60,19 @@
     background-color: transparent;
 	}
 
-  &.disabled,
+  &.btn-link--disabled,
   &:disabled {
     opacity: .3;
   }
 }
 
-.-close {
+.btn--close {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.btn-close {
+.btn__close {
   padding: 5px;
   font-size: 21px;
   font-weight: 700;

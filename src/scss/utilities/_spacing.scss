@@ -1,0 +1,59 @@
+//
+// Margins and paddings
+//
+
+$grid-breakpoints: map-get($theme, 'screens');
+$margins: map-get($theme, 'margin');
+$paddings: map-get($theme, 'padding');
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		@each $attr, $value in $margins {
+			.#{$infix}m-#{$attr},
+			.#{$infix}my-#{$attr},
+			.#{$infix}mt-#{$attr} {
+				margin-top: #{$value};
+			}
+			.#{$infix}m-#{$attr},
+			.#{$infix}my-#{$attr},
+			.#{$infix}mb-#{$attr} {
+				margin-bottom: #{$value};
+			}
+			.#{$infix}m-#{$attr},
+			.#{$infix}mx-#{$attr},
+			.#{$infix}ml-#{$attr} {
+				margin-left: #{$value};
+			}
+			.#{$infix}m-#{$attr},
+			.#{$infix}mx-#{$attr},
+			.#{$infix}mr-#{$attr} {
+				margin-right: #{$value};
+			}
+		}
+
+		@each $attr, $value in $paddings {
+			.#{$infix}p-#{$attr},
+			.#{$infix}py-#{$attr},
+			.#{$infix}pt-#{$attr} {
+				padding-top: #{$value};
+			}
+			.#{$infix}p-#{$attr},
+			.#{$infix}py-#{$attr},
+			.#{$infix}pb-#{$attr} {
+				padding-bottom: #{$value};
+			}
+			.#{$infix}p-#{$attr},
+			.#{$infix}px-#{$attr},
+			.#{$infix}pl-#{$attr} {
+				padding-left: #{$value};
+			}
+			.#{$infix}p-#{$attr},
+			.#{$infix}px-#{$attr},
+			.#{$infix}pr-#{$attr} {
+				padding-right: #{$value};
+			}
+		}
+	}
+}
