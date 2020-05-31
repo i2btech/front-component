@@ -60,12 +60,7 @@
   .btn-link.btn-link--disabled, .btn-link:disabled {
     opacity: .3; }
 
-.btn--close {
-  position: absolute;
-  top: 0;
-  right: 0; }
-
-.btn__close {
+.btn-close {
   padding: 5px;
   font-size: 21px;
   font-weight: 700;
@@ -78,14 +73,17 @@
   text-decoration: none;
   cursor: pointer;
   outline: none; }
+  .btn-close--right {
+    position: absolute;
+    top: 0;
+    right: 0; }
 
 .nav__item {
-  padding: 8px 16px;
-  float: left;
+  display: inline-block;
   width: auto;
+  padding: 8px 16px;
   border: none;
-  outline: none;
-  display: block; }
+  outline: none; }
 
 .nav--button {
   border: none;
@@ -110,7 +108,7 @@
     color: #000 !important;
     background-color: #ccc !important; }
 
-.nav--vert .nav__item {
+.nav-vert__item {
   width: 100%;
   display: block;
   padding: 8px 16px;
@@ -258,6 +256,455 @@
       background-color: #FFF; }
     .table-all tr:nth-child(even) {
       background-color: #F1F1F1; }
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; }
+  .tooltip__text {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1; }
+    .tooltip__text--ani {
+      opacity: 0;
+      transition: opacity 1s; }
+    .tooltip__text--left {
+      top: -5px;
+      right: 105%; }
+      .tooltip__text--left::after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        /* To the right of the tooltip */
+        margin-top: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent transparent black; }
+    .tooltip__text--right {
+      top: -5px;
+      left: 105%; }
+      .tooltip__text--right::after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        /* To the left of the tooltip */
+        margin-top: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent black transparent transparent; }
+    .tooltip__text--top {
+      width: 120px;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -60px;
+      /* Use half of the width (120/2 = 60), to center the tooltip */ }
+      .tooltip__text--top::after {
+        content: " ";
+        position: absolute;
+        top: 100%;
+        /* At the bottom of the tooltip */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: black transparent transparent transparent; }
+    .tooltip__text--bottom {
+      width: 120px;
+      top: 100%;
+      left: 50%;
+      margin-left: -60px;
+      /* Use half of the width (120/2 = 60), to center the tooltip */ }
+      .tooltip__text--bottom::after {
+        content: " ";
+        position: absolute;
+        bottom: 100%;
+        /* At the top of the tooltip */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent black transparent; }
+  .tooltip:hover .tooltip__text {
+    visibility: visible; }
+  .tooltip:hover .tooltip__text--ani {
+    opacity: 1; }
+
+.breadcrumb {
+  padding: 0;
+  list-style: none;
+  font-size: 0; }
+  .breadcrumb a {
+    color: #D71F26;
+    text-decoration: none; }
+    .breadcrumb a:hover {
+      color: #94151a; }
+  .breadcrumb__item {
+    display: inline-block;
+    font-size: 13px;
+    color: #AAA; }
+    .breadcrumb__item + .breadcrumb__item:before {
+      display: inline-block;
+      padding-right: 5px;
+      padding-left: 5px;
+      color: #AAA;
+      content: "/"; }
+
+/*----- Accordion -----*/
+.collapse {
+  overflow: hidden;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  background: #F7F7F7; }
+  .collapse__title {
+    width: 100%;
+    padding: 15px;
+    display: inline-block;
+    border-top: 1px solid #1A1A1A;
+    background: #333;
+    font-size: 15px;
+    text-shadow: 0 1px 0 #1A1A1A;
+    color: #FFF;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all linear .15s; }
+    .collapse__title:after {
+      display: inline-block;
+      float: right;
+      content: "";
+      margin-top: 3px;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid #FFF; }
+    .collapse__title.active:after {
+      border-top: none;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid #FFF; }
+    .collapse__title.active, .collapse__title:hover {
+      background: #4C4C4C;
+      text-decoration: none; }
+  .collapse__content {
+    padding: 15px;
+    display: none; }
+    .collapse__content.active {
+      display: block; }
+  .collapse__item:first-child .title {
+    border-top: none; }
+
+.btn-menu {
+  position: relative;
+  transition: opacity .5s ease 0s;
+  z-index: 10; }
+  .btn-menu.active {
+    opacity: .5; }
+
+.nav-menu {
+  position: absolute;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s ease;
+  z-index: 11; }
+  .nav-menu.active {
+    opacity: 1;
+    visibility: visible; }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 9;
+  transition: opacity .5s ease 0s; }
+  .overlay.active {
+    visibility: visible;
+    opacity: .5; }
+
+.modal {
+  position: relative;
+  top: 20px;
+  left: 0;
+  right: 0;
+  width: 94%;
+  margin: 0 auto;
+  opacity: 0;
+  visibility: hidden;
+  background: #FFF;
+  border-radius: 2px;
+  z-index: 100;
+  transition: opacity .5s ease; }
+  .modal.active {
+    opacity: 1;
+    visibility: visible; }
+  .modal__btn-close {
+    position: absolute;
+    top: 8.5px;
+    right: 8px; }
+
+body.fixed {
+  overflow: hidden; }
+
+.m-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 99;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: opacity .5s ease 0s;
+  overflow: auto; }
+  .m-overlay.active {
+    visibility: visible;
+    opacity: 1; }
+
+.input,
+.textarea,
+.select {
+  height: 35px;
+  padding: 8px 10px;
+  font-size: 15px;
+  line-height: 1;
+  color: #999;
+  border: none;
+  border: 1px solid #555;
+  background: none;
+  outline: none; }
+  .input.error,
+  .textarea.error,
+  .select.error {
+    border-color: #D71F26; }
+  .input--xs,
+  .textarea--xs,
+  .select--xs {
+    height: 25px;
+    padding: 5px 10px;
+    font-size: 13px; }
+  .input--sm,
+  .textarea--sm,
+  .select--sm {
+    height: 30px;
+    padding: 8px 10px;
+    font-size: 16px; }
+  .input--md,
+  .textarea--md,
+  .select--md {
+    height: 40px;
+    padding: 10px;
+    font-size: 18px; }
+  .input--lg,
+  .textarea--lg,
+  .select--lg {
+    height: 50px;
+    padding: 12px 10px;
+    font-size: 20px; }
+
+/**
+ * Checkbox y Radio
+ */
+.checkbox,
+.radio,
+.checkbox + label,
+.radio + label {
+  display: inline-block;
+  font-size: 13px;
+  vertical-align: middle;
+  cursor: pointer; }
+
+.checkbox,
+.radio {
+  position: absolute;
+  opacity: 0; }
+  .checkbox + label,
+  .radio + label {
+    position: relative; }
+    .checkbox + label:before,
+    .radio + label:before {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+      padding: 2px;
+      content: '';
+      border: 1px solid #555;
+      vertical-align: middle;
+      text-align: center;
+      outline: none; }
+  .checkbox.error + label:before,
+  .radio.error + label:before {
+    border-color: #D71F26; }
+
+.checkbox:checked + label:before {
+  background: #eb7176;
+  box-shadow: inset 0px 0px 0px 3px #FFF; }
+
+.radio + label:before {
+  border-radius: 50%; }
+
+.radio:checked + label:before {
+  background: #eb7176;
+  box-shadow: inset 0px 0px 0px 3px #FFF; }
+
+/**
+ * Select
+ */
+.select {
+  position: relative;
+  display: block;
+  padding: 0 30px 0 0;
+  overflow: hidden;
+  cursor: pointer; }
+  .select:after {
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    right: 7px;
+    width: 0;
+    height: 0;
+    content: '';
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #555;
+    transform: translateY(-50%);
+    z-index: 0; }
+  .select option {
+    color: #999; }
+  .select select {
+    position: absolute;
+    padding: 8px 10px;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    z-index: 1; }
+    .select select:focus {
+      outline: none; }
+  .select option[value=""][disabled],
+  .select option[value="null"][disabled],
+  .select option[value="undefined"][disabled] {
+    display: none; }
+
+/**
+ * Select Custom
+ */
+.cselect {
+  position: relative;
+  display: block;
+  height: 35px;
+  font-size: 15px;
+  color: #555;
+  cursor: pointer; }
+  .cselect select {
+    display: none;
+    padding-right: 10px;
+    visibility: hidden; }
+    .cselect select.error + .csel-cont {
+      border-color: #D71F26; }
+
+.csel-cont {
+  background: none;
+  padding: 8px 35px 8px 15px;
+  transition: all 0.2s ease-in;
+  border: 1px solid #555;
+  user-select: none; }
+  .csel-cont:after {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 0;
+    height: 0;
+    content: '';
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #444;
+    transform: translateY(-50%); }
+  .csel-cont:active:after, .csel-cont.active:after {
+    border-top: none;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #444; }
+
+.csel-options {
+  position: absolute;
+  display: none;
+  top: 100%;
+  right: 0;
+  left: 0;
+  height: 230px;
+  margin: 0;
+  padding: 0;
+  z-index: 99;
+  list-style: none;
+  border: 1px solid #555;
+  border-top: none;
+  background-color: #FFF;
+  overflow-y: auto; }
+  .csel-options li {
+    margin: 0;
+    padding: 10px 0;
+    text-indent: 15px;
+    transition: all 0.15s ease-in; }
+    .csel-options li:hover {
+      color: #FFF;
+      background-color: #eb7176; }
+    .csel-options li[disabled] {
+      display: none; }
+
+/**
+ * Error
+ */
+.textarea {
+  height: auto; }
+
+/**
+ * Error
+ */
+label.error {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #D71F26; }
+
+/**
+ * Placeholder Form
+ */
+form ::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #b3b3b3; }
+
+form ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #b3b3b3; }
+
+form :-ms-input-placeholder {
+  /* IE 10+ */
+  color: #b3b3b3; }
+
+form :-moz-placeholder {
+  /* Firefox 18- */
+  color: #b3b3b3; }
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -1265,78 +1712,78 @@ fieldset {
     margin-left: 91.66667%; } }
 
 .align-baseline {
-  float: baseline !important; }
+  vertical-align: baseline !important; }
 
 .align-top {
-  float: top !important; }
+  vertical-align: top !important; }
 
 .align-middle {
-  float: middle !important; }
+  vertical-align: middle !important; }
 
 .align-bottom {
-  float: bottom !important; }
+  vertical-align: bottom !important; }
 
 .align-text-bottom {
-  float: text-bottom !important; }
+  vertical-align: text-bottom !important; }
 
 .align-text-top {
-  float: text-top !important; }
+  vertical-align: text-top !important; }
 
 @media (min-width: 640px) {
   .sm\:align-baseline {
-    float: baseline !important; }
+    vertical-align: baseline !important; }
   .sm\:align-top {
-    float: top !important; }
+    vertical-align: top !important; }
   .sm\:align-middle {
-    float: middle !important; }
+    vertical-align: middle !important; }
   .sm\:align-bottom {
-    float: bottom !important; }
+    vertical-align: bottom !important; }
   .sm\:align-text-bottom {
-    float: text-bottom !important; }
+    vertical-align: text-bottom !important; }
   .sm\:align-text-top {
-    float: text-top !important; } }
+    vertical-align: text-top !important; } }
 
 @media (min-width: 768px) {
   .md\:align-baseline {
-    float: baseline !important; }
+    vertical-align: baseline !important; }
   .md\:align-top {
-    float: top !important; }
+    vertical-align: top !important; }
   .md\:align-middle {
-    float: middle !important; }
+    vertical-align: middle !important; }
   .md\:align-bottom {
-    float: bottom !important; }
+    vertical-align: bottom !important; }
   .md\:align-text-bottom {
-    float: text-bottom !important; }
+    vertical-align: text-bottom !important; }
   .md\:align-text-top {
-    float: text-top !important; } }
+    vertical-align: text-top !important; } }
 
 @media (min-width: 1024px) {
   .lg\:align-baseline {
-    float: baseline !important; }
+    vertical-align: baseline !important; }
   .lg\:align-top {
-    float: top !important; }
+    vertical-align: top !important; }
   .lg\:align-middle {
-    float: middle !important; }
+    vertical-align: middle !important; }
   .lg\:align-bottom {
-    float: bottom !important; }
+    vertical-align: bottom !important; }
   .lg\:align-text-bottom {
-    float: text-bottom !important; }
+    vertical-align: text-bottom !important; }
   .lg\:align-text-top {
-    float: text-top !important; } }
+    vertical-align: text-top !important; } }
 
 @media (min-width: 1280px) {
   .xl\:align-baseline {
-    float: baseline !important; }
+    vertical-align: baseline !important; }
   .xl\:align-top {
-    float: top !important; }
+    vertical-align: top !important; }
   .xl\:align-middle {
-    float: middle !important; }
+    vertical-align: middle !important; }
   .xl\:align-bottom {
-    float: bottom !important; }
+    vertical-align: bottom !important; }
   .xl\:align-text-bottom {
-    float: text-bottom !important; }
+    vertical-align: text-bottom !important; }
   .xl\:align-text-top {
-    float: text-top !important; } }
+    vertical-align: text-top !important; } }
 
 .bg-default {
   background-color: #D71F26 !important; }
