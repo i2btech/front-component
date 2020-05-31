@@ -15,26 +15,26 @@ block wBody
 	main#lazyload.home
 		.container-fluid
 			.row
-				.col-sm-3.col-lg-2.col-mnv.bg-grey-dark.position-fixed
-					.bar.bg-grey-dark.text-white.-vert.pt-15.pb-15
-						h4.bar-item.fz-15.bd-bottom Imagen
+				.col-mnv.position-static.bg-gray-900(class="md:col-2 md:position-fixed")
+					.nav-vert.text-white.pt-15.pb-15
+						h4.nav-vert__item.fz-15.bd-bottom Imagen
 						.fz-14
-							a(href='#image' data-js="sctop").bar-item.button Normal
-							a(href='#image-resp-1' data-js="sctop").bar-item.button Resposive - Mobile, Desktop
-							a(href='#image-resp-2' data-js="sctop").bar-item.button Resposive - Mobile, Tablet, Desktop
+							a(href='#image' data-js="sctop").nav-vert__item.nav--button Normal
+							a(href='#image-resp-1' data-js="sctop").nav-vert__item.nav--button Resposive - Mobile, Desktop
+							a(href='#image-resp-2' data-js="sctop").nav-vert__item.nav--button Resposive - Mobile, Tablet, Desktop
 
-						h4.bar-item.fz-15.bd-bottom.-mt10 Background
+						h4.nav-vert__item.fz-15.bd-bottom.-mt10 Background
 						.fz-14
-							a(href='#bg' data-js="sctop").bar-item.button Normal
-							a(href='#bg-resp-1' data-js="sctop").bar-item.button Responsive - Mobile, Desktop
-							a(href='#bg-resp-2' data-js="sctop").bar-item.button Responsive - Mobile, Tablet, Desktop
+							a(href='#bg' data-js="sctop").nav-vert__item.nav--button Normal
+							a(href='#bg-resp-1' data-js="sctop").nav-vert__item.nav--button Responsive - Mobile, Desktop
+							a(href='#bg-resp-2' data-js="sctop").nav-vert__item.nav--button Responsive - Mobile, Tablet, Desktop
 
-						h4.bar-item.fz-15.bd-bottom.-mt10 Otros
+						h4.nav-vert__item.fz-15.bd-bottom.-mt10 Otros
 						.fz-14
-							a(href="#iframe" data-js="sctop").bar-item.button Iframe
-							a(href="#scroll" data-js="sctop").bar-item.button Scroll Custom
+							a(href="#iframe" data-js="sctop").nav-vert__item.nav--button Iframe
+							a(href="#scroll" data-js="sctop").nav-vert__item.nav--button Scroll Custom
 
-				.col-sm-9.offset-sm-3.col-lg-10.offset-lg-2.p-20
+			.p-20(class="md:col-10 md:offset-2")
 					h1 LazyLoad
 
 					.mt-30#image
@@ -58,7 +58,7 @@ block wBody
 					.mt-50#image-resp-2
 						h5.mt-30 Resposive - Mobile, Tablet, Desktop
 						.mt-20
-							img(src=siteImg + 'lazy/b.png' data-src=siteImg + 'lazy/image-m-3.jpg' data-srcset=siteImg + 'lazy/image-t-3.jpg 768w, #{siteImg}lazy/image-3.jpg 1200w' alt='' width='800' height='600' class='lazy' lazyload)
+							img(src=siteImg + 'lazy/b.png' data-src=siteImg + 'lazy/image-m-3.jpg' data-srcset=siteImg + 'lazy/image-t-3.jpg 768w, ' + siteImg + 'lazy/image-3.jpg 1200w' alt='' width='800' height='600' class='lazy' lazyload)
 
 							p.mt-20 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio.
 
@@ -67,7 +67,7 @@ block wBody
 					.mt-50#bg
 						h5.mt-30 Background
 						.mt-20
-							div(style="background-image:url(#{siteImg}img/lazy/b.png);" data-src=siteImg + 'lazy/image-4.jpg' alt='' width='800' height='600' class='lazybg' lazyload)
+							div(style="background-image:url(#{siteImg}img/lazy/b.png);" data-src=siteImg + 'lazy/image-4.jpg' alt='' width='800' height='600' class='lazy lazy--bg' lazyload)
 								p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio.
 
 								p.mt-20 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio.
@@ -75,7 +75,7 @@ block wBody
 					.mt-50#bg-resp-1
 						h5.mt-30 Background Resposive - Mobile, Desktop
 						.mt-20
-							div(data-src=siteImg + 'lazy/image-m-5.jpg' data-srcset=siteImg + 'lazy/image-5.jpg 992w' alt='' width='800' height='600' class='lazybg' lazyload)
+							div(data-src=siteImg + 'lazy/image-m-5.jpg' data-srcset=siteImg + 'lazy/image-5.jpg 992w' alt='' width='800' height='600' class='lazy lazy--bg' lazyload)
 								p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio.
 
 								p.mt-20 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio.
@@ -83,7 +83,7 @@ block wBody
 					.mt-50#bg-resp-2
 						h5.mt-30 Background Resposive - Mobile, Tablet, Desktop
 						.mt-20
-							div(data-src=siteImg + 'lazy/image-m-6.jpg' data-srcset=siteImg + 'lazy/image-t-6.jpg 768w, #{siteImg}img/lazy/image-6.jpg 1200w' alt='' width='800' height='600' class='lazybg' lazyload)
+							div(data-src=siteImg + 'lazy/image-m-6.jpg' data-srcset=siteImg + 'lazy/image-t-6.jpg 768w, ' + siteImg + 'lazy/image-6.jpg 1200w' alt='' width='800' height='600' class='lazy lazy--bg' lazyload)
 								p.text-white Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio.
 
 								p.text-white.mt-20 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio.
@@ -91,7 +91,7 @@ block wBody
 					.mt-50#iframe
 						h5.mt-30 Iframe
 						.mt-20
-							iframe(src="" data-src="https://www.youtube.com/embed/qQtTjLnncVE" frameborder="0" allowfullscreen class="lazyiframe" lazyload)
+							iframe(src="" data-src="https://www.youtube.com/embed/qQtTjLnncVE" frameborder="0" allowfullscreen class="lazy lazy--iframe" lazyload)
 
 					.mt-50#scroll
 						h5.mt-30 Scroll Custom
