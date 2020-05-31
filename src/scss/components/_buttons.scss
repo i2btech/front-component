@@ -66,13 +66,7 @@ $color-default: map-get($theme, 'default');
   }
 }
 
-.btn--close {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.btn__close {
+.btn-close {
   padding: 5px;
   font-size: 21px;
   font-weight: 700;
@@ -84,5 +78,11 @@ $color-default: map-get($theme, 'default');
   opacity: .2;
   text-decoration: none;
   cursor: pointer;
-  outline: none;
+	outline: none;
+
+	&--right {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
 }

@@ -7,9 +7,9 @@ h5.mt-30 Input Text
 
 	h6.mt-20 Tamaños
 	.mt-10
-		input.input.-xs(type='text' name='input2' placeholder='Pequeño')
-		input.input.-sm.ml-10(type='text' placeholder='Mediano')
-		input.input.-lg.ml-10(type='text' placeholder='Grande')
+		input.input.input--xs(type='text' name='input2' placeholder='Pequeño')
+		input.input.input--sm.ml-10(type='text' placeholder='Mediano')
+		input.input.input--lg.ml-10(type='text' placeholder='Grande')
 
 	h6.mt-20 Error
 	.mt-10
@@ -29,7 +29,7 @@ h5.mt-30 Select
 
 	h6.mt-20 Custom Arrow
 	.row.mt-10
-		.col-sm-4
+		div(class="sm:col-4")
 			.select
 				select(name='select2')
 					option(value="" disabled selected) Seleccionar
@@ -40,7 +40,7 @@ h5.mt-30 Select
 
 	h6.mt-20 Custom Options
 	.row.mt-10
-		.col-sm-4
+		div(class="sm:col-4")
 			select(name='select3' data-js="csel")
 				option(value="" disabled selected) Seleccionar
 				option(value="Opción 1") Opción 1
@@ -128,42 +128,42 @@ h6.mt-20 Error
 h5.mt-30 Validación
 
 .mt-10
-	form(name='form1' method='POST' frm-valid)
+	form(name='form1' method='POST' data-js="frm-valid")
 		.row
-			fieldset.col-sm-4
+			fieldset(class="md:col-4")
 				label.fz-14(for='name') Nombre:
 				.mt-5
-					input.input.d-block(type='text' name='name' id='name' placeholder='Pepito Perez' data-rule-required='true' data-msg-required='Digite Nombre.' data-rule-cname='true' data-msg-cname='Digite Nombre válido.')
+					input.input.w-full(type='text' name='name' id='name' placeholder='Pepito Perez' data-rule-required='true' data-msg-required='Digite Nombre.' data-rule-cname='true' data-msg-cname='Digite Nombre válido.')
 
-			fieldset.col-sm-4
+			fieldset(class="md:col-4")
 				label.fz-14 Rut:
 				.mt-5
-					input.input.d-block(type='text' name='document' placeholder='11.111.111-1' data-rule-required='true' data-msg-required='Digite Rut.' data-rule-rut='true' data-msg-rut='Digite Rut válido.')
+					input.input.w-full(type='text' name='document' placeholder='11.111.111-1' data-rule-required='true' data-msg-required='Digite Rut.' data-rule-rut='true' data-msg-rut='Digite Rut válido.')
 
 		.row.mt-30
-			fieldset.col-sm-4
+			fieldset(class="md:col-4")
 				label.fz-14(for='userName') Nombre de usuario:
 				.mt-5
-					input.input.d-block(type='text' name='userName' id='userName' placeholder='PepitoPerez' data-rule-required='true' data-msg-required='Digite Nombre de usuario.' data-rule-nick='true' data-msg-nick='Digite Nombre de usuario válido.')
+					input.input.w-full(type='text' name='userName' id='userName' placeholder='PepitoPerez' data-rule-required='true' data-msg-required='Digite Nombre de usuario.' data-rule-nick='true' data-msg-nick='Digite Nombre de usuario válido.')
 
-			fieldset.col.-sm-4
+			fieldset(class="md:col-4")
 				label.fz-14(for='email') Email:
 				.mt-5
-					input.input.d-block(type='text' name='email' id='email' placeholder='PepitoPerez' data-rule-required='true' data-msg-required='Digite Email.' data-rule-email='true' data-msg-email='Digite Email válido.')
+					input.input.w-full(type='text' name='email' id='email' placeholder='PepitoPerez' data-rule-required='true' data-msg-required='Digite Email.' data-rule-email='true' data-msg-email='Digite Email válido.')
 
 		.row.mt-30
-			fieldset.col-sm-4
+			fieldset(class="md:col-4")
 				label.fz-14(for='password') Clave:
 				.mt-5
-					input.input.d-block(type='password' name='password' id='password' data-rule-required='true' data-msg-required='Digite Clave.' data-rule-minlength='6' data-msg-minlength='La Clave debe contener al menos {0} caracteres.' data-rule-maxlength='15' data-msg-maxlength='La Clave debe contener máximo {0} caracteres.')
+					input.input.w-full(type='password' name='password' id='password' data-rule-required='true' data-msg-required='Digite Clave.' data-rule-minlength='6' data-msg-minlength='La Clave debe contener al menos {0} caracteres.' data-rule-maxlength='15' data-msg-maxlength='La Clave debe contener máximo {0} caracteres.')
 
-			fieldset.col-sm-4
+			fieldset(class="md:col-4")
 				label.fz-14(for='repass') Repetir Clave:
 				.mt-5
-					input.input.d-block(type='password' name='repass' id='repass' data-rule-required='true' data-msg-required='Digite Clave.' data-rule-minlength='6' data-msg-minlength='La Clave debe contener al menos {0} caracteres.' data-rule-maxlength='15' data-msg-maxlength='La Clave debe contener máximo {0} caracteres.' data-rule-equalto='#password' data-msg-equalto='Las Claves no coinciden.')
+					input.input.w-full(type='password' name='repass' id='repass' data-rule-required='true' data-msg-required='Digite Clave.' data-rule-minlength='6' data-msg-minlength='La Clave debe contener al menos {0} caracteres.' data-rule-maxlength='15' data-msg-maxlength='La Clave debe contener máximo {0} caracteres.' data-rule-equalto='#password' data-msg-equalto='Las Claves no coinciden.')
 
 		.row.mt-30
-			fieldset.col-sm-4
+			fieldset(class="md:col-4")
 				label.fz-14(for='sel1') Selección 1
 				.select.mt-5
 					select(name='sel1' id='sel1' data-rule-required='true' data-msg-required='Seleccione Selección 1.')
@@ -173,7 +173,7 @@ h5.mt-30 Validación
 						option(value="Opción 3") Opción 3
 						option(value="Opción 4") Opción 4
 
-			fieldset.col-sm-4
+			fieldset(class="md:col-4")
 				label.fz-14(for='sel2') Selección 2
 				.mt-5
 					select(name='sel2' id='sel2' data-js="csel" data-rule-required='true' data-msg-required='Seleccione Selección 2.')
@@ -189,7 +189,7 @@ h5.mt-30 Validación
 						option(value="Opción 9") Opción 9
 
 		.row.mt-30
-			fieldset.col-sm-4
+			fieldset(class="md:col-4")
 				label.fz-14 Opción
 				.mt-10(control-group)
 					.d-inline-block
@@ -204,7 +204,7 @@ h5.mt-30 Validación
 						input.radio#opt3(type='radio' name='opt')
 						label(for='opt3') Tercero
 
-			fieldset.col-sm-4
+			fieldset(class="md:col-4")
 				label.fz-14 Opciónes
 				.mt-10(control-group)
 					.d-inline-block
@@ -220,4 +220,4 @@ h5.mt-30 Validación
 						label(for='opts3') Tercero
 
 		fieldset.mt-30
-			button.btn.bg-red.text-white(type='submit') Validar
+			button.btn.bg-default.text-white(type='submit') Validar

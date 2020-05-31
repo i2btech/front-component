@@ -149,5 +149,32 @@ $components: (
 			background: #D1ECF1,
 			color: #0C5460,
 		)
+	),
+
+	form: (
+		input: (
+			color: #999,
+			color-danger: #D71F26,
+			border-color: #555,
+			border-color-danger: #D71F26,
+			input-background: #FFF,
+			placeholder-color: #FFF
+		),
+		radio: (
+			background: lighten(#D71F26, 20%)
+		),
+		checkbox: (
+			background: lighten(#D71F26, 20%)
+		),
+		select: (
+			background: #FFF,
+			border-color: #555,
+			arrow-color: #444,
+			border-color-error: #D71F26,
+
+			option-background: #FFF,
+			option-hover-background: lighten(#D71F26, 20%),
+			option-hover-color: #FFF,
+		)
 	)
 )

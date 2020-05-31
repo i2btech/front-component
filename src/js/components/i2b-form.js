@@ -1,69 +1,50 @@
-/* ===========
- * Proyecto:
- * Fecha Inicio:
- * Email Desarrollador:
- * ======== */
-
 "use strict";
 
-var $ = $ || {},
-	jQuery = jQuery || {};
+export default {
+	validate: function($frm) {
+		if ($frm.length) {
+			$frm.each(function () {
+				var $tf = $(this);
 
-$(function () {
-	const $frm = $('[frm-valid]');
+				$tf.validate({
+					ignore: [],
+					errorPlacement: function (err, el) {
+						var $t = $(el),
+							$p = $t.parents('.cselect, .select, [control-group]');
 
-	if ($frm.length) {
-		$frm.each(function () {
-			var $tf = $(this);
+						if ($t.is('select') && $p.length) {
+							$p.addClass('error');
+							err.insertAfter($p);
 
-			$tf.validate({
-				ignore: [],
-				errorPlacement: function (err, el) {
-					var $t = $(el),
-						$p = $t.parents('.cselect, .select, [control-group]');
+						} else if (($t.is(':radio') || $t.is(':checkbox')) && $p.length) {
+							err.insertAfter($p);
 
-					if ($t.is('select') && $p.length) {
-						$p.addClass('error');
-						err.insertAfter($p);
+						} else {
+							err.insertAfter($t);
+						}
+					},
+					unhighlight: function (el) {
+						var $t = $(el),
+							$p = $t.parents('.cselect, .select, [control-group]');
 
-					} else if (($t.is(':radio') || $t.is(':checkbox')) && $p.length) {
-						err.insertAfter($p);
+						if ($t.is('select') && $p.length) {
+							$t.removeClass('error');
+							$p.removeClass('error');
 
-					} else {
-						err.insertAfter($t);
-					}
-				},
-				unhighlight: function (el) {
-					var $t = $(el),
-						$p = $t.parents('.cselect, .select, [control-group]');
+						} else if (($t.is(':radio') || $t.is(':checkbox')) && $p.length) {
+							$p.find(':radio, :checkbox').removeClass('error');
 
-					if ($t.is('select') && $p.length) {
-						$t.removeClass('error');
-						$p.removeClass('error');
-
-					} else if (($t.is(':radio') || $t.is(':checkbox')) && $p.length) {
-						$p.find(':radio, :checkbox').removeClass('error');
-
-					} else {
-						$t.removeClass('error');
-					}
-				},
-				onfocusout: function (el) { $(el).valid(); }
+						} else {
+							$t.removeClass('error');
+						}
+					},
+					onfocusout: function (el) { $(el).valid(); }
+				});
 			});
-		});
 
-		$(document).on('change', '[frm-valid] [csel]', function () {
-			$(this).valid();
-		});
-
-		$frm.on('submit', function (e) {
-			e.preventDefault();
-			const $t = $(this);
-
-			if ($t.valid()) {
-				console.log('Datos enviados.');
-				// $t.submit();
-			}
-		});
+			$(document).on('change', '[data-js="frm-valid"] [csel]', function () {
+				$(this).valid();
+			});
+		}
 	}
-});
+};

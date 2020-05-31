@@ -1,3 +1,9 @@
+$colors: map-get($theme, 'colors');
+$bc-link-color: map-get($colors, 'default');
+$bc-txt-size: 13px;
+$bc-link-color-active: map-get($colors, 'muted');
+$bc-padding: 5px;
+
 .breadcrumb {
   padding: 0;
   list-style: none;
@@ -12,12 +18,12 @@
     }
 	}
 
-  .item {
+  &__item {
     display: inline-block;
     font-size: $bc-txt-size;
 		color: $bc-link-color-active;
 
-    + .item:before {
+    + .breadcrumb__item:before {
       display: inline-block;
       padding-right: $bc-padding;
       padding-left: $bc-padding;

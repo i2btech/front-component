@@ -1,4 +1,6 @@
 /*----- Accordion -----*/
+$color-white: #FFF;
+
 .collapse {
 	overflow: hidden;
 	box-shadow: 0px 1px 3px rgba(0, 0, 0, .25);
@@ -6,7 +8,7 @@
 	background: #F7F7F7;
 
 	// Titles
-	.title {
+	&__title {
 		width: 100%;
 		padding: 15px;
 		display: inline-block;
@@ -46,7 +48,7 @@
 	}
 
 	// Content
-	.content {
+	&__content {
 		padding: 15px;
 		display: none;
 
@@ -55,7 +57,7 @@
 		}
 	}
 
-	.item {
+	&__item {
 		&:first-child .title {
 			border-top: none;
 		}

@@ -4,14 +4,13 @@ $color-red: map-get($theme, 'red');
 
 .nav {
 	&__item {
-		padding: 8px 16px;
-		float: left;
+		display: inline-block;
 		width: auto;
+		padding: 8px 16px;
 		border: none;
 		outline: none;
-		display: block;
 
-		&.active {
+		&--active {
 			color: $color-white;
 			background-color: $color-red;
 		}
@@ -43,8 +42,8 @@ $color-red: map-get($theme, 'red');
 		}
 	}
 
-	&--vert {
-		.nav__item {
+	&-vert {
+		&__item {
 			width: 100%;
 			display: block;
 			padding: 8px 16px;
@@ -53,6 +52,11 @@ $color-red: map-get($theme, 'red');
 			outline: none;
 			white-space: normal;
 			float: none;
+
+			&--active {
+				color: $color-white;
+				background-color: $color-red;
+			}
 		}
 	}
 }

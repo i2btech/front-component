@@ -3,11 +3,7 @@
 	display: inline-block;
 	border-bottom: 1px dotted black;
 
-	&:hover .tooltiptext.-ani {
-		opacity: 1;
-	}
-
-  .tooltiptext {
+  &__text {
 		visibility: hidden;
 		width: 120px;
 		background-color: black;
@@ -18,12 +14,12 @@
 		position: absolute;
 		z-index: 1;
 
-		&.-ani {
+		&--ani {
 			opacity: 0;
 			transition: opacity 1s;
 		}
 
-		&.-left {
+		&--left {
 			top: -5px;
 			right: 105%;
 
@@ -39,7 +35,7 @@
 			}
 		}
 
-		&.-right {
+		&--right {
 			top: -5px;
 			left: 105%;
 			&::after{
@@ -54,7 +50,7 @@
 			}
 		}
 
-		&.-top{
+		&--top {
 			width: 120px;
 			bottom: 100%;
 			left: 50%;
@@ -72,13 +68,13 @@
 			}
 		}
 
-		&.-bottom{
+		&--bottom {
 			width: 120px;
 			top: 100%;
 			left: 50%;
 			margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
 
-			&::after{
+			&::after {
 				content: " ";
 				position: absolute;
 				bottom: 100%;  /* At the top of the tooltip */
@@ -91,7 +87,12 @@
 		}
 	}
 
-	&:hover .tooltiptext{
-		visibility: visible;
+	&:hover {
+		.tooltip__text {
+			visibility: visible;
+		}
+		.tooltip__text--ani {
+			opacity: 1;
+		}
 	}
 }

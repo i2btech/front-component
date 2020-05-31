@@ -7,6 +7,7 @@ import i2bDropdown from './components/i2b-dropdown';
 import i2bModal from './components/i2b-modal';
 import i2bSelect from './components/i2b-select';
 import i2bLazyLoad from './components/i2b-lazyload';
+import cForm from './components/i2b-form';
 
 $(function () {
 	// Tabs
@@ -30,17 +31,17 @@ $(function () {
 	const $collapseGroup = $js('collapse-group');
 	$collapseGroup.i2bCollapse();
 
-	$('.js-wc-open').on('click', function (e) {
+	$js('wc-open').on('click', function (e) {
 		e.preventDefault();
 		$collapseGroup.filter(':eq(1)').i2bCollapse('show');
 	});
 
-	$('.js-wc-close').on('click', function (e) {
+	$js('wc-close').on('click', function (e) {
 		e.preventDefault();
 		$collapseGroup.filter(':eq(1)').i2bCollapse('hide');
 	});
 
-	$('.js-wc-toggle').on('click', function (e) {
+	$js('wc-toggle').on('click', function (e) {
 		e.preventDefault();
 		$collapseGroup.filter(':eq(1)').i2bCollapse('toggle');
 	});
@@ -82,5 +83,16 @@ $(function () {
 
 	$('[lazyscroll]').i2bLazyLoad({
 		content: '#sc-custom'
+	});
+
+	const $frm = $js('frm-valid');
+	cForm.validate($frm);
+
+	$frm.on('submit', (e) => {
+		e.preventDefault();
+
+		if($frm.valid()) {
+			console.log('Enviado');
+		}
 	});
 });

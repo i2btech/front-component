@@ -1,3 +1,29 @@
+$form: map-get($components, 'form');
+$input: map-get($form, 'input');
+$radio: map-get($form, 'radio');
+$checkbox: map-get($form, 'checkbox');
+$select: map-get($form, 'select');
+
+$input-color: map-get($input, 'color');
+$input-border-color: map-get($input, 'border-color');
+$input-border-color-error: map-get($input, 'border-color-danger');
+$input-background: map-get($input, 'background');
+$input-shadow-color: #FFF;
+$input-placeholder-color: map-get($input, 'placeholder-color');
+
+$radio-background: map-get($radio, 'background');
+$checkbox-background: map-get($checkbox, 'background');
+
+$select-background: map-get($select, 'background');
+$select-border-color: map-get($select, 'border-color');
+$select-arrow-color: map-get($select, 'arrow-color');
+$select-border-color-error: map-get($select, 'border-color-error');
+$select-option-background: map-get($select, 'option-background');
+$select-option-background-hover: map-get($select, 'option-hover-background');
+$select-option-hover-color: map-get($select, 'option-hover-color');
+
+$label-color-error:  map-get($input, 'color-danger');
+
 .input,
 .textarea,
 .select {
@@ -5,31 +31,31 @@
   padding: 8px 10px;
   font-size: 15px;
   line-height: 1;
-  color: $color-grey-dark;
+  color: $input-color;
   border: none;
-  border: 1px solid $color-grey;
+  border: 1px solid $input-border-color;
   background: none;
   outline: none;
   // border-radius: 3px;
   &.error {
-    border-color: $color-red;
+    border-color: $input-border-color-error;
   }
-  &.-xs {
+  &--xs {
     height: 25px;
     padding: 5px 10px;
     font-size: 13px;
   }
-  &.-sm {
+  &--sm {
     height: 30px;
     padding: 8px 10px;
     font-size: 16px;
   }
-  &.-md {
+  &--md {
     height: 40px;
     padding: 10px;
     font-size: 18px;
   }
-  &.-lg {
+  &--lg {
     height: 50px;
     padding: 12px 10px;
     font-size: 20px;
@@ -62,8 +88,8 @@
       margin-right: 5px;
       padding: 2px;
       content: '';
-      background: $color-white;
-      border: 1px solid $color-grey;
+      background: $input-background;
+      border: 1px solid $input-border-color;
       vertical-align: middle;
       text-align: center;
       outline: none;
@@ -72,7 +98,7 @@
   &.error {
     + label {
       &:before {
-        border-color: $color-red;
+        border-color: $input-border-color-error;
       }
     }
   }
@@ -81,8 +107,8 @@
 .checkbox {
   &:checked {
     + label:before {
-      background: $color-red;
-      box-shadow: inset 0px 0px 0px 3px $color-white;
+      background: $radio-background;
+      box-shadow: inset 0px 0px 0px 3px $input-shadow-color;
     }
   }
 }
@@ -93,8 +119,8 @@
   }
   &:checked {
     + label:before {
-      background: $color-red;
-      box-shadow: inset 0px 0px 0px 3px $color-white;
+      background: $checkbox-background;
+      box-shadow: inset 0px 0px 0px 3px $input-shadow-color;
     }
   }
 }
@@ -118,15 +144,15 @@
     content: '';
     border-left: 7px solid transparent;
     border-right: 7px solid transparent;
-    border-top: 7px solid $color-black;
+    border-top: 7px solid $input-border-color;
 		transform: translateY(-50%);
 		z-index: 0;
   }
   option {
-    color: $color-black;
+    color: $input-color;
   }
   select {
-  	position: absolute;
+		position: absolute;
     padding: 8px 10px;
     width: 100%;
     border: none;
@@ -157,7 +183,7 @@
   display: block;
   height: 35px;
   font-size: 15px;
-  color: $color-grey-dark;
+  color: $select-border-color;
   cursor: pointer;
   select {
     display: none;
@@ -165,7 +191,7 @@
     visibility: hidden;
     &.error {
       + .csel-cont {
-        border-color: $color-red;
+        border-color: $select-border-color-error;
       }
     }
   }
@@ -175,7 +201,7 @@
   background: none;
   padding: 8px 35px 8px 15px;
   transition: all 0.2s ease-in;
-  border: 1px solid $color-grey;
+  border: 1px solid $select-border-color;
   user-select: none;
   &:after {
     position: absolute;
@@ -186,7 +212,7 @@
     content: '';
     border-left: 7px solid transparent;
     border-right: 7px solid transparent;
-    border-top: 7px solid $color-black;
+    border-top: 7px solid $select-arrow-color;
     transform: translateY(-50%);
   }
   &:active,
@@ -195,7 +221,7 @@
       border-top: none;
       border-left: 7px solid transparent;
       border-right: 7px solid transparent;
-      border-bottom: 7px solid $color-black;
+      border-bottom: 7px solid $select-arrow-color;
     }
   }
 }
@@ -211,9 +237,9 @@
   padding: 0;
   z-index: 99;
   list-style: none;
-  border: 1px solid $color-grey;
+  border: 1px solid $input-border-color;
   border-top: none;
-  background-color: $color-white;
+  background-color: $select-option-background;
   overflow-y: auto;
   li {
     margin: 0;
@@ -221,8 +247,8 @@
     text-indent: 15px;
     transition: all 0.15s ease-in;
     &:hover {
-      color: $color-white;
-      background-color: $color-red;
+      color: $select-option-hover-color;
+      background-color: $select-option-background-hover;
     }
     &[disabled] {
       display: none;
@@ -245,7 +271,7 @@ label {
     display: block;
     margin-top: 5px;
     font-size: 12px;
-    color: $color-red;
+    color: $label-color-error;
   }
 }
 
@@ -253,5 +279,5 @@ label {
  * Placeholder Form
  */
 form {
-  @include placeholder(darken($color-white, 30%));
+  @include placeholder(darken($input-placeholder-color, 30%));
 }

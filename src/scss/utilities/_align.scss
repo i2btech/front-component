@@ -8,7 +8,7 @@ $aligns: map-get($theme, 'aligns');
 		$infix: breakpoint-infix($bp, $grid-breakpoints);
 
 		@each $attr, $value in $aligns {
-			.#{$infix}align-#{$attr} { float: $value !important; }
+			.#{$infix}align-#{$attr} { vertical-align: $value !important; }
 		}
 	}
 }

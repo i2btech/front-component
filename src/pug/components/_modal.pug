@@ -3,13 +3,13 @@ h2 Modal
 h5.mt-30 Normal
 
 .mt-10
-	button.btn.btn-menu.bg-red.text-white(data-js="modal" data-open="#modal1") Modal Normal
+	button.btn.btn-menu.bg-default.text-white(data-js="modal" data-open="#modal1") Modal Normal
 
 	.m-overlay(overlay)
 		.modal.card#modal1(style="max-width:500px;")
-			.clear.p-15.bg-red
+			.clear.p-15.bg-default
 				h3.left.fz-18 Título Modal
-				button.btn-close.right(close) ×
+				button.btn-close.modal__btn-close(close) ×
 
 			.body.p-20
 				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit veniam ducimus nostrum dolorem eos aspernatur debitis nam incidunt neque alias recusandae reiciendis cumque, ipsam iste accusamus obcaecati voluptate doloremque quaerat.
@@ -23,16 +23,16 @@ h5.mt-30 Normal
 h5.mt-30 Confirmación
 
 .mt-10
-	button.btn.btn-menu.bg-red.text-white(data-js="modal" data-open="#modal2" data-overlay="[overConf]") Modal Confirmación
+	button.btn.btn-menu.bg-default.text-white(data-js="modal" data-open="#modal2" data-overlay="[overConf]") Modal Confirmación
 
 	.m-overlay(overConf)
 		.modal.card#modal2(style="max-width:350px;")
 			.clear.p-15.bg-red
 				h3.left.fz-18 Título Modal Confirmación
-				button.btn-close.right(close) ×
+				button.btn-close.modal__btn-close(close) ×
 
 			.body.p-20.text-center
 				p ¿Estas seguro?
 				.mt-20
-					button.btn.bg-green.-md.mr-10(name="confimSi") Sí
-					button.btn.bg-red.-md(name="confimNo" close) No
+					button.btn.bg-primary.-md.mr-10(name="confimSi") Sí
+					button.btn.bg-default.-md(name="confimNo" close) No
