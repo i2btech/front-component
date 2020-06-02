@@ -63,39 +63,19 @@ $(function () {
 	// Scroll
 	$js('sctop').on('click', function (e) {
 
-		if(document.location.pathname == '/') {
-			e.preventDefault();
+		e.preventDefault();
 
-			const $hb = $("html, body"),
-				href = $(this).attr('href').replace('../', ''),
-				$href = $(href);
-
-
-			if ($href.length) {
-				var top = $(href).offset().top;
-				top = top ? (top - 65) : 0;
-
-				$hb.stop().animate({ scrollTop: top }, 500, 'swing');
-			}
-		}
-
-	});
-
-	$(document).ready(function() {
-
-		if(document.location.pathname == '/') {
-			const $hb = $("html, body"),
-			href = document.location.hash,
+		const $hb = $("html, body"),
+			href = $(this).attr('href'),
 			$href = $(href);
 
+		if ($href.length) {
+			var top = $(href).offset().top;
+			top = top ? (top - 65) : 0;
 
-			if ($href.length) {
-				var top = $(href).offset().top;
-				top = top ? (top - 65) : 0;
-
-				$hb.stop().animate({ scrollTop: top }, 500, 'swing');
-			}
+			$hb.stop().animate({ scrollTop: top }, 500, 'swing');
 		}
+		
 	});
 
 	// Form Select
@@ -117,5 +97,9 @@ $(function () {
 		if($frm.valid()) {
 			console.log('Enviado');
 		}
+	});
+	
+	$('pre code').each(function(i, block) {
+		hljs.highlightBlock(block);
 	});
 });
