@@ -2,22 +2,20 @@ h2 Collapse
 
 h5.mt-30 Normal
 
-.collapse.mt-10
-	.collapse__item
-		h3.collapse__title(data-js="collapse" data-open="#cont-1") Collapse Seccción #1
-		.collapse__content#cont-1
+#collapseVue.mt-10
+	i-collapses
+		i-collapse(title="Collapse Seccción #1")
 			p.fz-14 Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.
 
-	.collapse__item
-		h3.collapse__title(data-js="collapse" data-open="#cont-2") Collapse Seccción #2
-		.collapse__content#cont-2
+		i-collapse(title="Collapse Seccción #2")
 			p.fz-14 Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.
-
-button.btn.bg-default.text-white.mt-20(data-js="wc-open") Abrir opción 2
-button.btn.bg-default.text-white.mt-20.ml-10(data-js="wc-close") Cerrar opción 2
-button.btn.bg-default.text-white.mt-20.ml-10(data-js="wc-toggle")  Toggle opción 2
 
 h5.mt-30 Accordeon
+
+.mt-20
+	button.btn.bg-default.text-white(data-js="wc-open") Abrir opción 2
+	button.btn.bg-default.text-white.ml-10(data-js="wc-close") Cerrar opción 2
+	button.btn.bg-default.text-white.ml-10(data-js="wc-toggle")  Toggle opción 2
 
 .collapse.mt-20
 	.collapse__item

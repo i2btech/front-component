@@ -22,7 +22,7 @@ $color-white: #FFF;
 		transition: all linear .15s;
 
 		&:after {
-			display: inline-block;
+			//display: inline-block;
 			float: right;
 			content: "";
 			margin-top: 3px;
@@ -33,7 +33,8 @@ $color-white: #FFF;
 			border-top: 10px solid $color-white;
 		}
 
-		&.active:after {
+		&.active:after,
+		&--active:after {
 			border-top: none;
 			border-left: 10px solid transparent;
 			border-right: 10px solid transparent;
@@ -52,7 +53,8 @@ $color-white: #FFF;
 		padding: 15px;
 		display: none;
 
-		&.active {
+		&.active,
+		&--active {
 			display: block;
 		}
 	}

@@ -1,22 +1,38 @@
 h2 Tabs
-h5.mt-10 Tab default
-.mt-10
-  .tabs.bd
-    .tabs__link
-      .tab__link.tab--active(data-js="tab" data-open="#tab-1" data-group="tabs") Tab 1
-      .tab__link(data-js="tab" data-open="#tab-2" data-group="tabs") Tab 2
-      .tab__link(data-js="tab" data-open="#tab-3" data-group="tabs") Tab 3
-    .tab__content#tab-1.tab--active(group-cont="tabs") Tab Contenido 1
-    .tab__content#tab-2(group-cont="tabs") Tab Contenido 2
-    .tab__content#tab-3(group-cont="tabs") Tab Contenido 3
 
-h5.mt-10 Tab vertical
-.mt-10
-  .tabs-vtl.clear.bd
-    .tabs__link
-      .tab__link.tab--active(data-js="tab" data-open="#tab2-1" data-group="tabs2") Tab 1
-      .tab__link(data-js="tab" data-open="#tab2-2" data-group="tabs2") Tab 2
-      .tab__link(data-js="tab" data-open="#tab2-3" data-group="tabs2") Tab 3
-    .tab__content#tab2-1.tab--active(group-cont="tabs2") Tab Contenido 1
-    .tab__content#tab2-2(group-cont="tabs2") Tab Contenido 2
-    .tab__content#tab2-3(group-cont="tabs2") Tab Contenido 3
+h5.mt-10 Tab Vue
+#tabVue
+	.mt-10
+		i-tabs
+			i-tab(title="Tab 1" :selected="true") Tab Contenido 1
+			i-tab(title="Tab 2") Tab Contenido 2
+			i-tab(title="Tab 3") Tab Contenido 3
+
+	h5.mt-20 Tab vertical
+	.mt-10
+		i-tabs(align="vertical")
+			i-tab(title="Tab 1" :selected="true") Tab Contenido 1
+			i-tab(title="Tab 2") Tab Contenido 2
+			i-tab(title="Tab 3") Tab Contenido 3
+
+//- h5.mt-10 Tab default
+//- .mt-10
+//- 	.tabs.bd
+//-     .tabs__link
+//-       .tab__link.tab--active(data-js="tab" data-open="#tab-1" data-group="tabs") Tab 1
+//-       .tab__link(data-js="tab" data-open="#tab-2" data-group="tabs") Tab 2
+//-       .tab__link(data-js="tab" data-open="#tab-3" data-group="tabs") Tab 3
+//-     .tab__content#tab-1.tab--active(group-cont="tabs") Tab Contenido 1
+//-     .tab__content#tab-2(group-cont="tabs") Tab Contenido 2
+//-     .tab__content#tab-3(group-cont="tabs") Tab Contenido 3
+
+//- h5.mt-10 Tab vertical
+//- .mt-10
+//-   .tabs-vtl.clear.bd
+//-     .tabs__link
+//-       .tab__link.tab--active(data-js="tab" data-open="#tab2-1" data-group="tabs2") Tab 1
+//-       .tab__link(data-js="tab" data-open="#tab2-2" data-group="tabs2") Tab 2
+//-       .tab__link(data-js="tab" data-open="#tab2-3" data-group="tabs2") Tab 3
+//-     .tab__content#tab2-1.tab--active(group-cont="tabs2") Tab Contenido 1
+//-     .tab__content#tab2-2(group-cont="tabs2") Tab Contenido 2
+//-     .tab__content#tab2-3(group-cont="tabs2") Tab Contenido 3

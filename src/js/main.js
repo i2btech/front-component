@@ -2,7 +2,9 @@
 
 import { $js } from './utils';
 import i2bTabs from './components/i2b-tabs';
+import { iTabs, iTab } from './components/i2b-tabs-vue';
 import i2bCollapse from './components/i2b-collapse';
+import { iCollapses, iCollapse } from './components/i2b-collapse-vue';
 import i2bDropdown from './components/i2b-dropdown';
 import i2bModal from './components/i2b-modal';
 import i2bSelect from './components/i2b-select';
@@ -53,7 +55,7 @@ $(function () {
 
 	// DropDown
 	$js('dropdown').i2bDropdown();
-  	$js('ddoverlay').i2bDropdown({
+		$js('ddoverlay').i2bDropdown({
     overlay: '.overlay'
 	});
 
@@ -119,3 +121,8 @@ $(function () {
 		}
 	});
 });
+
+// Vue
+new Vue({ el: '#tabVue' })
+
+new Vue({ el: '#collapseVue' })
