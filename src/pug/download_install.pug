@@ -1,0 +1,27 @@
+//-
+	* Nombre proyecto:
+	* Fecha inicio:
+	* Email desarrollador:
+	* Descripción:
+	* Dependencias:
+	* Dónde se utiliza/requiere:
+
+extends ./inc/_layout
+
+block variables
+	- var title = 'Home | ' + siteTitle
+
+block wBody
+	main#home.home
+		.container-fluid
+			.row
+				.col-mnv.position-static.bg-gray-900(class="md:col-2 md:position-fixed")
+					//- Menú Navegación
+					include _menu.pug
+				
+				.p-20(class="md:col-10 md:offset-2")
+					h1 Descarga e instalación
+					h2 Repositorio de descarga
+					a(href="https://github.com/I2BLab/front-component.git") https://github.com/I2BLab/front-component.git
+
+block wScripts

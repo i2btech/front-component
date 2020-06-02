@@ -53,7 +53,7 @@ $(function () {
 
 	// DropDown
 	$js('dropdown').i2bDropdown();
-  $js('ddoverlay').i2bDropdown({
+  	$js('ddoverlay').i2bDropdown({
     overlay: '.overlay'
 	});
 
@@ -62,16 +62,39 @@ $(function () {
 
 	// Scroll
 	$js('sctop').on('click', function (e) {
-		e.preventDefault();
-		const $hb = $("html, body"),
-			href = $(this).attr('href'),
+
+		if(document.location.pathname == '/') {
+			e.preventDefault();
+
+			const $hb = $("html, body"),
+				href = $(this).attr('href').replace('../', ''),
+				$href = $(href);
+
+
+			if ($href.length) {
+				var top = $(href).offset().top;
+				top = top ? (top - 65) : 0;
+
+				$hb.stop().animate({ scrollTop: top }, 500, 'swing');
+			}
+		}
+
+	});
+
+	$(document).ready(function() {
+
+		if(document.location.pathname == '/') {
+			const $hb = $("html, body"),
+			href = document.location.hash,
 			$href = $(href);
 
-		if ($href.length) {
-			var top = $(href).offset().top;
-			top = top ? (top - 65) : 0;
 
-			$hb.stop().animate({ scrollTop: top }, 500, 'swing');
+			if ($href.length) {
+				var top = $(href).offset().top;
+				top = top ? (top - 65) : 0;
+
+				$hb.stop().animate({ scrollTop: top }, 500, 'swing');
+			}
 		}
 	});
 
