@@ -7,5 +7,6 @@ bower_components
 TEMP.txt
 dev/
 prod/
-
-# added: don't version compilated files
+*.iml
+docker/common.env
+docker/.env

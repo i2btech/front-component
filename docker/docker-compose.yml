@@ -1,0 +1,23 @@
+version: '3'
+services:
+  build:
+    container_name: i2btech-fc-build
+    hostname: i2btech-fc-build
+    image: node:13
+    env_file: common.env
+    working_dir: /app
+    volumes:
+      - ../:/app
+    command: [ "/bin/bash", "-c", "npm install && npm install --global gulp-cli && gulp build" ]
+  web:
+    container_name: i2btech-fc-web
+    hostname: i2btech-fc-web
+    image: nginx:1.18.0-alpine
+    working_dir: /usr/share/nginx/html
+    volumes:
+      - ../dev:/usr/share/nginx/html
+    ports:
+      - 8080:80
+    depends_on:
+      - build
+
