@@ -8,7 +8,7 @@ services:
     working_dir: /app
     volumes:
       - ../:/app
-    command: [ "/bin/bash", "-c", "npm install && npm install --global gulp-cli && gulp build" ]
+    command: [ "/bin/bash", "-c", "npm install && npm install --global gulp-cli && gulp build && gulp watch_task" ]
   web:
     container_name: i2btech-fc-web
     hostname: i2btech-fc-web
