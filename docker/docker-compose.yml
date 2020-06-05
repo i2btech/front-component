@@ -8,16 +8,7 @@ services:
     working_dir: /app
     volumes:
       - ../:/app
-    command: [ "/bin/bash", "-c", "npm install && npm install --global gulp-cli && gulp build && gulp watch_task" ]
-  web:
-    container_name: i2btech-fc-web
-    hostname: i2btech-fc-web
-    image: nginx:1.18.0-alpine
-    working_dir: /usr/share/nginx/html
-    volumes:
-      - ../dev:/usr/share/nginx/html
+    command: [ "/bin/bash", "-c", "npm install && npm install --global gulp-cli && gulp" ]  
     ports:
-      - 8080:80
-    depends_on:
-      - build
-
+      - 3000:3000
+      - 3001:3001
