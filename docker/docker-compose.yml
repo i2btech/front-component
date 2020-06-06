@@ -8,7 +8,16 @@ services:
     working_dir: /app
     volumes:
       - ../:/app
-    command: [ "/bin/bash", "-c", "npm install && npm install --global gulp-cli && gulp" ]  
+    command: [ "/bin/bash", "-c", "npm install && npm install --global gulp-cli && gulp" ]
     ports:
       - 3000:3000
       - 3001:3001
+  storybook:
+    container_name: i2btech-storybook
+    image: node:13
+    working_dir: /app
+    volumes:
+      - ../:/app
+    command: npm run docker:storybook
+    ports:
+      - 65200:65200

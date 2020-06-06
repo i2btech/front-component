@@ -7,7 +7,7 @@ $font-weights: map-get($theme, 'fontWeight');
 .text {
 	font-size: map-get($font-sizes, 'default');
 	line-height: map-get($line-heights, 'default');
-	color: map-get($colors, 'default');
+	//color: map-get($colors, 'default');
 }
 
 @each $breakpoint in map-keys($grid-breakpoints) {

@@ -53,7 +53,7 @@ $(function () {
 
 	// DropDown
 	$js('dropdown').i2bDropdown();
-  	$js('ddoverlay').i2bDropdown({
+		$js('ddoverlay').i2bDropdown({
     overlay: '.overlay'
 	});
 
@@ -75,7 +75,7 @@ $(function () {
 
 			$hb.stop().animate({ scrollTop: top }, 500, 'swing');
 		}
-		
+
 	});
 
 	// Form Select
@@ -98,7 +98,7 @@ $(function () {
 			console.log('Enviado');
 		}
 	});
-	
+
 	$('pre code').each(function(i, block) {
 		hljs.highlightBlock(block);
 	});
