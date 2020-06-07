@@ -7,13 +7,39 @@ $container-breakpoints: map-get($theme, 'screens');
 $grid-columns: map-get($theme, 'columns');
 $grid-breakpoints: $container-breakpoints;
 
-.container {
+.container-fluid {
   @include make-container($gutter-width);
-  @include make-container-max-widths($container-breakpoints, $container-breakpoints);
+}
 
-  &-fluid {
-    @include make-container($gutter-width);
-  }
+@each $bp, $mw in $container-breakpoints {
+	$infix: breakpoint-infix($bp, $container-breakpoints);
+
+	.#{$infix}container {
+		@include make-container($gutter-width);
+	}
+
+	@include media-breakpoint-up($bp) {
+
+		// Extend each breakpoint which is smaller or equal to the current breakpoint
+		$extend-breakpoint: true;
+
+		@each $name, $width in $container-breakpoints {
+			$infix: breakpoint-infix($name, $container-breakpoints);
+
+			@if ($extend-breakpoint) {
+				@if($mw > 0) {
+					.#{$infix}container {
+						max-width: $mw;
+					}
+				}
+
+				// Once the current breakpoint is reached, stop extending
+				@if ($bp == $name) {
+					$extend-breakpoint: false;
+				}
+			}
+		}
+	}
 }
 
 // Row
