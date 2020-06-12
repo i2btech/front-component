@@ -1,0 +1,292 @@
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.0/styles/vs2015.min.css"> -->
+
+<div class="p-30">
+	<h2 class="text fz-28">Formulario</h2>
+
+	<h3 class="text fz-22 mt-30">Input Text</h3>
+	<div class="mt-10">
+		<input class="input" type="text" name="input1" placeholder="Digite">
+
+		<h4 class="text fz-18 mt-20">Tamaños</h4>
+		<div class="mt-10">
+			<input class="input input--xs" type="text" name="input2" placeholder="Pequeño">
+			<input class="input input--sm ml-10" type="text" placeholder="Mediano">
+			<input class="input input--lg ml-10" type="text" placeholder="Grande">
+		</div>
+
+		<h4 class="text fz-18 mt-20">Error</h4>
+		<div class="mt-10">
+			<input class="input error" type="text" name="input5">
+		</div>
+	</div>
+
+	<h3 class="text fz-22 mt-30">Select</h3>
+	<div class="mt-20">
+		<h4 class="text fz-18 mt-20">Normal</h4>
+		<div class="mt-10"><select class="select" name="select1">
+				<option value="" disabled="" selected="">Seleccionar</option>
+				<option value="Opción 1">Opción 1</option>
+				<option value="Opción 2">Opción 2</option>
+				<option value="Opción 3">Opción 3</option>
+				<option value="Opción 4">Opción 4</option>
+			</select>
+		</div>
+
+		<h4 class="text fz-18 mt-20">Custom Arrow</h4>
+		<div class="row mt-10">
+			<div class="sm:col-4">
+				<div class="select"><select name="select2">
+						<option value="" disabled="" selected="">Seleccionar</option>
+						<option value="Opción 1">Opción 1</option>
+						<option value="Opción 2">Opción 2</option>
+						<option value="Opción 3">Opción 3</option>
+						<option value="Opción 4">Opción 4</option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+		<h4 class="text fz-18 mt-20">Custom Options</h4>
+		<div class="row mt-10">
+			<div class="sm:col-4">
+				<div class="cselect">
+					<select name="select3" data-js="csel">
+						<option value="" disabled="" selected="">Seleccionar</option>
+						<option value="Opción 1">Opción 1</option>
+						<option value="Opción 2">Opción 2</option>
+						<option value="Opción 3">Opción 3</option>
+						<option value="Opción 4">Opción 4</option>
+						<option value="Opción 5">Opción 5</option>
+						<option value="Opción 6">Opción 6</option>
+						<option value="Opción 7">Opción 7</option>
+						<option value="Opción 8">Opción 8</option>
+						<option value="Opción 9">Opción 9</option>
+					</select>
+
+					<div class="csel-cont">Seleccionar</div>
+					<ul class="csel-options" style="display: none;">
+						<li rel="" disabled="disabled">Seleccionar</li>
+						<li rel="Opción 1">Opción 1</li>
+						<li rel="Opción 2">Opción 2</li>
+						<li rel="Opción 3">Opción 3</li>
+						<li rel="Opción 4">Opción 4</li>
+						<li rel="Opción 5">Opción 5</li>
+						<li rel="Opción 6">Opción 6</li>
+						<li rel="Opción 7">Opción 7</li>
+						<li rel="Opción 8">Opción 8</li>
+						<li rel="Opción 9">Opción 9</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<h4 class="text fz-18 mt-20">Error</h4>
+		<div class="mt-10">
+			<div class="d-inline-block align-top">
+				<select class="select error" name="select1">
+					<option value="" disabled="" selected="">Seleccionar</option>
+					<option value="Opción 1">Opción 1</option>
+					<option value="Opción 2">Opción 2</option>
+					<option value="Opción 3">Opción 3</option>
+					<option value="Opción 4">Opción 4</option>
+				</select>
+			</div>
+			<div class="d-inline-block align-top ml-10" style="width:200px;">
+				<div class="select error">
+					<select name="select2">
+						<option value="" disabled="" selected="">Seleccionar</option>
+						<option value="Opción 1">Opción 1</option>
+						<option value="Opción 2">Opción 2</option>
+						<option value="Opción 3">Opción 3</option>
+						<option value="Opción 4">Opción 4</option>
+					</select>
+				</div>
+			</div>
+			<div class="d-inline-block align-top ml-10">
+				<div class="cselect">
+					<select class="error" name="select3" data-js="csel">
+						<option value="" disabled="" selected="">Seleccionar</option>
+						<option value="Opción 1">Opción 1</option>
+						<option value="Opción 2">Opción 2</option>
+						<option value="Opción 3">Opción 3</option>
+						<option value="Opción 4">Opción 4</option>
+						<option value="Opción 5">Opción 5</option>
+						<option value="Opción 6">Opción 6</option>
+						<option value="Opción 7">Opción 7</option>
+						<option value="Opción 8">Opción 8</option>
+						<option value="Opción 9">Opción 9</option>
+					</select>
+
+					<div class="csel-cont">Seleccionar</div>
+					<ul class="csel-options" style="display: none;">
+						<li rel="" disabled="disabled">Seleccionar</li>
+						<li rel="Opción 1">Opción 1</li>
+						<li rel="Opción 2">Opción 2</li>
+						<li rel="Opción 3">Opción 3</li>
+						<li rel="Opción 4">Opción 4</li>
+						<li rel="Opción 5">Opción 5</li>
+						<li rel="Opción 6">Opción 6</li>
+						<li rel="Opción 7">Opción 7</li>
+						<li rel="Opción 8">Opción 8</li>
+						<li rel="Opción 9">Opción 9</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<h3 class="text fz-22 mt-30">Input Checkbox</h3>
+	<div class="mt-10">
+		<div class="d-inline-block">
+			<input class="checkbox" id="cb1" type="checkbox" name="cb1"><label for="cb1"></label>
+		</div>
+		<div class="d-inline-block ml-10">
+			<input class="checkbox" id="cb2" type="checkbox" name="cb1"><label
+				for="cb2">Checkbox 2</label>
+		</div>
+		<div class="d-inline-block ml-10">
+			<input class="checkbox" id="cb3" type="checkbox" name="cb1"><label
+				for="cb3">Checkbox 3</label>
+			</div>
+	</div>
+
+	<h4 class="text fz-18 mt-20">Error</h4>
+	<div class="mt-10">
+		<input class="checkbox error" id="cbe1" type="checkbox" name="cbe1">
+		<label for="cbe1"></label>
+	</div>
+
+	<h3 class="text fz-22 mt-30">Input Radio</h3>
+	<div class="mt-10">
+		<div class="d-inline-block">
+			<input class="radio" id="rad1" type="radio" name="rad1" checked="">
+			<label for="rad1"></label>
+		</div>
+		<div class="d-inline-block ml-10">
+			<input class="radio" id="rad2" type="radio" name="rad1">
+			<label for="rad2">Radio 2</label>
+		</div>
+		<div class="d-inline-block ml-10">
+			<input class="radio" id="rad3" type="radio" name="rad1">
+			<label for="rad3">Radio 3</label>
+		</div>
+	</div>
+
+	<h4 class="text fz-18 mt-20">Error</h4>
+	<div class="mt-10">
+		<input class="radio error" id="rade3" type="radio" name="rade1">
+		<label for="rade3">Radio 3</label>
+	</div>
+
+	<h3 class="text fz-22 mt-30">Validación</h3>
+	<div class="mt-10">
+		<form name="form1" method="POST" data-js="frm-valid" novalidate="novalidate">
+			<div class="row">
+				<fieldset class="md:col-4"><label class="fz-14" for="name">Nombre:</label>
+					<div class="mt-5"><input class="input w-full" type="text" name="name" id="name" placeholder="Pepito Perez"
+							data-rule-required="true" data-msg-required="Digite Nombre." data-rule-cname="true"
+							data-msg-cname="Digite Nombre válido."></div>
+				</fieldset>
+				<fieldset class="md:col-4"><label class="fz-14">Rut:</label>
+					<div class="mt-5"><input class="input w-full" type="text" name="document" placeholder="11.111.111-1"
+							data-rule-required="true" data-msg-required="Digite Rut." data-rule-rut="true"
+							data-msg-rut="Digite Rut válido."></div>
+				</fieldset>
+			</div>
+			<div class="row mt-30">
+				<fieldset class="md:col-4"><label class="fz-14" for="userName">Nombre de usuario:</label>
+					<div class="mt-5"><input class="input w-full" type="text" name="userName" id="userName"
+							placeholder="PepitoPerez" data-rule-required="true" data-msg-required="Digite Nombre de usuario."
+							data-rule-nick="true" data-msg-nick="Digite Nombre de usuario válido."></div>
+				</fieldset>
+				<fieldset class="md:col-4"><label class="fz-14" for="email">Email:</label>
+					<div class="mt-5"><input class="input w-full" type="text" name="email" id="email" placeholder="PepitoPerez"
+							data-rule-required="true" data-msg-required="Digite Email." data-rule-email="true"
+							data-msg-email="Digite Email válido."></div>
+				</fieldset>
+			</div>
+			<div class="row mt-30">
+				<fieldset class="md:col-4"><label class="fz-14" for="password">Clave:</label>
+					<div class="mt-5"><input class="input w-full" type="password" name="password" id="password"
+							data-rule-required="true" data-msg-required="Digite Clave." data-rule-minlength="6"
+							data-msg-minlength="La Clave debe contener al menos {0} caracteres." data-rule-maxlength="15"
+							data-msg-maxlength="La Clave debe contener máximo {0} caracteres."></div>
+				</fieldset>
+				<fieldset class="md:col-4"><label class="fz-14" for="repass">Repetir Clave:</label>
+					<div class="mt-5"><input class="input w-full" type="password" name="repass" id="repass"
+							data-rule-required="true" data-msg-required="Digite Clave." data-rule-minlength="6"
+							data-msg-minlength="La Clave debe contener al menos {0} caracteres." data-rule-maxlength="15"
+							data-msg-maxlength="La Clave debe contener máximo {0} caracteres." data-rule-equalto="#password"
+							data-msg-equalto="Las Claves no coinciden."></div>
+				</fieldset>
+			</div>
+			<div class="row mt-30">
+				<fieldset class="md:col-4"><label class="fz-14" for="sel1">Selección 1</label>
+					<div class="select mt-5"><select name="sel1" id="sel1" data-rule-required="true"
+							data-msg-required="Seleccione Selección 1.">
+							<option value="" disabled="" selected="">Seleccionar</option>
+							<option value="Opción 1">Opción 1</option>
+							<option value="Opción 2">Opción 2</option>
+							<option value="Opción 3">Opción 3</option>
+							<option value="Opción 4">Opción 4</option>
+						</select></div>
+				</fieldset>
+				<fieldset class="md:col-4"><label class="fz-14" for="sel2">Selección 2</label>
+					<div class="mt-5">
+						<div class="cselect"><select name="sel2" id="sel2" data-js="csel" data-rule-required="true"
+								data-msg-required="Seleccione Selección 2.">
+								<option value="" disabled="" selected="">Seleccionar</option>
+								<option value="Opción 1">Opción 1</option>
+								<option value="Opción 2">Opción 2</option>
+								<option value="Opción 3">Opción 3</option>
+								<option value="Opción 4">Opción 4</option>
+								<option value="Opción 5">Opción 5</option>
+								<option value="Opción 6">Opción 6</option>
+								<option value="Opción 7">Opción 7</option>
+								<option value="Opción 8">Opción 8</option>
+								<option value="Opción 9">Opción 9</option>
+							</select>
+							<div class="csel-cont">Seleccionar</div>
+							<ul class="csel-options" style="display: none;">
+								<li rel="" disabled="disabled">Seleccionar</li>
+								<li rel="Opción 1">Opción 1</li>
+								<li rel="Opción 2">Opción 2</li>
+								<li rel="Opción 3">Opción 3</li>
+								<li rel="Opción 4">Opción 4</li>
+								<li rel="Opción 5">Opción 5</li>
+								<li rel="Opción 6">Opción 6</li>
+								<li rel="Opción 7">Opción 7</li>
+								<li rel="Opción 8">Opción 8</li>
+								<li rel="Opción 9">Opción 9</li>
+							</ul>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			<div class="row mt-30">
+				<fieldset class="md:col-4"><label class="fz-14">Opción</label>
+					<div class="mt-10" control-group="">
+						<div class="d-inline-block"><input class="radio" id="opt1" type="radio" name="opt" data-rule-required="true"
+								data-msg-required="Seleccione Opción."><label for="opt1">Primera</label></div>
+						<div class="d-inline-block ml-10"><input class="radio" id="opt2" type="radio" name="opt"><label
+								for="opt2">Segundo</label></div>
+						<div class="d-inline-block ml-10"><input class="radio" id="opt3" type="radio" name="opt"><label
+								for="opt3">Tercero</label></div>
+					</div>
+				</fieldset>
+				<fieldset class="md:col-4"><label class="fz-14">Opciónes</label>
+					<div class="mt-10" control-group="">
+						<div class="d-inline-block"><input class="checkbox" id="opts1" type="checkbox" name="opts"
+								data-rule-required="true" data-msg-required="Seleccione Opciónes."><label for="opts1">Primera</label>
+						</div>
+						<div class="d-inline-block ml-10"><input class="checkbox" id="opts2" type="checkbox" name="opts"><label
+								for="opts2">Segundo</label></div>
+						<div class="d-inline-block ml-10"><input class="checkbox" id="opts3" type="checkbox" name="opts"><label
+								for="opts3">Tercero</label></div>
+					</div>
+				</fieldset>
+			</div>
+			<fieldset class="mt-30"><button class="btn bg-default text-white" type="submit">Validar</button></fieldset>
+		</form>
+	</div>
+</div>
