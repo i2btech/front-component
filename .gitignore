@@ -8,5 +8,6 @@ TEMP.txt
 dev/
 prod/
 *.iml
+.idea
 docker/common.env
 docker/.env

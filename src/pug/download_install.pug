@@ -1,11 +1,3 @@
-//-
-	* Nombre proyecto:
-	* Fecha inicio:
-	* Email desarrollador:
-	* Descripción:
-	* Dependencias:
-	* Dónde se utiliza/requiere:
-
 extends ./inc/_layout
 
 block variables
@@ -18,10 +10,34 @@ block wBody
 				.col-mnv.position-static.bg-gray-900(class="md:col-2 md:position-fixed")
 					//- Menú Navegación
 					include _menu.pug
-				
-				.p-20(class="md:col-10 md:offset-2")
-					h1 Descarga e instalación
-					h2 Repositorio de descarga
-					a(href="https://github.com/I2BLab/front-component.git") https://github.com/I2BLab/front-component.git
+				.col.mt-10(class="md:col-10 md:offset-2")
+					.pt-10.mb-20
+						h1 Descarga e instalación	
+						p.pb-10.pt-20
+							| En la siguiente ruta encontrarás el repositorio front-end 
+							a(href="https://github.com/I2BLab/front-component") https://github.com/I2BLab/front-component
+					
+					.pt-10.mb-20
+						h2.mb-10 Estructura de archivos
+						p.pb-10
+							| Con la siguiente url podrás clonar el repositorio de componentes front-end 
+							a(href="https://github.com/I2BLab/front-component.git") https://github.com/I2BLab/front-component.git
+						p Los *.scss, *.pug y *.js son el código fuente de nuestros CSS, html y JavaScript. El directorio dev contiene los archivos css, html, js compilados. 
+					
+					.pt-10.mb-20
+						h2.mb-10 Pasos para la instalación:
+						ul
+							li Paso 1: Abra la terminal de comandos.
+							li Paso 2: Diríjase a /front-component/docker.
+							li Paso 3: Ejecute la siguiente línea de comando para construir los contenedores sh app.sh build.
+					.pt-10.mb-20
+						h2.mb-10 Ejecución:
+						p.pb-10
+							| Para ejecutar los componente siga los siguientes pasos:
+							ul
+								li Paso 1: Diríjase a /front-component/docker
+								li Paso 2: Ejecute la siguiente línea de comando sh app.sh up
+								li Paso 3: Ingrese la siguiente url en el navegador 
+									a(href="http://localhost:3000/") http://localhost:3000/
 
 block wScripts
