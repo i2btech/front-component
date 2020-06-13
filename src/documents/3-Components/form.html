@@ -7,23 +7,36 @@
 	<div class="mt-10">
 		<input class="input" type="text" name="input1" placeholder="Digite">
 
-		<h4 class="text fz-18 mt-20">Tamaños</h4>
+		<p class="mt-15 bg-gray-100 p-20">
+			&#60;input type="text" name="input1" class="input" placeholder="Digite"&#62;
+		</p>
+
+		<h4 class="text fz-18 fw-default mt-30">Tamaños</h4>
 		<div class="mt-10">
 			<input class="input input--xs" type="text" name="input2" placeholder="Pequeño">
-			<input class="input input--sm ml-10" type="text" placeholder="Mediano">
-			<input class="input input--lg ml-10" type="text" placeholder="Grande">
+			<input class="input input--sm ml-10" type="text" name="input3" placeholder="Mediano">
+			<input class="input input--lg ml-10" type="text" name="input4" placeholder="Grande">
 		</div>
+		<p class="mt-15 bg-gray-100 p-20">
+			&#60;input type="text" name="input3" class="input input--xs" placeholder="Pequeño"&#62;<br>
+			&#60;input type="text" name="input4" class="input input--sm" placeholder="Mediano"&#62;<br>
+			&#60;input type="text" name="input5" class="input input--lg" placeholder="Grande"&#62;
+		</p>
 
-		<h4 class="text fz-18 mt-20">Error</h4>
+		<h4 class="text fz-18 fw-default mt-30">Error</h4>
 		<div class="mt-10">
 			<input class="input error" type="text" name="input5">
 		</div>
+		<p class="mt-15 bg-gray-100 p-20">
+			&#60;input type="text" name="input5" class="input error"&#62;
+		</p>
 	</div>
 
 	<h3 class="text fz-22 mt-30">Select</h3>
 	<div class="mt-20">
-		<h4 class="text fz-18 mt-20">Normal</h4>
-		<div class="mt-10"><select class="select" name="select1">
+		<h4 class="text fz-18 fw-default mt-20">Normal</h4>
+		<div class="mt-10">
+			<select class="select" name="select1">
 				<option value="" disabled="" selected="">Seleccionar</option>
 				<option value="Opción 1">Opción 1</option>
 				<option value="Opción 2">Opción 2</option>
@@ -31,11 +44,21 @@
 				<option value="Opción 4">Opción 4</option>
 			</select>
 		</div>
+		<p class="mt-15 bg-gray-100 p-20">
+			&#60;select name="select1" class="select"&#62;<br>
+			&nbsp;&nbsp;&#60;option value="" disabled="" selected=""&#62;Seleccionar&#60;/option&#62;<br>
+			&nbsp;&nbsp;&#60;option value="Opción 1"&#62;Opción 1&#60;/option&#62;<br>
+			&nbsp;&nbsp;&#60;option value="Opción 2"&#62;Opción 2&#60;/option&#62;<br>
+			&nbsp;&nbsp;&#60;option value="Opción 3"&#62;Opción 3&#60;/option&#62;<br>
+			&nbsp;&nbsp;&#60;option value="Opción 4"&#62;Opción 4&#60;/option&#62;<br>
+			&#60;/select&#62;
+		</p>
 
-		<h4 class="text fz-18 mt-20">Custom Arrow</h4>
+		<h4 class="text fz-18 fw-default mt-30">Custom Arrow</h4>
 		<div class="row mt-10">
 			<div class="sm:col-4">
-				<div class="select"><select name="select2">
+				<div class="select">
+					<select name="select2">
 						<option value="" disabled="" selected="">Seleccionar</option>
 						<option value="Opción 1">Opción 1</option>
 						<option value="Opción 2">Opción 2</option>
@@ -45,8 +68,17 @@
 				</div>
 			</div>
 		</div>
+		<p class="mt-15 bg-gray-100 p-20">
+			&#60;select name="select2"&#62;<br>
+			&nbsp;&nbsp;&#60;option value="" disabled selected&#62;Seleccionar&#60;/option&#62;<br>
+			&nbsp;&nbsp;&#60;option value="Opción 1"&#62;Opción 1&#60;/option&#62;<br>
+			&nbsp;&nbsp;&#60;option value="Opción 2"&#62;Opción 2&#60;/option&#62;<br>
+			&nbsp;&nbsp;&#60;option value="Opción 3"&#62;Opción 3&#60;/option&#62;<br>
+			&nbsp;&nbsp;&#60;option value="Opción 4"&#62;Opción 4&#60;/option&#62;<br>
+			&#60;/select&#62;
+		</p>
 
-		<h4 class="text fz-18 mt-20">Custom Options</h4>
+		<h4 class="text fz-18 fw-default mt-30">Custom Options</h4>
 		<div class="row mt-10">
 			<div class="sm:col-4">
 				<div class="cselect">
@@ -62,25 +94,27 @@
 						<option value="Opción 8">Opción 8</option>
 						<option value="Opción 9">Opción 9</option>
 					</select>
-
-					<div class="csel-cont">Seleccionar</div>
-					<ul class="csel-options" style="display: none;">
-						<li rel="" disabled="disabled">Seleccionar</li>
-						<li rel="Opción 1">Opción 1</li>
-						<li rel="Opción 2">Opción 2</li>
-						<li rel="Opción 3">Opción 3</li>
-						<li rel="Opción 4">Opción 4</li>
-						<li rel="Opción 5">Opción 5</li>
-						<li rel="Opción 6">Opción 6</li>
-						<li rel="Opción 7">Opción 7</li>
-						<li rel="Opción 8">Opción 8</li>
-						<li rel="Opción 9">Opción 9</li>
-					</ul>
 				</div>
 			</div>
 		</div>
+		<p class="mt-15 bg-gray-100 p-20">
+			&#60;div class="cselect"&#62;<br>
+				&nbsp;&nbsp;&#60;select name="select3" data-js="csel"&#62;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="" disabled="" selected=""&#62;Seleccionar&#60;/option&#62;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 1"&#62;Opción 1&#60;/option&#62;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 2"&#62;Opción 2&#60;/option&#62;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 3"&#62;Opción 3&#60;/option&#62;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 4"&#62;Opción 4&#60;/option&#62;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 5"&#62;Opción 5&#60;/option&#62;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 6"&#62;Opción 6&#60;/option&#62;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 7"&#62;Opción 7&#60;/option&#62;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 8"&#62;Opción 8&#60;/option&#62;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 9"&#62;Opción 9&#60;/option&#62;<br>
+				&nbsp;&nbsp;&#60;/select&#62;<br>
+			&#60;/div&#62;
+		</p>
 
-		<h4 class="text fz-18 mt-20">Error</h4>
+		<h4 class="text fz-18 fw-default mt-30">Error</h4>
 		<div class="mt-10">
 			<div class="d-inline-block align-top">
 				<select class="select error" name="select1">
@@ -133,28 +167,77 @@
 				</div>
 			</div>
 		</div>
+		<p class="mt-15 bg-gray-100 p-20">
+			&#60;select class="select error" name="select1"&#62;<br>
+				&nbsp;&nbsp;&#60;option value="" disabled="" selected=""&#62;Seleccionar&#60;/option&#62;<br>
+				&nbsp;&nbsp;&#60;option value="Opción 1"&#62;Opción 1&#60;/option&#62;<br>
+				&nbsp;&nbsp;&#60;option value="Opción 2"&#62;Opción 2&#60;/option&#62;<br>
+				&nbsp;&nbsp;&#60;option value="Opción 3"&#62;Opción 3&#60;/option&#62;<br>
+				&nbsp;&nbsp;&#60;option value="Opción 4"&#62;Opción 4&#60;/option&#62;<br>
+			&#60;/select&#62;<br><br>
+
+			&#60;div class="select error"&#62;<br>
+				&nbsp;&nbsp;&#60;select name="select2"&#62;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="" disabled="" selected=""&#62;Seleccionar&#60;/option&#62;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 1"&#62;Opción 1&#60;/option&#62;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 2"&#62;Opción 2&#60;/option&#62;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 3"&#62;Opción 3&#60;/option&#62;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 4"&#62;Opción 4&#60;/option&#62;<br>
+					&nbsp;&nbsp;&#60;/select&#62;<br>
+			&#60;/div&#62;<br><br>
+
+			&#60;div class="cselect"&#62;<br>
+				&nbsp;&nbsp;&#60;select class="error" name="select3" data-js="csel"&#62;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="" disabled="" selected=""&#62;Seleccionar&#60;/option&#62;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 1"&#62;Opción 1&#60;/option&#62;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 2"&#62;Opción 2&#60;/option&#62;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 3"&#62;Opción 3&#60;/option&#62;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 4"&#62;Opción 4&#60;/option&#62;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 5"&#62;Opción 5&#60;/option&#62;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 6"&#62;Opción 6&#60;/option&#62;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 7"&#62;Opción 7&#60;/option&#62;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 8"&#62;Opción 8&#60;/option&#62;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 9"&#62;Opción 9&#60;/option&#62;<br>
+				&nbsp;&nbsp;&#60;/select&#62;<br>
+			&#60;/div&#62;
+		</p>
 	</div>
 
 	<h3 class="text fz-22 mt-30">Input Checkbox</h3>
 	<div class="mt-10">
 		<div class="d-inline-block">
-			<input class="checkbox" id="cb1" type="checkbox" name="cb1"><label for="cb1"></label>
+			<input class="checkbox" id="cb1" type="checkbox" name="cb1">
+			<label for="cb1"></label>
 		</div>
 		<div class="d-inline-block ml-10">
-			<input class="checkbox" id="cb2" type="checkbox" name="cb1"><label
-				for="cb2">Checkbox 2</label>
+			<input class="checkbox" id="cb2" type="checkbox" name="cb1">
+			<label for="cb2">Checkbox 2</label>
 		</div>
 		<div class="d-inline-block ml-10">
-			<input class="checkbox" id="cb3" type="checkbox" name="cb1"><label
-				for="cb3">Checkbox 3</label>
-			</div>
+			<input class="checkbox" id="cb3" type="checkbox" name="cb1">
+			<label for="cb3">Checkbox 3</label>
+		</div>
 	</div>
+	<p class="mt-15 bg-gray-100 p-20">
+		&#60;input class="checkbox" id="cb1" type="checkbox" name="cb1"&#62;<br>
+		&#60;label for="cb1"&#62;&#60;/label&#62;<br><br>
 
-	<h4 class="text fz-18 mt-20">Error</h4>
+		&#60;input class="checkbox" id="cb2" type="checkbox" name="cb1"&#62;<br>
+		&#60;label for="cb2"&#62;Checkbox 2&#60;/label&#62;<br><br>
+
+		&#60;input class="checkbox" id="cb3" type="checkbox" name="cb1"&#62;<br>
+		&#60;label for="cb3"&#62;Checkbox 3&#60;/label&#62;
+	</p>
+
+	<h4 class="text fz-18 fw-default mt-20">Error</h4>
 	<div class="mt-10">
 		<input class="checkbox error" id="cbe1" type="checkbox" name="cbe1">
 		<label for="cbe1"></label>
 	</div>
+	<p class="mt-15 bg-gray-100 p-20">
+		&#60;input class="checkbox error" id="cbe1" type="checkbox" name="cbe1"&#62;<br>
+		&#60;label for="cbe1"&#62;&#60;/label&#62;
+	</p>
 
 	<h3 class="text fz-22 mt-30">Input Radio</h3>
 	<div class="mt-10">
@@ -171,12 +254,26 @@
 			<label for="rad3">Radio 3</label>
 		</div>
 	</div>
+	<p class="mt-15 bg-gray-100 p-20">
+		&#60;input class="radio" id="rad1" type="radio" name="rad1" checked=""&#62;<br>
+		&#60;label for="rad1"&#62;&#60;/label&#62;<br><br>
 
-	<h4 class="text fz-18 mt-20">Error</h4>
+		&#60;input class="radio" id="rad2" type="radio" name="rad1"&#62;<br>
+		&#60;label for="rad2"&#62;Radio 2&#60;/label&#62;<br><br>
+
+		&#60;input class="radio" id="rad3" type="radio" name="rad1"&#62;<br>
+		&#60;label for="rad3"&#62;Radio 3&#60;/label&#62;
+	</p>
+
+	<h4 class="text fz-18 fw-default mt-30">Error</h4>
 	<div class="mt-10">
 		<input class="radio error" id="rade3" type="radio" name="rade1">
 		<label for="rade3">Radio 3</label>
 	</div>
+	<p class="mt-15 bg-gray-100 p-20">
+		&#60;input class="radio error" id="rade3" type="radio" name="rade1"&#62;<br>
+		&#60;label for="rade3"&#62;Radio 3&#60;/label&#62;
+	</p>
 
 	<h3 class="text fz-22 mt-30">Validación</h3>
 	<div class="mt-10">
@@ -290,3 +387,14 @@
 		</form>
 	</div>
 </div>
+
+<!-- <script src="/dev/assets/js/libs/libs.js"></script> -->
+
+<script>
+	/*console.log('Script', $);
+	$(function () {
+		console.log('Select', $js('csel'));
+		// Form Select
+		$js('csel').i2bSelect();
+	});*/
+</script>
