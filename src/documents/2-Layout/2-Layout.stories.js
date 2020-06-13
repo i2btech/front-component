@@ -4,10 +4,10 @@
 export default { title: '2 Layout' };
 
 //import '../../../dev/assets/css/main.css';
-import ContainerHtml from './2.1-container.html';
+import ContainerHtml from './container.html';
 
 export const Container = () => ContainerHtml;
-Container.story = { name: '2.1 Contenedor' }
+Container.story = { name: 'Contenedor' }
 
 export const Grid = () => `
 	<div class="p-30">
@@ -131,7 +131,7 @@ export const Grid = () => `
 		</div>
 	</div>
 `;
-Grid.story = { name: '2.2 Grilla' }
+Grid.story = { name: 'Grilla' }
 /*document.addEventListener('DOMContentLoaded', () => {
 	document.querySelectorAll('pre code').forEach((block) => {
 		console.log('pre code', block, hljs);
