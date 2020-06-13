@@ -1,0 +1,175 @@
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.0/styles/vs2015.min.css"> -->
+
+<div class="p-30">
+	<h2 class="text fz-28">Contenedor</h2>
+
+	<p class="mt-20">Los contenedores son el elemento de diseño más básico y son necesarios cuando se utiliza nuestro sistema de cuadrícula predeterminado. Los contenedores se usan para contener, rellenar y (a veces) centrar el contenido dentro de ellos. Si bien los contenedores se pueden anidar, la mayoría de los diseños no requieren un contenedor anidado.<br><br>Viene contenedores diferentes:</p>
+
+	<table class="table-all mt-20">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Extra Pequeña < 640px</th>
+				<th>Pequeña ≥ 640px</th>
+				<th>Mediana ≥ 768px</th>
+				<th>Grande ≥ 1024px</th>
+				<th>Extra Grande ≥ 1280px</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="text-default">.container</td>
+				<td>100%</td>
+				<td>640px</td>
+				<td>768px</td>
+				<td>1024px</td>
+				<td>1280px</td>
+			</tr>
+			<tr>
+				<td class="text-default">.sm:container</td>
+				<td>100%</td>
+				<td>640px</td>
+				<td>768px</td>
+				<td>1024px</td>
+				<td>1280px</td>
+			</tr>
+			<tr>
+				<td class="text-default">.md:container</td>
+				<td>100%</td>
+				<td>100%</td>
+				<td>768px</td>
+				<td>1024px</td>
+				<td>1280px</td>
+			</tr>
+			<tr>
+				<td class="text-default">.lg:container</td>
+				<td>100%</td>
+				<td>100%</td>
+				<td>100%</td>
+				<td>1024px</td>
+				<td>1280px</td>
+			</tr>
+			<tr>
+				<td class="text-default">.xl:container</td>
+				<td>100%</td>
+				<td>100%</td>
+				<td>100%</td>
+				<td>100%</td>
+				<td>1280px</td>
+			</tr>
+			<tr>
+				<td class="text-default">container-fluid</td>
+				<td>100%</td>
+				<td>100%</td>
+				<td>100%</td>
+				<td>100%</td>
+				<td>100%</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<!-- <pre class="mt-20">
+		<code class="html">
+			&#60;div class="message-success success message"&#62;
+				&#60;div&#62;
+					Esto es codigo de prueba
+				&#60;/div&#62;
+			&#60;/div&#62;
+		</code>
+	</pre> -->
+
+	<h3 class="text fz-24 mt-30">Basico</h3>
+
+	<p class="mt-20">Clase por defecto <b>.container</b> es un contenedor que su max-width cambia en cada breakpoint.</p>
+
+	<div class="container p-20 bg-primary mt-30">
+		<h2 class="text text-white">.container</h2>
+	</div>
+
+	<h3 class="text fz-24 mt-30">Fluido</h3>
+
+	<p class="mt-20">Use <b>.container-fluid</b> para un contenedor de ancho completo, que abarca todo el ancho de la ventana gráfica.</p>
+
+	<div class="container-fluid p-20 bg-default mt-30">
+		<h2 class="text text-white">.container-fluid</h2>
+	</div>
+
+	<h3 class="text fz-24 mt-30">Responsivo</h3>
+
+	<p class="mt-20">Le permiten especificar una clase que es 100% de ancho hasta que se alcanza el breakpoint especificado, después de lo cual aplicamos max-widths para cada uno de los breakpoints. Por ejemplo, .container-sm tiene un ancho del 100% para comenzar hasta que se alcanza el breakpoint sm, donde se ampliará con md, lg y xl.</p>
+
+	<div class="sm:container p-20 bg-default mt-20">
+		<h2 class="text text-white">.sm:container</h2>
+	</div>
+
+	<div class="md:container p-20 bg-primary mt-20">
+		<h2 class="text text-white">.md:container</h2>
+	</div>
+
+	<div class="lg:container p-20 bg-default mt-20">
+		<h2 class="text text-white">.lg:container</h2>
+	</div>
+
+	<div class="xl:container p-20 bg-primary mt-20">
+		<h2 class="text text-white">.xl:container</h2>
+	</div>
+
+
+	<h3 class="text fz-24 mt-30">Responsivo breakpoints</h3>
+
+	<p class="mt-20">Todo el desarrollo de contenedores esta basado en móvil primero. Estos breakpoints se basan principalmente en los anchos mínimos de la vista y nos permiten escalar elementos a medida que cambia la vista.</p>
+
+	<p class="mt-20">
+		@include media-breakpoint-up(sm) { ... }<br>
+		@include media-breakpoint-up(md) { ... }<br>
+		@include media-breakpoint-up(lg) { ... }<br>
+		@include media-breakpoint-up(xl) { ... }
+		<br><br>
+		.custom-class {<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;display: none;<br>
+		}<br>
+		@include media-breakpoint-up(sm) {<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;.custom-class {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: block;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+		}
+	</p>
+
+	<p class="mt-20">Ocasionalmente utilizamos consultas de medios que van en la otra dirección (el tamaño de pantalla dado max a menos):</p>
+
+	<p class="mt-20">
+		@include media-breakpoint-down(xs) { ... }<br>
+		@include media-breakpoint-down(sm) { ... }<br>
+		@include media-breakpoint-down(md) { ... }<br>
+		@include media-breakpoint-down(lg) { ... }
+	</p>
+
+	<p class="mt-20">También hay consultas de medios y mixins para apuntar a un solo segmento de tamaños de pantalla utilizando los anchos de breakpoint mínimo y máximo:</p>
+
+	<p class="mt-20">
+		@include media-breakpoint-only(xs) { ... }<br>
+		@include media-breakpoint-only(sm) { ... }<br>
+		@include media-breakpoint-only(md) { ... }<br>
+		@include media-breakpoint-only(lg) { ... }<br>
+		@include media-breakpoint-only(xl) { ... }
+	</p>
+
+	<p class="mt-20">Del mismo modo, las consultas de medios pueden abarcar varios anchos de breakpoint:</p>
+
+	<p class="mt-20">
+		@include media-breakpoint-between(md, lg) { ... }
+	</p>
+</div>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.0/highlight.min.js"></script> -->
+
+<script>
+	/*console.log('Load hljs');
+	document.addEventListener('DOMContentLoaded', () => {
+		document.querySelectorAll('pre code').forEach((block) => {
+			console.log('pre code', block, hljs);
+			hljs.highlightBlock(block);
+		});
+	});*/
+</script>
+
