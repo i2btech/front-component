@@ -1,5 +1,7 @@
 import ButtonsHtml from './buttons.html';
 import FormHtml from './form.html';
+import ModalHtml from './modal.html';
+import DropdownHtml from './dropdown.html';
 
 export default { title: '3 Componentes' };
 
@@ -8,6 +10,12 @@ Buttons.story = { name: 'Botones' }
 
 export const Form = () => FormHtml;
 Form.story = { name: 'Formulario' }
+
+export const Modal = () => ModalHtml;
+Modal.story = { name: 'Modal' }
+
+export const Dropdown = () => DropdownHtml;
+Dropdown.story = { name: 'Dropdown' }
 
 /*export const withEmoji = () => {
 	const button = document.createElement('button');
@@ -20,6 +28,8 @@ import $ from 'jquery';
 import { $js } from '../../js/utils';
 import iSelect from '../../js/components/i-select';
 import iForm from '../../js/components/i-form';
+import iModal from '../../js/components/i-modal';
+import iDropdown from '../../js/components/i-dropdown';
 
 $(function () {
 	setTimeout(() => {
@@ -35,6 +45,15 @@ $(function () {
 			if($frm.valid()) {
 				console.log('Enviado');
 			}
+		});
+
+		// Modal
+		$js('modal').iModal();
+
+		// DropDown
+		$js('dropdown').iDropdown();
+		$js('ddoverlay').iDropdown({
+			overlay: '.overlay'
 		});
 	}, 800);
 });

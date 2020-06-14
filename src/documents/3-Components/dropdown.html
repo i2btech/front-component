@@ -1,0 +1,74 @@
+<div class="p-30">
+	<h2 class="text fz-28">Dropdown</h2>
+
+	<h3 class="text fz-22 mt-30">Normal</h3>
+	<div class="mt-10">
+		<button class="btn btn-menu bg-default text-white" data-js="dropdown" data-open="#menu1">Dropdown Normal</button>
+
+		<div>
+			<div class="nav nav-menu nav-vert bg-black text-white" id="menu1">
+				<a class="nav-item nav--button active" href="javascript:;">Home</a>
+				<a class="nav-item nav--button" href="#">Link 1</a>
+				<a class="nav-item nav--button" href="#">Link 2</a>
+				<a class="nav-item nav--button" href="#">Link 3</a>
+			</div>
+		</div>
+	</div>
+	<p class="mt-15 bg-gray-100 p-20">
+		&#60;button class="btn btn-menu bg-default text-white" data-js="dropdown" data-open="#menu1">Dropdown Normal&#60;/button&#62;<br><br>
+
+		&#60;div&#62;<br>
+		&nbsp;&nbsp;&#60;div class="nav nav-menu nav-vert bg-black text-white" id="menu1"&#62;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&#60;a class="nav-item nav--button active" href="javascript:;"&#62;Home&#60;/a&#62;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&#60;a class="nav-item nav--button" href="#"&#62;Link 1&#60;/a&#62;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&#60;a class="nav-item nav--button" href="#"&#62;Link 2&#60;/a&#62;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&#60;a class="nav-item nav--button" href="#"&#62;Link 3&#60;/a&#62;<br>
+		&nbsp;&nbsp;&#60;/div&#62;<br>
+		&#60;/div&#62;<br><br>
+
+		&#60;script&#62;<br>
+		&nbsp;&nbsp;import iDropdown from '../../js/components/i-dropdown';<br><br>
+		&nbsp;&nbsp;$(function () {<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;$js('dropdown').iDropdown();<br>
+		&nbsp;&nbsp;});<br>
+		&#60;/script&#62;
+	</p>
+
+	<h3 class="text fz-22 mt-30">Con Overlay</h3>
+	<div class="mt-10">
+		<button class="btn btn-menu bg-default text-white" data-js="ddoverlay" data-open="#menu2">Dropdown Overlay</button>
+
+		<div>
+			<div class="nav-vert nav-menu bg-black text-white" id="menu2">
+				<a class="bar-item nav--button active" href="javascript:;">Home</a>
+				<a class="bar-item nav--button" href="#">Link 1</a>
+				<a class="bar-item nav--button" href="#">Link 2</a>
+				<a class="bar-item nav--button" href="#">Link 3</a>
+			</div>
+		</div>
+		<div class="overlay"></div>
+	</div>
+
+	<p class="mt-15 bg-gray-100 p-20">
+		&#60;button class="btn btn-menu bg-default text-white" data-js="ddoverlay" data-open="#menu2"&#62;Dropdown Overlay&#60;/button&#62;<br><br>
+
+		&#60;div&#62;<br>
+		&nbsp;&nbsp;&#60;div class="nav-vert nav-menu bg-black text-white" id="menu2"&#62;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&#60;a class="bar-item nav--button active" href="javascript:;"&#60;Home&#60;/a&#62;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&#60;a class="bar-item nav--button" href="#"&#60;Link 1&#60;/a&#62;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&#60;a class="bar-item nav--button" href="#"&#60;Link 2&#60;/a&#62;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&#60;a class="bar-item nav--button" href="#"&#60;Link 3&#60;/a&#62;<br>
+		&nbsp;&nbsp;&#60;/div&#62;<br>
+		&#60;/div&#62;<br>
+		&#60;div class="overlay"&#62;&#60;/div&#62;<br><br>
+
+		&#60;script&#62;<br>
+		&nbsp;&nbsp;import iDropdown from '../../js/components/i-dropdown';<br><br>
+		&nbsp;&nbsp;$(function () {<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;$js('ddoverlay').iDropdown({<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overlay: '.overlay'<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+		&nbsp;&nbsp;});<br>
+		&#60;/script&#62;
+	</p>
+</div>

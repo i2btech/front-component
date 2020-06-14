@@ -1,5 +1,3 @@
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.0/styles/vs2015.min.css"> -->
-
 <div class="p-30">
 	<h2 class="text fz-28">Formulario</h2>
 
@@ -185,7 +183,12 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 8"&#62;Opción 8&#60;/option&#62;<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&#60;option value="Opción 9"&#62;Opción 9&#60;/option&#62;<br>
 				&nbsp;&nbsp;&#60;/select&#62;<br>
-			&#60;/div&#62;
+			&#60;/div&#62;<br><br>
+
+			import iSelect from './components/i-select';<br><br>
+			$(function () {<br>
+			&nbsp;&nbsp;$js('csel').iSelect();<br>
+			});
 		</p>
 	</div>
 
@@ -359,4 +362,20 @@
 			<fieldset class="mt-30"><button class="btn bg-default text-white" type="submit">Validar</button></fieldset>
 		</form>
 	</div>
+	<p class="mt-15 bg-gray-100 p-20">
+		import iForm from './components/i-form';<br><br>
+
+		$(function () {<br>
+		&nbsp;&nbsp;const $frm = $js('frm-valid');<br>
+		&nbsp;&nbsp;iForm.validate($frm);<br><br>
+
+		&nbsp;&nbsp;$frm.on('submit', (e) => {<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;e.preventDefault();<br><br>
+
+		&nbsp;&nbsp;&nbsp;&nbsp;if($frm.valid()) {<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Enviado');<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+		&nbsp;&nbsp;});<br>
+		});
+	</p>
 </div>
