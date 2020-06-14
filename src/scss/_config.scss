@@ -132,7 +132,11 @@ $theme: (
 		3: 3px,
 		4: 4px,
 		5: 5px
-	)
+	),
+	h:(
+		1: 30px,
+		2: 28px
+	) 
 );
 
 // Components
@@ -182,5 +186,13 @@ $components: (
 			option-hover-background: lighten(#D71F26, 20%),
 			option-hover-color: #FFF,
 		)
+	),
+
+	link: (
+		link-color: #D71F26,
+		hover-color: #D71F26,
+		active-color: #D71F26,
+		visited-color: #D71F26,
+		text-decoration: 	underline	
 	)
 )

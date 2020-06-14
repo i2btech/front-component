@@ -1,0 +1,16 @@
+$link: map-get($components, 'link');
+a {
+    text-decoration: map-get($link, 'text-decoration');
+    &:link {
+        color: map-get($link, 'link-color');
+    }
+    &:visited {
+        color: map-get($link, 'active-color');
+    }
+    &:hover {
+        color: map-get($link, 'hover-color');
+    }
+    &:active {
+        color: map-get($link, 'visited-color');
+    }
+}
