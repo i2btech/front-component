@@ -1,4 +1,5 @@
 "use strict";
+import $ from 'jquery';
 
 	/**
   Opciones para inicializar:
@@ -12,7 +13,7 @@
   Opciones por data atributo html:
   <button data-open="#id" data-close=".close, .search" overlay=".overlay" active="selected"></button>
   **/
-export default $.fn.i2bDropdown = function(options) {
+export default $.fn.iDropdown = function(options) {
 	var $tg = $(this),
 
 	opt = $.extend({}, {

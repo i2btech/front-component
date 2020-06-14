@@ -1,4 +1,5 @@
 "use strict";
+import $ from 'jquery';
 
 /**
 Opciones para inicializar:
@@ -17,7 +18,7 @@ Opciones por data atributo html:
 Responsive
 <src="img/lazy/b.png" data-src="img/lazy/image-m-3.jpg" data-srcset="img/lazy/image-t-3.jpg 768w, img/lazy/image-3.jpg 1200w" alt="" width="800" height="600" class="lazy" lazyload>
 **/
-$.fn.i2bLazyLoad = function (opts) {
+$.fn.iLazyLoad = function (opts) {
 	var $tg = $(this),
 		aWidth = -1,
 		aHeight = -1,

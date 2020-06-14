@@ -1,21 +1,22 @@
 "use strict";
+import $ from 'jquery';
 
 import { $js } from './utils';
-import i2bTabs from './components/i2b-tabs';
-import i2bCollapse from './components/i2b-collapse';
-import i2bDropdown from './components/i2b-dropdown';
-import i2bModal from './components/i2b-modal';
-import i2bSelect from './components/i2b-select';
-import i2bLazyLoad from './components/i2b-lazyload';
-import cForm from './components/i2b-form';
+import iTabs from './components/i-tabs';
+import iCollapse from './components/i-collapse';
+import iDropdown from './components/i-dropdown';
+import iModal from './components/i-modal';
+import iSelect from './components/i-select';
+import iLazyLoad from './components/i-lazyload';
+import iForm from './components/i-form';
 
 $(function () {
 	// Tabs
-	$js('tab').i2bTabs();
+	$js('tab').iTabs();
 
 	// Collapses
 	const $collapse = $js('collapse');
-	$collapse.i2bCollapse();
+	$collapse.iCollapse();
 
 	$collapse
 		.on('beforeshow', function () {
@@ -29,36 +30,36 @@ $(function () {
 		});
 
 	const $collapseGroup = $js('collapse-group');
-	$collapseGroup.i2bCollapse();
+	$collapseGroup.iCollapse();
 
 	$js('wc-open').on('click', function (e) {
 		e.preventDefault();
-		$collapseGroup.filter(':eq(1)').i2bCollapse('show');
+		$collapseGroup.filter(':eq(1)').iCollapse('show');
 	});
 
 	$js('wc-close').on('click', function (e) {
 		e.preventDefault();
-		$collapseGroup.filter(':eq(1)').i2bCollapse('hide');
+		$collapseGroup.filter(':eq(1)').iCollapse('hide');
 	});
 
 	$js('wc-toggle').on('click', function (e) {
 		e.preventDefault();
-		$collapseGroup.filter(':eq(1)').i2bCollapse('toggle');
+		$collapseGroup.filter(':eq(1)').iCollapse('toggle');
 	});
 
-	$js('collapse-group-first').i2bCollapse({
+	$js('collapse-group-first').iCollapse({
 		open: 'first',
 		time: 800
 	});
 
 	// DropDown
-	$js('dropdown').i2bDropdown();
-		$js('ddoverlay').i2bDropdown({
+	$js('dropdown').iDropdown();
+		$js('ddoverlay').iDropdown({
     overlay: '.overlay'
 	});
 
 	// Modal
-	$js('modal').i2bModal();
+	$js('modal').iModal();
 
 	// Scroll
 	$js('sctop').on('click', function (e) {
@@ -79,17 +80,17 @@ $(function () {
 	});
 
 	// Form Select
-	$js('csel').i2bSelect();
+	$js('csel').iSelect();
 
 	// Lazy Load
-	$('[lazyload]').i2bLazyLoad();
+	$('[lazyload]').iLazyLoad();
 
-	$('[lazyscroll]').i2bLazyLoad({
+	$('[lazyscroll]').iLazyLoad({
 		content: '#sc-custom'
 	});
 
 	const $frm = $js('frm-valid');
-	cForm.validate($frm);
+	iForm.validate($frm);
 
 	$frm.on('submit', (e) => {
 		e.preventDefault();

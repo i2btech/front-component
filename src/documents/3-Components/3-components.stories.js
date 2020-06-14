@@ -16,13 +16,25 @@ Form.story = { name: 'Formulario' }
   return button;
 };*/
 
-/*var script = document.createElement('script');
-script.src = '../../../dev/assets/js/libs/libs.js';
-script.type = 'text/javascript';
-document.getElementsByTagName('head')[0].appendChild(script);
+import $ from 'jquery';
+import { $js } from '../../js/utils';
+import iSelect from '../../js/components/i-select';
+import iForm from '../../js/components/i-form';
 
 $(function () {
-	console.log('Select', $js('csel'));
-	// Form Select
-	$js('csel').i2bSelect();
-});*/
+	setTimeout(() => {
+		// Form Select
+		$js('csel').iSelect();
+
+		const $frm = $js('frm-valid');
+		iForm.validate($frm);
+
+		$frm.on('submit', (e) => {
+			e.preventDefault();
+
+			if($frm.valid()) {
+				console.log('Enviado');
+			}
+		});
+	}, 800);
+});

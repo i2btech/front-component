@@ -27,6 +27,10 @@ let config = {
     ]
 	},
   plugins: [
+		/*new webpack.ProvidePlugin({
+			$: 'jquery',
+			jQuery: 'jquery'
+		})*/
     /*new webpack.optimize.UglifyJsPlugin({
       minimize: true,
       output: {

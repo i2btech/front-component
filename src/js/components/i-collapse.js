@@ -1,24 +1,26 @@
 "use strict";
+import $ from 'jquery';
 
 /**
-  Opciones para inicializar:
-  {
-    open:    'none',  // none: No seleccionar item, first: Seleccionar primer item
-    active:  'active' // Class para seleccionar al elemento actual
-  }
+Opciones para inicializar:
+{
+	open:    '#id',     // Identificador el elemento al para abrir
+	time:    800, 			// Tiempo efecto slide contenido
+	active:  'selected' // Class para agrear al elemento actual y el elemento a abrir
+}
 
-  Opciones por data atributo html:
-  <a class="tab-link" data-open="#id" data-group="tab-cont"></a>
-  **/
-
-export default $.fn.i2bTabs = function (options) {
+Opciones por data atributo html:
+<button data-open="#id" data-close=".close, .search" overlay=".overlay" active="selected"></button>
+**/
+export default $.fn.iCollapse = function (options) {
 	var $tg = $(this),
 		opt = $.extend({}, {
-			open: 'none', //first
+			open: 'none', //first, all
 			dtCont: 'data-open',
 			dtGroupOpen: 'data-group',
 			dtGroupCont: 'group-cont',
-			active: 'tab--active'
+			active: 'active',
+			time: 300
 		}, options);
 
 	if (typeof options == 'string') {
@@ -28,6 +30,12 @@ export default $.fn.i2bTabs = function (options) {
 			if (options == 'show') {
 				close($t, 'open');
 				open($t);
+
+			} else if (options == 'hide') {
+				close($t, 'close');
+
+			} else if (options == 'toggle') {
+				toggle($t);
 			}
 		});
 
@@ -42,6 +50,8 @@ export default $.fn.i2bTabs = function (options) {
 					if (opt.open == 'first' && i == 0) {
 						open($t);
 
+					} else if (opt.open == 'all') {
+						open($t);
 					}
 				}
 				$t.data('active', true);
@@ -53,8 +63,7 @@ export default $.fn.i2bTabs = function (options) {
 		e.preventDefault();
 		var $t = $(this);
 
-		close($t);
-		open($t);
+		toggle($t);
 	}
 
 	function open($t) {
@@ -64,7 +73,10 @@ export default $.fn.i2bTabs = function (options) {
 		if ($cont.length) {
 			$t.trigger('beforeshow');
 			$t.addClass(opt.active);
-			$cont.addClass(opt.active);
+			$cont.slideDown(opt.time, function () {
+				$t.trigger('show');
+			})
+				.addClass(opt.active);
 		}
 	}
 
@@ -94,8 +106,29 @@ export default $.fn.i2bTabs = function (options) {
 
 			if ($gc.length) {
 				$go.removeClass(opt.active);
-				$gc.removeClass(opt.active);
+				$gc.slideUp(opt.time, function () {
+					$t.trigger('hidden');
+				})
+					.removeClass(opt.active);
 			}
+		} else {
+			if ($cont.length) {
+				$t.removeClass(opt.active);
+				$cont.slideUp(opt.time, function () {
+					$t.trigger('hidden');
+				})
+					.removeClass(opt.active);
+			}
+		}
+	}
+
+	function toggle($t) {
+		if ($t.hasClass(opt.active)) {
+			close($t);
+
+		} else {
+			close($t);
+			open($t);
 		}
 	}
 };

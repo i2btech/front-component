@@ -1,4 +1,6 @@
 "use strict";
+import $ from 'jquery';
+import validate from 'jquery-validation';
 
 export default {
 	validate: function($frm) {
@@ -42,7 +44,7 @@ export default {
 				});
 			});
 
-			$(document).on('change', '[data-js="frm-valid"] [csel]', function () {
+			$(document).on('change', '[data-js="frm-valid"] [data-js="csel"]', function () {
 				$(this).valid();
 			});
 		}

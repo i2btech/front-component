@@ -1,4 +1,5 @@
 "use strict";
+import $ from 'jquery';
 
 /**
  * Helpers

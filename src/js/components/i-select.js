@@ -1,4 +1,5 @@
 "use strict";
+import $ from 'jquery';
 
 /**
 Opciones para inicializar:
@@ -11,7 +12,7 @@ Opciones por data atributo html:
 	<option value="1">Opción 1</option>
 </select>
 **/
-export default $.fn.i2bSelect = function (opts) {
+export default $.fn.iSelect = function (opts) {
 	var $tg = $(this),
 
 		opt = $.extend({}, {
