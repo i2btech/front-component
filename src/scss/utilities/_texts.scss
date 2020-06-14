@@ -3,11 +3,16 @@ $colors: map-get($theme, 'colors');
 $font-sizes: map-get($theme, 'fontSizes');
 $line-heights: map-get($theme, 'lineHeights');
 $font-weights: map-get($theme, 'fontWeight');
+$h: map-get($theme, 'h');
 
 .text {
 	font-size: map-get($font-sizes, 'default');
 	line-height: map-get($line-heights, 'default');
 	//color: map-get($colors, 'default');
+}
+
+@each $attr, $value in $h {
+	h#{$attr} { font-size: $value; }
 }
 
 @each $breakpoint in map-keys($grid-breakpoints) {

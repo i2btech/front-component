@@ -1,0 +1,141 @@
+<div class="p-30">
+	<div class="mb-50">
+		<h1>Estructura de Archivos</h2>
+		<div class="mt-20">
+			Para una mejor semántica se propone separar los archivos base
+			<b>(src)</b>
+			de los procesados. Los archivos finales procesados para desarrollo se crearán en un directorio llamado
+			<b>(dev)</b>
+			mientras que los
+			            optimizado listos para producción se crearan en un derectorio llamado
+			<b>(prod)</b>.
+		</div>
+		<p class="pt-10">
+			La estructura de archivos se muestra a continuación tecnologías:
+		</p>
+
+		<p class="pt-10">
+            <pre><code>nombre-proyecto/
+            |___src
+            |	|___fonts
+            |	|___img
+            |	|___js
+            |	|   |___component
+            |	|   |   |___collapse.js
+            |	|   |   |___dropdown.js
+            |	|   |   |___form.js
+            |	|   |   |___lazyload.js
+            |	|   |   |___modal.js
+            |	|   |   |___select.js   
+            |	|   |   |___tabs.js
+            |	|   |
+            |	|   |___libs
+            |	|   |   |___libs.js
+            |	|   |
+            |	|   |___services
+            |	|   |   |__ index.js
+            |	|   |
+            |	|   |___utils
+            |	|   |   |__ index.js
+            |	|   |
+            |   |   |__ main.js
+            |	|   |
+            |	|__ pug
+            |	|   |__ components
+            |	|   |   |__ _alerts.pug
+            |	|   |   |__ _breadcrumb.pug
+            |	|   |   |__ _buttons.pug
+            |	|   |   |__ _cards.pug
+            |	|   |   |__ _collapse.pug
+            |	|   |   |__ _dropdown.pug            
+            |	|   |   |__ _forms.pug
+            |	|   |   |__ _grids.pug
+            |	|   |   |__ _modal.pug
+            |	|   |   |__ _navigation.pug
+            |	|   |   |__ _pagination.pug
+            |	|   |   |__ _panels.pug
+            |	|   |   |__ _progress-bar.pug
+            |	|   |   |__ _responsive.pug
+            |	|   |   |__ _tables.pug
+            |	|   |   |__ _tabs.pug
+            |	|   |   |__ _tooltops.pug
+            |	|   |
+            |	|   |__ inc
+            |	|   |   |__ _layout.pug
+            |	|   |   |__ _mixins.pug
+            |	|   |   |__ _variables.pug
+            |	|   |
+            |	|   |__ patials
+            |	|   |   |__ _footer.pug
+            |	|   |   |__ _header.pug
+            |	|   |__ _menu.pug
+            |	|   |
+            |	|__ scss
+            |	|   |__ components
+            |	|   |   |__ _alerts.scss
+            |	|   |   |__ _breadcrumb.scss
+            |	|   |   |__ _buttons.scss
+            |	|   |   |__ _cards.scss
+            |	|   |   |__ _collapse.scss
+            |	|   |   |__ _dropdown.scss
+            |	|   |   |__ _fonts.scss
+            |	|   |   |__ _forms.scss
+            |	|   |   |__ _lazyload.scss
+            |	|   |   |__ _link.scss
+            |	|   |   |__ _modal.scss
+            |	|   |   |__ _navigation.scss
+            |	|   |   |__ _normalize.scss
+            |	|   |   |__ _panels.scss
+            |	|   |   |__ _quickcart.scss
+            |	|   |   |__ _tables.scss
+            |	|   |   |__ _tabs.scss
+            |	|   |   |__ _tooltips.scss
+            |	|   |   |
+            |	|   |__ mixis
+            |	|   |   |__ _background-variant.scss
+            |	|   |   |__ _breakpoints.scss
+            |	|   |   |__ _custom.scss
+            |	|   |   |__ _grid.scss
+            |	|   |   |__ _grid-framework-flex.scss
+            |	|   |   |__ _hover.scss
+            |	|   |   |__ _text-emphasis.scss
+            |	|   |   |__ _text-hide.scss
+            |	|   |   |__ _text-truncate.scss
+            |	|   |
+            |	|__ tempalte
+            |	|   |__ _footer.scss
+            |	|   |__ _globals.scss
+            |	|   |__ _header.scss            
+            |	|   |
+            |	|__ utilities
+            |	|   |__ _align.scss
+            |	|   |__ _background.scss
+            |	|   |__ _borders.scss
+            |	|   |__ _clear.scss
+            |	|   |__ _display.scss
+            |	|   |__ _flex.scss
+            |	|   |__ _float.scss
+            |	|   |__ _grid.scss
+            |	|   |__ _grid-flex.scss
+            |	|   |__ _images.scss
+            |	|   |__ _normalize.scss
+            |	|   |__ _position.scss
+            |	|   |__ _sizing.scss
+            |	|   |__ _spacing.scss
+            |	|   |__ _texts.scss
+            |   | 
+            |	|__ _config.scss
+            |	|__ _main.scss
+            |   |
+            |___ .babelrc
+            |___ .editorconfig
+            |___ .gitignore
+            |___ .gulpfile.babel.js
+            |___ package.json
+            |___ package-lock.json
+            |___ README.md
+            |___ webpack.config.js
+            </code></pre>
+		</p>
+	</div>
+</div>

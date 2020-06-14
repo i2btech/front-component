@@ -21,3 +21,5 @@ services:
     command: [ "/bin/bash", "-c", "npm install && npm run docker:storybook"]
     ports:
       - 65200:65200
+    depends_on: 
+      - build

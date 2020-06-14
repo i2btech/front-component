@@ -1,11 +1,32 @@
 h2 Panels
+p
+	| Para encerrar cierto contenido dentro de una caja puedes hacer uso de un panel
+	| un ejemplo sencillo es aplicar la clase .panel a un elemento div.
+pre
+	code(class="html")
+		| &#60;div class="panel"&#62;
+		|   &#60;span&#62;Este es un panel.&#60;/span&#62;
+		| &#60;/div&#62;
 
-.mt-10
-  .panel
-    span Este es un panel.
+p.mt-20 Puedes agregar modificadores para cambiar el color de fondo, los margenes internos utilizando por ejemplos las clases 
+	| .bg-default, .text-white .p-10 puedes modificar el color de fondo, el color del texto y el padding interno del panel.
 
-.panel.bg-default.text-white.p-10
-  span Este es otro panel.
+pre
+	code(class="html")
+		| &#60;div class="panel bg-default text-white p-10"&#62;
+		|   &#60;span&#62;Este es otro panel.&#60;/span&#62;
+		| &#60;/div&#62;
 
-.panel.bg-black.text-white.p-15
-  span Este es otro panel.
+	.panel.bg-default.text-white.p-10
+		span Este es otro panel.
+
+p.mt-20 Acá otro ejemplo con fondo de color negro y el texto de color blanco.
+
+pre
+	code(class="html")
+		| &#60;div class="panel bg-black text-white p-15"&#62;
+		|   &#60;span&#62;Este es un panel.&#60;/span&#62;
+		| &#60;/div&#62;
+	
+	.panel.bg-black.text-white.p-15
+		span Este es otro panel.
