@@ -1,0 +1,25 @@
+pre {
+	padding: 16px;
+	overflow: auto;
+	font-size: 85%;
+	line-height: 1.45;
+	background-color: #f6f8fa;
+	border-radius: 3px;
+	word-wrap: normal;
+}
+
+code {
+	display: inline;
+	max-width: auto;
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+	line-height: inherit;
+	word-wrap: normal;
+	border: 0;
+	font-size: 100%;
+	white-space: pre;
+	word-break: normal;
+	background: transparent;
+}
+
