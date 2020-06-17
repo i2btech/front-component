@@ -11,13 +11,15 @@
     "storybook": "start-storybook",
     "docker:start": "cd ./docker && ./app.sh up -d && ./app.sh logs -f",
     "docker:container": "docker exec -ti i2btech-fc-build bash",
-    "docker:storybook": "start-storybook -p 65200 --ci"
+    "docker:storybook": "start-storybook -p 65200 --ci -s ./.storybook/images"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@babel/register": "^7.9.0",
+    "@storybook/addons": "^5.3.19",
     "@storybook/html": "^5.3.19",
+    "@storybook/theming": "^5.3.19",
     "babel-loader": "^8.1.0",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
@@ -37,8 +39,8 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
     "highlight.js": "^10.0.3",
-    "webpack": "^4.43.0",
     "jquery": "^2.2.4",
-    "jquery-validation": "^1.19.2"
+    "jquery-validation": "^1.19.2",
+    "webpack": "^4.43.0"
   }
 }
