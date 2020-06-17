@@ -2,6 +2,8 @@ import ButtonsHtml from './buttons.html';
 import FormHtml from './form.html';
 import ModalHtml from './modal.html';
 import DropdownHtml from './dropdown.html';
+import PanelsHtml from './panels.html';
+import CardHtml from './cards.html';
 
 export default { title: '3 Componentes' };
 
@@ -16,6 +18,12 @@ Modal.story = { name: 'Modal' }
 
 export const Dropdown = () => DropdownHtml;
 Dropdown.story = { name: 'Dropdown' }
+
+export const Panels = () => PanelsHtml;
+Panels.story = { name: 'Panels' }
+
+export const Card = () => CardHtml;
+Card.story = { name: 'Cards' }
 
 /*export const withEmoji = () => {
 	const button = document.createElement('button');
