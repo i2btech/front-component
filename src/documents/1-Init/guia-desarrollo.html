@@ -7,11 +7,12 @@
 		</div>
 	</div>
 	<div class="mb-50">
-		<h2>HTML</h2>
+		<h1>HTML</h1>
 		<div class="mt-20">
-			<ul>
+			<h2>Sintaxis</h2>
+			<ul class="mt-20">
 				<li>Utiliza 2 espacios (soft tab) / 1 tab (hard tab) para indentar.</li>
-				<li>El doctype por defecto será HTML5: doctype html</li>
+				<li>El doctype por defecto será <b>HTML5: doctype html</b></li>
 				<li>Usa doble comilla " (double quote) para abrir y cerrar atributos, aunque el estándar no lo requiera.</li>
 				<li>Prefiere atributos simples en los que su valor sea el mismo del atributo, por ejemplo:
 					<div class="highlight highlight-text-html-basic">
@@ -21,9 +22,81 @@
 // Prefiere:
 <span class="pl-kos">&lt;</span><span class="pl-ent">input</span> <span class="pl-c1">required</span> /&gt;
 </pre>
+
+
+					</div>
+				</li>
+				<li>
+					Agrega un salto de línea vacío antes de comenzar un nuevo bloque de elementos que sean importantes para mantener legibilidad en el código fuente.
+					<div class="highlight highlight-text-html-basic"><pre>
+doctype html
+html(lang='es')
+						
+head
+meta(charset='utf-8')
+meta(name='viewport', content='width=device-width, initial-scale=1')
+						
+link(rel='stylesheet', href='css/main.min.css')</pre></div>
+
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="mb-50">
+		<h2>Encabezado</h2>
+		<div class="mt-20">			
+			<ul class="mt-20">
+				<li>
+					En todo archivo .jade que corresponda a un template de una o varias varias páginas se incluirá dentro de las primeras líneas del mismo el siguiente encabezado a modo de comentario oculto, el cual deberá ser llenado por el desarrollador a cargo del proyecto ó que esté realizando el template:
+					<div class="highlight highlight-text-html-basic">
+						<pre>//-
+* Nombre proyecto:
+* Fecha inicio:
+* Email desarrollador:
+* Descripción: 
+* Dependencias: 
+* Dónde se utiliza/requiere: 
+						</pre>
 					</div>
 				</li>
 			</ul>
 		</div>
 	</div>
+
+	<div class="mb-50">
+		<h2>Cometarios</h2>
+		<div class="mt-20">			
+			<ul class="mt-20">
+				<li>
+					Comenta grandes bloques de secciones de la siguiente manera (mayúsculas):
+					<div class="highlight highlight-source-css"><pre><span class="pl-c1">/</span><span class="pl-c1">/</span> NOMBRE SECCION</pre></div>
+				</li>
+				<li>
+					Para comentarios menores, de orden local o para recordar o mencionar algo, con Pug utiliza //- ya que se emitirá al compilar a HTML:
+					<div class="highlight highlight-source-css"><pre><span class="pl-c1">/</span><span class="pl-c1">/</span><span class="pl-c1">-</span> clearfix</pre></div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="mb-50">
+		<h2>Compatibilidad IE</h2>
+		<div class="mt-20">			
+			<ul class="mt-20">
+				<li>
+					El modo Edge de Internet Explorer debe ser explícitamente declarado dentro de las etiquetas <div class="highlight highlight-text-html-basic"><pre><code>&lt;head&gt;&lt;/head&gt;:</code></pre></div>
+					<div class="highlight highlight-text-html-basic"><pre>
+head
+meta(http-equiv='X-UA-Compatible' content='IE=Edge')
+title</pre></div>
+				</li>
+				<li>
+					Para comentarios menores, de orden local o para recordar o mencionar algo, con Pug utiliza //- ya que se emitirá al compilar a HTML:
+					<div class="highlight highlight-source-css"><pre><span class="pl-c1">/</span><span class="pl-c1">/</span><span class="pl-c1">-</span> clearfix</pre></div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
 </div>

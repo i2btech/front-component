@@ -5,7 +5,7 @@
 Desarrollo Web Frontend
 =====
 
-Bienvenid@ a la guía de desarrollo frontend para I2B:
+Bienvenido a la guía de desarrollo Frontend:
 
 ### Descarga
 En la siguiente ruta encontrarás el repositorio de desarrollo frontend I2b https://github.com/I2BLab/front-component
