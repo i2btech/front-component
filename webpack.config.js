@@ -23,6 +23,10 @@ let config = {
             plugins: [require('babel-plugin-transform-class-properties')]*/
           }
         }
+      },
+      {
+        test: /\.mdx?$/,
+        use: ['babel-loader', '@mdx-js/loader']
       }
     ]
 	},

@@ -18,6 +18,7 @@
     "@babel/preset-env": "^7.9.6",
     "@babel/register": "^7.9.0",
     "@storybook/addons": "^5.3.19",
+    "@storybook/addon-docs": "^5.3.19",
     "@storybook/html": "^5.3.19",
     "@storybook/theming": "^5.3.19",
     "babel-loader": "^8.1.0",

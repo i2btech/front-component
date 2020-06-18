@@ -4,6 +4,10 @@ import ModalHtml from './modal.html';
 import DropdownHtml from './dropdown.html';
 import PanelsHtml from './panels.html';
 import CardHtml from './cards.html';
+import BreadcrumHtml from './breadcrumb.html';
+import CollapseHtml from './collapse.html';
+import TooltipsHtml from './tooltips.html';
+import TableHtml from './tables.html';
 
 export default { title: '3 Componentes' };
 
@@ -24,6 +28,18 @@ Panels.story = { name: 'Panels' }
 
 export const Card = () => CardHtml;
 Card.story = { name: 'Cards' }
+
+export const Breadcrumb = () => BreadcrumHtml;
+Breadcrumb.story = { name: 'Breadcrumb'};
+
+export const Collapse = () => CollapseHtml;
+Collapse.story = { name: 'Collapse'};
+
+export const Tooltips = () => TooltipsHtml;
+Tooltips.story= { name: 'Tooltips'};
+
+export const Table = () => TableHtml;
+Table.story= { name: 'Table'};
 
 /*export const withEmoji = () => {
 	const button = document.createElement('button');

@@ -1,0 +1,46 @@
+import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
+
+# Cards
+
+<Meta title="Componentes/Cards" />
+
+Una Card es un contenedor de contenido flexible y extensible. Incluye opciones para encabezados y pies de página, una amplia variedad de contenido, colores de fondo contextuales y  opciones de visualización.
+
+## Ejemplo
+
+A continuación se muestra un ejemplo de una tarjeta básica con contenido mixto y un ancho fijo. Las tarjetas no tienen un ancho fijo para comenzar, por lo que, naturalmente, ocuparán todo el ancho de su elemento padre. Esto se personaliza fácilmente con la diversas  opciones de tamaño
+
+<Preview>
+  <Story
+    name="Card"
+    height="200px"
+    parameters={{ docs: { transformSource: (src) => `transformed: ${src}` } }}
+  >
+    {`<div class="mt-10">
+        <div class="card" style="max-width:300px;">
+        <img src="../../img/avatar.jpg" alt="Avatar" style="width:100%;height:auto">
+    <div class="body p-10">
+        <h2 class="fz-20">Titulo de la tarjeta</h2>
+        <p class="mt-10">Algún texto de ejemplo rápido para construir sobre el título de la tarjeta y conformar la mayor parte del contenido de la tarjeta.</p>
+    </div>
+    </div>
+   </div>`}
+  </Story>
+</Preview>
+
+
+## Tipos de contenido
+Las tarjetas admiten una amplia variedad de contenido, incluidas imágenes, texto, grupos de listas, enlaces y más. A continuación hay ejemplos de lo que se admite.
+
+## Cuerpo
+El bloque de construcción de una tarjeta es el .card-body. Úselo siempre que necesite una sección acolchada dentro de una tarjeta.
+
+<Preview>
+  <Story
+    name="Card con cuerpo"
+    height="200px"
+    parameters={{ docs: { transformSource: (src) => `transformed: ${src}` } }}
+  >
+    {`<div class="card-4 p-20" style="max-width:300px;"><span>Este es otra card.</span></div>`}
+  </Story>
+</Preview>
