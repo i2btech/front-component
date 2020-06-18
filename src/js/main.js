@@ -11,6 +11,8 @@ import iLazyLoad from './components/i-lazyload';
 import iForm from './components/i-form';
 
 $(function () {
+
+	setTimeout(() => {
 	// Tabs
 	$js('tab').iTabs();
 
@@ -103,4 +105,5 @@ $(function () {
 	$('pre code').each(function(i, block) {
 		hljs.highlightBlock(block);
 	});
+	}, 800);
 });

@@ -1,0 +1,35 @@
+import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
+import  '../../js/main.js';
+
+# Collapse
+
+<Meta title="Componentes/Collapse" />
+
+Una Card es un contenedor de contenido flexible y extensible. Incluye opciones para encabezados y pies de página, una amplia variedad de contenido, colores de fondo contextuales y  opciones de visualización.
+
+## Ejemplo
+
+A continuación se muestra un ejemplo de una tarjeta básica con contenido mixto y un ancho fijo. Las tarjetas no tienen un ancho fijo para comenzar, por lo que, naturalmente, ocuparán todo el ancho de su elemento padre. Esto se personaliza fácilmente con la diversas  opciones de tamaño
+
+<Preview>
+  <Story
+    name="Collapse basico"
+    height="200px"
+    parameters={{ docs: { transformSource: (src) => `transformed: ${src}` } }}
+  >
+    {`<div class="collapse mt-20">
+        <div class="collapse__item">
+            <h3 class="collapse__title" data-js="collapse-group" data-open="#group1-1" data-group="group1">Collapse Seccción #1</h3><div class="collapse__content" id="group1-1" group-cont="group1" style="display: none;"><p class="fz-14">Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.</p></div></div><div class="collapse__item"><h3 class="collapse__title" data-js="collapse-group" data-open="#group1-2" data-group="group1">Collapse Seccción #2</h3><div class="collapse__content" id="group1-2" group-cont="group1" style="display: none;"><p class="fz-14">Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.</p></div></div></div>
+ 
+    <script> 
+    const $collapse = $js('collapse');
+    $collapse.iCollapse();
+    </script>
+    
+    `}
+  </Story>
+</Preview>
+
+## Codigo Javascript
+
+

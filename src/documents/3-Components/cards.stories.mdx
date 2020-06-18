@@ -13,12 +13,12 @@ A continuación se muestra un ejemplo de una tarjeta básica con contenido mixto
 <Preview>
   <Story
     name="Card"
-    height="200px"
+    height="600px"
     parameters={{ docs: { transformSource: (src) => `transformed: ${src}` } }}
   >
     {`<div class="mt-10">
         <div class="card" style="max-width:300px;">
-        <img src="../../img/avatar.jpg" alt="Avatar" style="width:100%;height:auto">
+        <img src="/avatar.jpg" alt="Avatar" style="width:100%;height:auto">
     <div class="body p-10">
         <h2 class="fz-20">Titulo de la tarjeta</h2>
         <p class="mt-10">Algún texto de ejemplo rápido para construir sobre el título de la tarjeta y conformar la mayor parte del contenido de la tarjeta.</p>
@@ -44,3 +44,4 @@ El bloque de construcción de una tarjeta es el .card-body. Úselo siempre que n
     {`<div class="card-4 p-20" style="max-width:300px;"><span>Este es otra card.</span></div>`}
   </Story>
 </Preview>
+
