@@ -1,0 +1,58 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+
+<Meta title="Componentes/Botones" />
+
+# Botones
+
+Incluye varios estilos de botones predefinidos, cada uno con su propio propósito semántico, con algunos extras para mayor control.
+
+## Colores
+
+Agregado <b>bg-default</b>, <b>bg-primary</b>, <b>bg-secondary</b>, <b>bg-danger</b>, <b>bg-black</b>, <b>disabled</b>
+
+<Preview>
+  <Story
+		name="Colores"
+		height="50px"
+	>
+		{`<button class="btn bg-default">Defecto</button>
+			<button class="btn bg-primary ml-5">Primario</button>
+			<button class="btn bg-secondary ml-5">Secundario</button>
+			<button class="btn bg-danger ml-5">Danger</button>
+			<button class="btn bg-black ml-5">Negro</button>
+			<button class="btn bg-black ml-5" disabled>Deshabilitado</button>`}
+	</Story>
+</Preview>
+
+## Tamaños
+
+Agregado <b>btn--sm</b>, <b>btn--md</b>, <b>btn--lg</b>, <b>btn--xl</b>
+
+<Preview>
+  <Story
+		name="Tamaños"
+		height="60px"
+	>
+		{`<button class="btn bg-black btn--sm">Pequeño</button>
+			<button class="btn bg-black ml-5">Defecto</button>
+			<button class="btn bg-black btn--md ml-5">Medio</button>
+			<button class="btn bg-black btn--lg ml-5">Grande</button>
+			<button class="btn bg-black btn--xlg ml-5">Extra grande</button>`}
+	</Story>
+</Preview>
+
+## Enlace
+
+Agregado <b>btn--sm</b>, <b>btn--md</b>, <b>btn--lg</b>, <b>btn--xl</b>
+
+<Preview>
+  <Story
+		name="Enlace"
+		height="50px"
+	>
+		{`<button class="btn-link text-default">Defecto</button>
+			<button class="btn-link text-primary ml-10">Primario</button>
+			<button class="btn-link text-secondary ml-10">Secundario</button>
+			<button class="btn-link ml-10" disabled="">Deshabilitado</button>`}
+	</Story>
+</Preview>

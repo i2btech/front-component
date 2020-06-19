@@ -1,5 +1,5 @@
-$colors: map-get($theme, 'colors');
-$color-default: map-get($theme, 'default');
+$btn-colors: map-get($theme, 'colors');
+$btn-color-default: map-get($btn-colors, 'white');
 
 //-
 //- Buttons
@@ -50,6 +50,10 @@ $color-default: map-get($theme, 'default');
   &--md  { font-size: 15px; }
   &--lg  { font-size: 18px; }
   &--xlg { font-size: 22px; }
+}
+
+.btn {
+	color: #FFF; //$btn-color-default;
 }
 
 .btn-link {

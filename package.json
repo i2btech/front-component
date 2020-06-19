@@ -9,7 +9,7 @@
     "build": "gulp build",
     "prod": "gulp prod",
     "storybook": "start-storybook",
-    "docker:start": "cd ./docker && ./app.sh up -d && ./app.sh logs -f",
+    "docker:start": "cd ./docker && sh app.sh up",
     "docker:container": "docker exec -ti i2btech-fc-build bash",
     "docker:storybook": "start-storybook -p 65200 --ci -s ./.storybook/images"
   },

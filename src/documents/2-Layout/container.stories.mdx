@@ -1,0 +1,202 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+
+<Meta title="Layout/Contenedor" />
+
+# Contenedor
+
+Los contenedores son el elemento de diseño más básico y son necesarios cuando se utiliza nuestro sistema de cuadrícula predeterminado. Los contenedores se usan para contener, rellenar y (a veces) centrar el contenido dentro de ellos. Si bien los contenedores se pueden anidar, la mayoría de los diseños no requieren un contenedor anidado.
+
+Viene contenedores diferentes:
+
+<Preview>
+  <Story
+		name="Tabla"
+		height="260px"
+	>
+		{`<table class="table-all">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Extra Pequeña < 640px</th>
+						<th>Pequeña ≥ 640px</th>
+						<th>Mediana ≥ 768px</th>
+						<th>Grande ≥ 1024px</th>
+						<th>Extra Grande ≥ 1280px</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="text-default">.container</td>
+						<td>100%</td>
+						<td>640px</td>
+						<td>768px</td>
+						<td>1024px</td>
+						<td>1280px</td>
+					</tr>
+					<tr>
+						<td class="text-default">.sm:container</td>
+						<td>100%</td>
+						<td>640px</td>
+						<td>768px</td>
+						<td>1024px</td>
+						<td>1280px</td>
+					</tr>
+					<tr>
+						<td class="text-default">.md:container</td>
+						<td>100%</td>
+						<td>100%</td>
+						<td>768px</td>
+						<td>1024px</td>
+						<td>1280px</td>
+					</tr>
+					<tr>
+						<td class="text-default">.lg:container</td>
+						<td>100%</td>
+						<td>100%</td>
+						<td>100%</td>
+						<td>1024px</td>
+						<td>1280px</td>
+					</tr>
+					<tr>
+						<td class="text-default">.xl:container</td>
+						<td>100%</td>
+						<td>100%</td>
+						<td>100%</td>
+						<td>100%</td>
+						<td>1280px</td>
+					</tr>
+					<tr>
+						<td class="text-default">container-fluid</td>
+						<td>100%</td>
+						<td>100%</td>
+						<td>100%</td>
+						<td>100%</td>
+						<td>100%</td>
+					</tr>
+				</tbody>
+			</table>`}
+	</Story>
+</Preview>
+
+## Basico
+
+Clase por defecto <b>.container</b> es un contenedor que su max-width cambia en cada breakpoint.
+
+<Preview>
+  <Story
+		name="Basico"
+		height="70px"
+	>
+		{`<div class="container">
+				<div class="p-20 bg-primary">
+					<h2 class="text text-white">.container</h2>
+				</div>
+			</div>`}
+	</Story>
+</Preview>
+
+## Fluido
+
+Use <b>.container-fluid</b> para un contenedor de ancho completo, que abarca todo el ancho de la ventana gráfica.
+
+<Preview>
+  <Story
+		name="Fluido"
+		height="70px"
+	>
+		{`<div class="container-fluid">
+				<div class="p-20 bg-default">
+					<h2 class="text text-white">.container-fluid</h2>
+				</div>
+			</div>`}
+	</Story>
+</Preview>
+
+## Responsivo
+
+Le permiten especificar una clase que es 100% de ancho hasta que se alcanza el breakpoint especificado, después de lo cual aplicamos max-widths para cada uno de los breakpoints. Por ejemplo, .container-sm tiene un ancho del 100% para comenzar hasta que se alcanza el breakpoint sm, donde se ampliará con md, lg y xl.
+
+<Preview>
+  <Story
+		name="Responsivo"
+		height="300px"
+	>
+		{`<div class="sm:container p-20 bg-default">
+				<h2 class="text text-white">.sm:container</h2>
+			</div>
+			<div class="md:container p-20 bg-primary mt-20">
+				<h2 class="text text-white">.md:container</h2>
+			</div>
+			<div class="lg:container p-20 bg-default mt-20">
+				<h2 class="text text-white">.lg:container</h2>
+			</div>
+			<div class="xl:container p-20 bg-primary mt-20">
+				<h2 class="text text-white">.xl:container</h2>
+			</div>`}
+	</Story>
+</Preview>
+
+
+## Responsivo breakpoints
+
+Todo el desarrollo de contenedores esta basado en móvil primero. Estos breakpoints se basan principalmente en los anchos mínimos de la vista y nos permiten escalar elementos a medida que cambia la vista.
+
+<Preview>
+  <Story
+		name="Responsivo breakpoints"
+		height="120px"
+	>
+		{`@include media-breakpoint-up(sm) { ... }<br/>
+			@include media-breakpoint-up(md) { ... }<br/>
+			@include media-breakpoint-up(lg) { ... }<br/>
+			@include media-breakpoint-up(xl) { ... }<br/>
+			.custom-class {
+				display:none;
+			}<br/>
+			@include media-breakpoint-up(sm) {
+				.custom-class {
+					display: block;
+				}
+			}`}
+	</Story>
+</Preview>
+
+Ocasionalmente utilizamos media queries que van en la otra dirección (el tamaño de pantalla dado más a menos):
+
+<Preview>
+  <Story
+		name="Responsivo breakpoints Escritorio - Móvil"
+		height="80px"
+	>
+		{`@include media-breakpoint-down(xs) { ... }<br/>
+			@include media-breakpoint-down(sm) { ... }<br/>
+			@include media-breakpoint-down(md) { ... }<br/>
+			@include media-breakpoint-down(lg) { ... }`}
+	</Story>
+</Preview>
+
+También hay media queries y mixins para apuntar a un solo segmento de tamaños de pantalla utilizando los anchos de breakpoint mínimo y máximo:
+
+<Preview>
+  <Story
+		name="Responsivo breakpoints Solo"
+		height="100px"
+	>
+		{`@include media-breakpoint-only(xs) { ... }<br/>
+			@include media-breakpoint-only(sm) { ... }<br/>
+			@include media-breakpoint-only(md) { ... }<br/>
+			@include media-breakpoint-only(lg) { ... }<br/>
+			@include media-breakpoint-only(xl) { ... }`}
+	</Story>
+</Preview>
+
+Del mismo modo, los media queries pueden abarcar varios anchos de breakpoint:
+
+<Preview>
+  <Story
+		name="Responsivo breakpoints Entre"
+		height="30px"
+	>
+		{`@include media-breakpoint-between(md, lg) { ... }`}
+	</Story>
+</Preview>
