@@ -94,7 +94,7 @@ El sistema de grilla utiliza una serie de contenedores, filas y columnas para di
 
 ## Breackpoints
 
-Lorem ipsum
+Para las grids que son iguales desde el dispositivo más pequeño hasta el más grande, use las clases .col y .*:col. Especifique una clase numerada cuando necesite una columna de tamaño particular; de lo contrario, siéntase libre de apegarse a .col.
 
 ### Breackpoint SM
 
@@ -192,11 +192,11 @@ Lorem ipsum
 </Preview>
 
 
-## Offset
+## Offset centrar
 
 <Preview>
   <Story
-		name="Offset"
+		name="Offset centrar"
 		height="60px"
 	>
 		{`<div class="container-fluid">
@@ -220,6 +220,106 @@ Lorem ipsum
 				<div class="row">
 					<div class="col-7 mx-auto">
 						<span class="d-block fz-md text-white text-center bg-default p-10">.col-7 .mx-auto</span>
+					</div>
+				</div>
+			</div>`}
+	</Story>
+</Preview>
+
+## Offset 2 Columnas
+
+<Preview>
+  <Story
+		name="Offset 2 Columnas"
+		height="60px"
+	>
+		{`<div class="container-fluid">
+				<div class="row">
+					<div class="text-center bg-default p-10 md:col-5 md:offset-1">
+						<span class="fz-md text-white">.md:col-5 .md:offset-1</span>
+					</div>
+					<div class="text-center bg-default p-10 md:col-5 md:offset-1">
+						<span class="fz-md text-white">.col-md-5 .md:offset-1</span>
+					</div>
+				</div>
+			</div>`}
+	</Story>
+</Preview>
+
+## Columnas ancho fijo
+
+<Preview>
+  <Story
+		name="Columnas ancho fijo"
+		height="60px"
+	>
+		{`<div class="container-fluid">
+				<div class="row">
+					<div class="col-auto bg-default p-10" style="width:300px;">
+						<span class="d-block fz-md text-white text-center">.col-auto width 300px</span>
+					</div>
+					<div class="col bg-primary p-10">
+						<span class="d-block fz-md text-white text-center">.col</span>
+					</div>
+				</div>
+			</div>`}
+	</Story>
+</Preview>
+
+<Preview>
+  <Story
+		name="Columnas ancho fijo 2"
+		height="60px"
+	>
+		{`<div class="container-fluid">
+				<div class="row">
+					<div class="col-auto bg-default p-10" style="width:200px;">
+						<span class="d-block fz-md text-white text-center">col-auto width 200px</span>
+					</div>
+					<div class="col bg-primary p-10">
+						<span class="d-block fz-md text-white text-center">.col</span>
+					</div>
+					<div class="col-auto bg-default p-10" style="width:200px;">
+						<span class="d-block fz-md text-white text-center">col-auto width 200px</span>
+					</div>
+				</div>
+			</div>`}
+	</Story>
+</Preview>
+
+<Preview>
+  <Story
+		name="Columnas ancho fijo 3"
+		height="60px"
+	>
+		{`<div class="container-fluid">
+				<div class="row">
+					<div class="col-auto bg-default p-10" style="width:20%;">
+						<span class="d-block fz-md text-white text-center">.col-auto width 20%</span>
+					</div>
+					<div class="col bg-primary p-10">
+						<span class="d-block fz-md text-white text-center">.col</span>
+					</div>
+					<div class="col-auto bg-default p-10" style="width:30%;">
+						<span class="d-block fz-md text-white text-center">.col-auto width 30%</span>
+					</div>
+				</div>
+			</div>`}
+	</Story>
+</Preview>
+
+<Preview>
+  <Story
+		name="Columnas ancho fijo 4"
+		height="60px"
+	>
+		{`<div class="container-fluid">
+				<div class="row">
+					<div class="col bg-primary p-10">
+						<span class="d-block fz-md text-white text-center">.col</span>
+					</div>
+					<div class="col-auto bg-default p-10" style="width:300px;">
+						<span class="d-block fz-md text-white text-center">.col-auto width 300px</span>
 					</div>
 				</div>
 			</div>`}
