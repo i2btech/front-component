@@ -1,0 +1,32 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+
+<Meta title="Componentes/Panels" />
+
+## Panels
+
+Para encerrar cierto contenido dentro de una caja puedes hacer uso de un panel 
+un ejemplo sencillo es aplicar la clase __.panel__ a un elemento div.	
+
+~~~
+<div class="panel">
+  <span>Este es un panel.<span/>
+</div>
+~~~
+
+Puedes cambiar el color de fondo, padding y margenes al panel usando clases de utilidades, para más información 
+consulta la sección de utilidades.
+
+<Preview>
+  <Story name="Básico" height="160px">
+		{
+      `<!-- PANEL 1 -->
+      <div class="panel bg-black text-white p-15">
+        <span>Ejemplo 1: panel</span>
+      </div>
+      <!-- PANEL 2 -->
+      <div class="panel bg-default text-white p-10">
+        <span>Ejemplo 2: panel</span>
+      </div>`
+    }
+	</Story>
+</Preview>

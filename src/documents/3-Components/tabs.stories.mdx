@@ -1,0 +1,61 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+import  '../../js/main.js';
+
+<Meta title="Componentes/Tabs" />
+
+## Tabs
+
+Los tabs se usan para separar el contenido en diferentes paneles donde cada panel se puede ver uno a la vez. las clases mas relevantes para un componente de tabs son: **tabs, tabs__link, tab__content, tab--active**
+
+Tenga en cuenta que puede darle un mejor estilo haciendo uso de utilidades, para más información 
+consulta la sección de utilidades.
+
+
+## Tab horizontal
+
+El siguiente es un ejemplo de un tab horizontal
+<Preview>
+  <Story name="Tab horizontal" height="160px">
+		{
+      `<div class="tabs bd">
+        <div class="tabs__link">
+            <div class="tab__link tab--active" data-js="tab" data-open="#tab-1" data-group="tabs">Tab 1</div>
+            <div class="tab__link" data-js="tab" data-open="#tab-2" data-group="tabs">Tab 2</div>
+            <div class="tab__link" data-js="tab" data-open="#tab-3" data-group="tabs">Tab 3</div>
+        </div>
+        <div class="tab__content tab--active" id="tab-1" group-cont="tabs">Tab Contenido 1</div>
+        <div class="tab__content" id="tab-2" group-cont="tabs">Tab Contenido 2</div>
+        <div class="tab__content" id="tab-3" group-cont="tabs">Tab Contenido 3</div>
+        </div>
+        `
+    }
+	</Story>
+</Preview>
+
+
+## Tab vertical
+
+El siguiente es un ejemplo de un tab vertical tenga en cuenta que el tab vertical usa la clase **tabs-vtl**
+<Preview>
+  <Story name="Tab vertical" height="160px">
+		{
+      `<div class="tabs-vtl clear bd">
+        <div class="tabs__link">
+            <div class="tab__link tab--active" data-js="tab" data-open="#tab2-1" data-group="tabs2">Tab 1</div>
+            <div class="tab__link" data-js="tab" data-open="#tab2-2" data-group="tabs2">Tab 2</div>
+            <div class="tab__link" data-js="tab" data-open="#tab2-3" data-group="tabs2">Tab 3</div>
+        </div>
+        <div class="tab__content tab--active" id="tab2-1" group-cont="tabs2">Tab Contenido 1</div>
+        <div class="tab__content" id="tab2-2" group-cont="tabs2">Tab Contenido 2</div>
+        <div class="tab__content" id="tab2-3" group-cont="tabs2">Tab Contenido 3</div>
+        </div>`
+    }
+	</Story>
+</Preview>
+
+Para la parte funcional de los tab use la siguiente línea javascript la cual llama una función **iTabs()** basado 
+en el atributo **data-js="tab"**.
+
+~~~
+$js('tab').iTabs();
+~~~

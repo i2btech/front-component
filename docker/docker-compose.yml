@@ -1,25 +1,25 @@
 version: '3'
 services:
-  build:
+  gulp:
     container_name: i2btech-fc-build
     hostname: i2btech-fc-build
-    image: node:13
+    image: node:14.4
     env_file: common.env
     working_dir: /app
     volumes:
       - ../:/app
-    command: [ "/bin/bash", "-c", "npm install && npm install --global gulp-cli && gulp" ]
+    command: [ "/bin/bash", "-c", "docker/bin/start.sh" ]
     ports:
       - 3000:3000
       - 3001:3001
   storybook:
     container_name: i2btech-storybook
-    image: node:13
+    image: node:14.4
     working_dir: /app
     volumes:
       - ../:/app
-    command: [ "/bin/bash", "-c", "npm install && npm run docker:storybook"]
+    command: [ "/bin/bash", "-c", "docker/bin/wait-for-it.sh -t 360 i2btech-fc-build:3000 -- npm run docker:storybook"]
     ports:
       - 65200:65200
     depends_on: 
-      - build
+      - gulp

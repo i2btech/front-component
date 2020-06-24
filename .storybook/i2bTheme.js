@@ -22,13 +22,13 @@ export default create({
 
   // Toolbar default and active colors
   barTextColor: '#fff',
-  barSelectedColor: 'black',
+  barSelectedColor: '#d71f26',
   barBg: 'black',
 
   // Form colors
   inputBg: 'white',
   inputBorder: 'silver',
-  inputTextColor: 'black',
+  inputTextColor: '#fff',
   inputBorderRadius: 4,
 
   brandTitle: 'I2B Intelligence to Business',

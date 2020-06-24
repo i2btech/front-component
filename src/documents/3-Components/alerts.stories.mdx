@@ -1,0 +1,99 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+
+<Meta title="Componentes/Alerts" />
+
+## Alerts
+
+Mensajes contextuales con acciones típicas en una aplicación.
+Los mensajes de alerta están disponibles para cualquier longitud de texto y contienen un botón de cerrar. 
+
+Los alerts se crean con la clase **alert** seguida de una clase de contexto. Las clases de contexto son:
+
+1. **alert--success:** Alerta de éxito.
+2. **alert--warning:** Alerta de advertencia.
+3. **alert--danger:** Alerta de error.
+4. **alert--info:** Alerta de información.
+
+### Alert success
+
+Indica una acción exitosa o positiva.
+
+<Preview>
+    <Story name="Alert success" height="50px">
+		{
+            `<div class="alert alert--success mt-10">
+            <a class="alert__btn-close" href="javascript:;" onclick="this.parentElement.style.display='none'">×</a>
+            <span>Success Lorem ipsum dolor sit amet.</span>
+            </div>`
+        }
+	</Story>
+</Preview>
+
+
+### Alert warning
+
+Indica indica una advertencia que podría necesitar atención.
+
+<Preview>
+    <Story name="Alert warning" height="50px">
+		{
+            `<div class="alert alert--warning mt-10">
+                <a class="alert__btn-close" href="javascript:;" onclick="this.parentElement.style.display='none'">×</a>
+                <span>Warning Lorem ipsum dolor sit amet.</span>
+            </div>`
+        }
+	</Story>
+</Preview>
+
+### Alert danger
+
+Indica indica un error o una acción negativa.
+
+<Preview>
+    <Story name="Alert danger" height="50px">
+		{
+            `<div class="alert alert--danger mt-10">
+                <a class="alert__btn-close" href="javascript:;" onclick="this.parentElement.style.display='none'">×</a>
+                <span>Danger Lorem ipsum dolor sit amet.</span>
+            </div>`
+        }
+	</Story>
+</Preview>
+
+
+### Alert info
+
+Indica un cambio o acción informativa neutral.
+
+<Preview>
+    <Story name="Alert info" height="50px">
+		{
+            `<div class="alert alert--info mt-10">
+                <a class="alert__btn-close" href="javascript:;" onclick="this.parentElement.style.display='none'">×</a>
+                <span>Information Lorem ipsum dolor sit amet.</span>
+            </div>`
+        }
+	</Story>
+</Preview>
+
+### Alert con título
+
+A continuación dos ejemplo de mensajes de alerta con título.
+
+<Preview>
+  <Story name="Alerts titulo" height="160px">
+		{
+            `<div class="alert alert--success mt-10">
+                <a class="alert__btn-close" href="javascript:;" onclick="this.parentElement.style.display='none'">×</a>
+                <h5 class="fz-18">Título</h5>
+                <div class="mt-10"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, tempore.</span></div>
+            </div>  
+            <div class="alert alert--danger mt-10">
+                <a class="alert__btn-close" href="javascript:;" onclick="this.parentElement.style.display='none'">×</a>
+                <h5 class="fz-18">Título</h5>
+                <div class="mt-10"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, tempore.</span></div>
+            </div>`
+        }
+	</Story>
+</Preview>
+
