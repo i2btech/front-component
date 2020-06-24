@@ -14,7 +14,6 @@ $(function () {
 
 	setTimeout(() => {
 	// Tabs
-	$js('tab').iTabs();
 
 	// Collapses
 	const $collapse = $js('collapse');

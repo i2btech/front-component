@@ -1,0 +1,44 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+import  '../../js/main.js';
+
+<Meta title="Componentes/Navigation" />
+
+## Navigation
+
+Es un elemento que nos permite navegar entre las diferentes páginas de una aplicación web.
+El navigation esta compuesto por una capa contenedora con la clase **nav**, dentro contiene 
+elementos hijos con las clases  **nav__item nav--button** y la clase **nav__item--active** que determina el elemento activo en 
+el navigation.
+
+A continuación 2 ejemplos de Navigation.
+
+### Basic Navigation 
+
+<Preview>
+  <Story name="Basic navigation" height="80px">
+		{
+        `<div class="nav bg-black text-white mt-10">
+            <a class="nav__item nav--button nav__item--active text-white" href="#">Home</a>
+            <a class="nav__item nav--button text-white" href="#">Link 1</a>
+            <a class="nav__item nav--button text-white" href="#">Link 2</a>
+            <a class="nav__item nav--button text-white" href="#">Link 3</a>
+        </div>`
+    }
+	</Story>
+</Preview>
+
+
+### Vertical Navigation 
+
+<Preview>
+  <Story name="Vertical basic navigation" height="160px">
+		{
+        `<div class="nav-vert bg-black text-white mt-10" style="max-width:150px;">
+            <a class="nav-vert__item nav--button active text-white" href="#">Home</a>
+            <a class="nav-vert__item nav--button text-white" href="#">Link 1</a>
+            <a class="nav-vert__item nav--button text-white" href="#">Link 2</a>
+            <a class="nav-vert__item nav--button text-white" href="#">Link 3</a>
+        </div>`
+        }
+	</Story>
+</Preview>

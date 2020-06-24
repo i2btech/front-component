@@ -5,25 +5,125 @@ import  '../../js/main.js';
 
 <Meta title="Componentes/Collapse" />
 
-Una Card es un contenedor de contenido flexible y extensible. Incluye opciones para encabezados y pies de página, una amplia variedad de contenido, colores de fondo contextuales y  opciones de visualización.
 
-## Ejemplo
+Si desea ocultar o mostrar contenido de forma plegable use este componente. A continuación se muestran ejemplos de este componente **Collapse**
 
-A continuación se muestra un ejemplo de una tarjeta básica con contenido mixto y un ancho fijo. Las tarjetas no tienen un ancho fijo para comenzar, por lo que, naturalmente, ocuparán todo el ancho de su elemento padre. Esto se personaliza fácilmente con la diversas  opciones de tamaño
+### Collapse abrir el primero
+
+El siguiente ejemplo es un collapse que se abre de forma automatica al recargar la página, fijese en
+el comportamiento del primer collapse al recargar la página.
 
 <Preview>
-  <Story
-    name="Collapse basico"
-    height="200px"
-    parameters={{ docs: { transformSource: (src) => `transformed: ${src}` } }}
-  >
+  <Story name="Collapse abrir el primero" height="250px">
     {`<div class="collapse mt-20">
-        <div class="collapse__item">
-            <h3 class="collapse__title" data-js="collapse-group" data-open="#group1-1" data-group="group1">Collapse Seccción #1</h3><div class="collapse__content" id="group1-1" group-cont="group1" style="display: none;"><p class="fz-14">Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.</p></div></div><div class="collapse__item"><h3 class="collapse__title" data-js="collapse-group" data-open="#group1-2" data-group="group1">Collapse Seccción #2</h3><div class="collapse__content" id="group1-2" group-cont="group1" style="display: none;"><p class="fz-14">Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.</p></div></div></div>
-    `}
+      <div class="collapse__item">
+          <h3 class="collapse__title" data-js="collapse-group-first" data-open="#groupf-1" data-group="groupf">Collapse Seccción #1</h3>
+          <div class="collapse__content" id="groupf-1" group-cont="groupf">
+            <p class="fz-14">Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.</p>
+          </div>
+      </div>
+      <div class="collapse__item">
+          <h3 class="collapse__title" data-js="collapse-group-first" data-open="#groupf-2" data-group="groupf">Collapse Seccción #2</h3>
+          <div class="collapse__content" id="groupf-2" group-cont="groupf">
+            <p class="fz-14">Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.</p>
+          </div>
+      </div>
+    </div>`}
   </Story>
 </Preview>
 
-## Codigo Javascript
+El código javascrip encargado de este comportamiento es el siguiente:
+
+~~~
+$js('collapse-group-first').iCollapse({
+  open: 'first',
+  time: 800
+});
+~~~
+
+
+### Collapse basico
+
+<Preview>
+  <Story name="Collapse basico" height="200px">
+    {`<div class="collapse mt-20">
+        <div class="collapse__item">
+            <h3 class="collapse__title" data-js="collapse-group" data-open="#group1-1" data-group="group1">Collapse Seccción #1</h3>
+            <div class="collapse__content" id="group1-1" group-cont="group1" style="display: none;">
+              <p class="fz-14">Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.</p>
+            </div>
+        </div>
+        <div class="collapse__item">
+            <h3 class="collapse__title" data-js="collapse-group" data-open="#group1-2" data-group="group1">Collapse Seccción #2</h3>
+            <div class="collapse__content" id="group1-2" group-cont="group1" style="display: none;">
+              <p class="fz-14">Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.</p>
+            </div>
+        </div>
+      </div>`
+    }
+  </Story>
+</Preview>
+
+
+### Collapse acordeon
+
+El Collapse tipo acordeon a continuación es un ejemplo que contiene 3 botones uno que se encarga de abrir, otro para cerrar y el 
+último tipo toggle.
+
+<Preview>
+  <Story name="Collapse acordeon" height="400px">
+    {`
+    <button class="btn bg-default text-white mt-20" data-js="wc-open">Abrir opción 2</button>
+    <button class="btn bg-default text-white mt-20" data-js="wc-close">Cerrar opción 2</button>
+    <button class="btn bg-default text-white mt-20" data-js="wc-toggle">Toggle opción 2</button>
+    <div class="collapse mt-20">
+      <div class="collapse__item">
+          <h3 class="collapse__title active" data-js="collapse-group" data-open="#group1-1" data-group="group1">Collapse Seccción #1</h3>
+          <div class="collapse__content active" id="group1-1" group-cont="group1" style="display: block;">
+            <p class="fz-14">Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.</p>
+          </div>
+      </div>
+      <div class="collapse__item">
+          <h3 class="collapse__title" data-js="collapse-group" data-open="#group1-2" data-group="group1">Collapse Seccción #2</h3>
+          <div class="collapse__content" id="group1-2" group-cont="group1" style="display: none;">
+            <p class="fz-14">Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.</p>
+          </div>
+      </div>
+      <div class="collapse mt-20">
+        <div class="collapse__item">
+            <h3 class="collapse__title" data-js="collapse-group" data-open="#group1-3" data-group="group1">Collapse Seccción #3</h3>
+            <div class="collapse__content" id="group1-3" group-cont="group1" style="display: none;">
+              <p class="fz-14">Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.</p>
+            </div>
+        </div>
+      </div>
+    </div>`}
+  </Story>
+</Preview>
+
+El código javascript que se encarga del comportamiento de los elementos collapse al dar click en los botones es el siguieinte:
+
+~~~
+  const $collapseGroup = $js('collapse-group');
+	$collapseGroup.iCollapse();
+
+  $js('wc-open').on('click', function (e) {
+		e.preventDefault();
+		$collapseGroup.filter(':eq(1)').iCollapse('show');
+	});
+
+	$js('wc-close').on('click', function (e) {
+		e.preventDefault();
+		$collapseGroup.filter(':eq(1)').iCollapse('hide');
+	});
+
+	$js('wc-toggle').on('click', function (e) {
+		e.preventDefault();
+		$collapseGroup.filter(':eq(1)').iCollapse('toggle');
+	});
+~~~
+
+
+
 
 

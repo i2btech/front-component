@@ -1,0 +1,21 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+import  '../../js/main.js';
+
+<Meta title="Componentes/Lazyload" />
+
+## Lazyload
+
+<Preview>
+  <Story name="lazyload" height="80px">
+		{
+        `<div class="buttons mt-10 text-white">
+            <button class="btn bg-primary d-inline-block">Show all</button>
+            <button class="btn bg-primary d-inline-block sm:d-none">Show xs</button>
+            <button class="btn bg-primary d-none sm:d-inline-block md:d-none">Show sm</button>
+            <button class="btn bg-primary d-none md:d-inline-block lg:d-none">Show md</button>
+            <button class="btn bg-primary d-none lg:d-inline-block xl:d-none">Show lg</button>
+            <button class="btn bg-primary d-none xl:d-inline-block">Show xl</button>
+        </div>`
+    }
+	</Story>
+</Preview>
