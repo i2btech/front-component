@@ -1,0 +1,39 @@
+import { Meta, Preview, Story } from "@storybook/addon-docs/blocks";
+
+<Meta title="Utilidades/Float" />
+
+# Float
+
+Aplica un flotante personalizado en cualquier 
+punto de interrupción
+
+**float** **-** **{value}**
+
+- **float-none** 
+- **float-right**
+- **float-left**
+
+<Preview>
+    <Story name="Float" height="130px">
+        {`<div class="bd p-10 mb-10" style="height: 116px; background: #e0e0e0;">
+           <div class="bd mb-10 p-10 float-none">Float None</div>
+           <div class="bd p-10 float-left">Float Left</div>
+           <div class="bd p-10 float-right">Float Right</div>
+        </div>`}
+    </Story>
+</Preview>
+
+También podemos personalizar para aplicarlas en función de varios puntos de interrupción.
+
+- **sm**: 640px **=>** sm:float-{value}
+- **md**: 768px **=>** md:float-{value}
+- **lg**: 1024px **=>** lg:float-{value}
+- **xl**: 1280px **=>** xl:float-{value}
+
+~~~
+<div class="sm:float-none md:float-left ">
+    <div>
+        Float
+    </div>
+</div>
+~~~
