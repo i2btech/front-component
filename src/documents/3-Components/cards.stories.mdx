@@ -12,36 +12,71 @@ A continuación se muestra un ejemplo de una tarjeta básica con contenido mixto
 
 <Preview>
   <Story
-    name="Card"
-    height="600px"
+    name="Basic"
+    height="450px"
     parameters={{ docs: { transformSource: (src) => `transformed: ${src}` } }}
   >
     {`<div class="mt-10">
         <div class="card" style="max-width:300px;">
-        <img src="/avatar.jpg" alt="Avatar" style="width:100%;height:auto">
-    <div class="body p-10">
-        <h2 class="fz-20">Titulo de la tarjeta</h2>
-        <p class="mt-10">Algún texto de ejemplo rápido para construir sobre el título de la tarjeta y conformar la mayor parte del contenido de la tarjeta.</p>
-    </div>
-    </div>
-   </div>`}
+          <img src="/avatar.jpg" alt="Avatar" style="width:100%;height:auto">
+          <div class="body p-10">
+            <h2 class="fz-20">Titulo de la tarjeta</h2>
+            <p class="mt-10">Algún texto de ejemplo rápido para construir sobre el título de la tarjeta y conformar la mayor parte del contenido de la tarjeta.</p>
+          </div>
+        </div>
+     </div>`}
   </Story>
 </Preview>
 
 
-## Tipos de contenido
+# Tipos de contenido
 Las tarjetas admiten una amplia variedad de contenido, incluidas imágenes, texto, grupos de listas, enlaces y más. A continuación hay ejemplos de lo que se admite.
 
-## Cuerpo
-El bloque de construcción de una tarjeta es el .card-body. Úselo siempre que necesite una sección acolchada dentro de una tarjeta.
+## Header y footer
 
-<Preview>
+ Agregue un encabezado y / o pie de página opcional dentro de una tarjeta.
+
+ <Preview>
   <Story
-    name="Card con cuerpo"
+    name="Header y footer"
     height="200px"
     parameters={{ docs: { transformSource: (src) => `transformed: ${src}` } }}
   >
-    {`<div class="card-4 p-20" style="max-width:300px;"><span>Este es otra card.</span></div>`}
+    {
+      `<div class="card" style="max-width:300px;">
+        <header class="bg-primary p-10">
+          <h2>Título</h2>
+        </header>
+        <div class="body p-10">
+          <p>Algún texto de ejemplo rápido para construir sobre el título de la tarjeta y conformar la mayor parte del contenido de la tarjeta.</p>
+        </div>
+        <footer class="bg-default p-10"><span>Footer</span></footer>
+      </div>`}
+  
   </Story>
 </Preview>
+
+## Cuerpo
+El bloque de construcción de una tarjeta es el ´.body´. Úselo siempre que necesite una sección dentro de una tarjeta.
+
+<Preview>
+  <Story
+    name="Cuerpo"
+    height="100px"
+    parameters={{ docs: { transformSource: (src) => `transformed: ${src}` } }}
+  >
+    {`<div class="body card-4 p-20" style="max-width:300px;">
+            <span>Este es otra card.</span>
+      </div>`}
+  </Story>
+</Preview>
+
+## Dimensionamiento
+
+Las Cards se suponen que no tienen un ancho de inicio específico , por lo que serán 100% de ancho a menos que se indique lo contrario. Puede cambiar esto según sea necesario con CSS personalizado, clases de cuadrícula, mixins de Sass de cuadrícula o utilidades.
+
+## Usando utilidades
+
+ Use nuestro set de utilidades de tamaño disponibles para establecer rápidamente el ancho de una tarjeta.
+
 

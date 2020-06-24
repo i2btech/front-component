@@ -1,0 +1,27 @@
+import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
+
+# List
+
+<Meta title="Componentes/List" />
+
+Las listas son un componente flexible y poderoso para mostrar una serie de contenido.
+
+### Ejemplo
+
+<Preview>
+  <Story
+    name="Basic"
+    height="120px"
+    parameters={{ docs: { transformSource: (src) => `transformed: ${src}` } }}
+  >
+    {`<div class="mt-10"> 
+        <ul class="mt-10">
+            <li>Cras justo odio</li>
+            <li>Dapibus ac facilisis in</li>
+            <li>Morbi leo risus</li>
+            <li>Porta ac consectetur ac</li>
+            <li>Vestibulum at eros</li>
+        </ul>
+      </div>`}
+  </Story>
+</Preview>

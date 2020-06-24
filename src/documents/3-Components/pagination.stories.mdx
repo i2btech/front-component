@@ -1,0 +1,156 @@
+import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
+
+# Paginación
+
+<Meta title="Componentes/Paginación" />
+
+La paginación se usa para indicar que existe una serie de contenido relacionado en varias páginas.
+
+La paginación se crea con elementos HTML de lista para que los lectores de pantalla puedan anunciar la cantidad de enlaces disponibles. Use la clase `nav` en el contenedor de los enlaces para identificarlo como una sección de navegación.
+
+
+
+### Ejemplo básico
+
+<Preview>
+  <Story
+    name="Basic"
+    height="50px"
+    parameters={{ docs: { transformSource: (src) => `transformed: ${src}` } }}
+  >
+    {`<div class="nav mt-10">
+        <a class="nav--button" href="#">«</a>
+        <a class="nav--button bg-default text-white" href="#">1</a>
+        <a class="nav--button" href="#">2</a>
+        <a class="nav--button" href="#">3</a>
+        <a class="nav--button" href="#">4</a>
+        <a class="nav--button" href="#">5</a>
+        <a class="nav--button" href="#">»</a>
+      </div>`}
+  </Story>
+</Preview>
+
+## Dimensionamiento de Paginación
+
+Si necesitas una paginación más grande o más pequeña, agregar la clase `.fz-<Tamaño>`. Esta clase contiene tamaños adicionales de acuerdo a lo requerido.
+
+### Ejemplo Dimensionamiento
+
+<Preview>
+  <Story
+    name="Dimensionamiento"
+    height="150px"
+    parameters={{ docs: { transformSource: (src) => `transformed: ${src}` } }}
+  >
+    {`<div class="nav fz-12 mt-10">
+        <a class="nav--button" href="#">«</a>
+        <a class="nav--button bg-default text-white" href="#">1</a>
+        <a class="nav--button" href="#">2</a>
+        <a class="nav--button" href="#">3</a>
+        <a class="nav--button" href="#">4</a>
+        <a class="nav--button" href="#">5</a>
+        <a class="nav--button" href="#">»</a>
+      </div>
+      <div class="nav fz-15 mt-10">
+        <a class="nav--button" href="#">«</a>
+        <a class="nav--button bg-default text-white" href="#">1</a>
+        <a class="nav--button" href="#">2</a>
+        <a class="nav--button" href="#">3</a>
+        <a class="nav--button" href="#">4</a>
+        <a class="nav--button" href="#">5</a>
+        <a class="nav--button" href="#">»</a>
+      </div>
+      <div class="nav fz-18 mt-10">
+        <a class="nav--button" href="#">«</a>
+        <a class="nav--button bg-default text-white" href="#">1</a>
+        <a class="nav--button" href="#">2</a>
+        <a class="nav--button" href="#">3</a>
+        <a class="nav--button" href="#">4</a>
+        <a class="nav--button" href="#">5</a>
+        <a class="nav--button" href="#">»</a>
+      </div>
+      `}
+  </Story>
+</Preview>
+
+
+## Paginación con Bordes
+
+Si necesita una paginación que contenga bordes, agregar la clase `.bd` para especificar un border.
+
+### Ejemplo con bordes
+
+<Preview>
+  <Story
+    name="Bordes"
+    height="50px"
+    parameters={{ docs: { transformSource: (src) => `transformed: ${src}` } }}
+  >
+    {`<div class="nav bd d-inline-block mt-10">
+        <a class="nav--button" href="#">«</a>
+        <a class="nav--button bg-default text-white" href="#">1</a>
+        <a class="nav--button" href="#">2</a>
+        <a class="nav--button" href="#">3</a>
+        <a class="nav--button" href="#">4</a>
+        <a class="nav--button" href="#">5</a>
+        <a class="nav--button" href="#">»</a>
+      </div>
+      `}
+  </Story>
+</Preview>
+
+
+
+
+## Alineación
+
+Si requier que su paginación se encuentre alineada, agregar dentro de un contenedor `div` con clase correspondiente a la alinineación.
+
+### Ejemplo con Alineación
+
+<Preview>
+  <Story
+    name="Alineación"
+    height="50px"
+    parameters={{ docs: { transformSource: (src) => `transformed: ${src}` } }}
+  >
+    {`<div class="text-center">
+        <div class="nav bd d-inline-block mt-10">
+          <a class="nav--button" href="#">«</a>
+          <a class="nav--button bg-default text-white" href="#">1</a>
+          <a class="nav--button" href="#">2</a>
+          <a class="nav--button" href="#">3</a>
+          <a class="nav--button" href="#">4</a>
+          <a class="nav--button" href="#">5</a>
+          <a class="nav--button" href="#">»</a>
+        </div>
+      </div>
+      `}
+  </Story>
+</Preview>
+
+
+## Paginación con iconos.
+
+Puede agregar un icono o símbolo en lugar de texto para algunos enlaces de paginación.
+
+
+### Ejemplo con iconos
+
+<Preview>
+  <Story
+    name="Iconos"
+    height="100px"
+    parameters={{ docs: { transformSource: (src) => `transformed: ${src}` } }}
+  >
+    {`<div class="nav bd mt-10">
+        <a class="nav--button" href="#">❮ Anterior</a>
+        <a class="nav--button float-right" href="#">Proximo ❯</a>
+      </div>
+      <div class="nav bd mt-10">
+        <a class="nav--button bd-right" href="#">❮</a>
+        <a class="nav--button float-right bd-left" href="#">❯</a>
+      </div>
+      `}
+  </Story>
+</Preview>

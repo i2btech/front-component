@@ -1,0 +1,52 @@
+import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
+
+# Tooltips
+
+<Meta title="Componentes/Tooltips" />
+
+Los tooltips son sugerencias textuales pequeñas e interactivas para elementos principalmente gráficos. Al usar íconos para acciones, puede usar una información sobre herramientas para aclarar a las personas sobre su función.
+
+## Ejemplo
+
+Desplácese sobre los enlaces a continuación para ver información sobre los elementos:
+
+<Preview>
+  <Story
+    name="Default"
+    height="100px"
+    parameters={{ docs: { transformSource: (src) => `transformed: ${src}` } }}
+  >
+    {`<div  style="display: inline">
+        <div class="ml-20 mt-30 tooltip">Tooltips Default
+            <span class="tooltip__text">Tooltips Default</span>
+        </div>
+        <div class="ml-20 tooltip">Tooltips Left
+            <span class="tooltip__text tooltip__text--left">Tooltips Left</span>
+        </div>
+        <div class="ml-20 tooltip">Tooltips Right
+            <span class="tooltip__text tooltip__text--right">Tooltips Right</span>
+        </div>
+        <div class="ml-20 tooltip">Tooltips Top
+            <span class="tooltip__text tooltip__text--top">Tooltips Top</span>
+        </div>
+        <div class="ml-20 tooltip">Tooltips Bottom
+            <span class="tooltip__text tooltip__text--bottom">Tooltips Bottom</span>
+        </div>
+        <div class="ml-20 tooltip">Tooltips Animation
+            <span class="tooltip__text tooltip__text--ani">Fade In Tooltips (Animation)</span>
+        </div>
+    </div>
+    `}
+</Story>
+</Preview>
+
+Para visualizar las su textuales simplemente agregue la clase `tooltip__text tooltip__text--right` a cualquier contanedor con la clase `.tooltip`.
+
+Las clases puede variar teniendo en cuenta la ubicación donde quiere que se visualice la sugerencia textual.
+
+- **Default**: `tooltip__text`
+- **Left**: `tooltip__text tooltip__text--left`
+- **Right**: `tooltip__text tooltip__text--right`
+- **Top**: `tooltip__text tooltip__text--top`
+- **Bottom**: `tooltip__text tooltip__text--bottom`
+- **Animated**: `tooltip__text tooltip__text--ani`
