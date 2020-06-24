@@ -1,0 +1,42 @@
+import { Meta, Preview, Story } from "@storybook/addon-docs/blocks";
+
+<Meta title="Utilidades/Background" />
+
+## Background
+
+Eestablezca fácilmente el fondo de un elemento en cualquier clase contextual. 
+
+**{bg}** **-** **{value}**
+- **bg-dafault**
+- **bg-primary**
+- **bg-secondary**
+- **bg-black**
+- **bg-white**
+
+<Preview>
+    <Story name="Background" height="250px">
+        {`<div class="bd p-10 d-block mb-10" style="background: #e0e0e0;">
+            <div class="bd p-10 bg-default">
+                Background Default
+            </div>
+            <div class="bd p-10 bg-primary">
+                Background Primary
+            </div>
+            <div class="bd p-10 bg-secondary">
+                Background Secondary
+            </div>
+             <div class="bd p-10 bg-black" style="color: #fff">
+                Background Black
+            </div>
+             <div class="bd p-10 bg-white">
+                Background White
+            </div>
+        </div>
+        
+       `}
+    </Story>
+</Preview>
+
+## Opciones
+
+Puede encontrar y personalizar estas variables para opciones globales en **/src/scss/_config.scss**
