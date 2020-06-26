@@ -1,2 +1,2 @@
 
-import '/app/dev/assets/css/main.css';
+import '../../../dev/assets/css/main.css';
