@@ -11,3 +11,4 @@ prod/
 .idea
 docker/common.env
 docker/.env
+storybook-static
