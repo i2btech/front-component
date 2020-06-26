@@ -1,0 +1,68 @@
+import { Meta, Preview, Story } from "@storybook/addon-docs/blocks";
+
+<Meta title="Utilidades/Sizing" />
+
+# Sizing
+
+Haga fácilmente un elemento tan ancho o tan alto
+
+- **w** **-** **{value}**
+- **h** **-** **{value}**
+
+Las utilidades de ancho y alto se generan en **/src/scss/_config.scss**,
+Modifique esos valores según lo necesite para generar diferentes utilidades aquí. 
+Incluye soporte para:
+
+## Width:
+- auto: auto
+- full: 100%
+- screen: 100vw
+- 1: 20%
+- 2: 40%
+- 3: 60% 
+- 4: 80%
+
+## Height
+- auto: auto
+- full: 100%
+- screen: 100vh
+- 50: 50px
+
+<Preview>
+    <Story name="Sizing" height="450px">
+        {`
+        <div class="" style="height: 200px">
+            <div class="bd p-10 mb-10 w-auto h-50 bg-default text-white">
+                Ancho Auto y Alto 50px
+            </div>
+            <div class="bd p-10 mb-10 w-1 h-auto bg-primary text-white">
+                Ancho 20% y Alto auto
+            </div>
+            <div class="bd p-10 mb-10 w-2 h-50 bg-secondary text-white">
+                Ancho 40% y Alto 50px
+            </div>
+            <div class="bd p-10 mb-10 w-3 h-auto bg-default text-white">
+                Ancho 60% y Alto auto
+            </div>
+            <div class="bd p-10 w-4 h-full bg-primary text-white">
+                Ancho 80% y Alto Full
+            </div>
+        </div>
+        `}
+    </Story>
+</Preview>
+
+También podemos personalizar para aplicarlas en función de varios puntos de interrupción.
+
+- **sm**: 640px **=>**  sm:w-{value} - sm:h-{value} 
+- **md**: 768px **=>**  md:w-{value} - md:h-{value}
+- **lg**: 1024px **=>** lg:w-{value} - lg:h-{value}
+- **xl**: 1280px **=>** xl:w-{value} - xl:h-{value}
+
+~~~
+<div class="sm:w-auto md:w-2 sm:h-auto md:h-full ">
+    <div>
+        Ancho y Alto
+    </div>
+</div>
+~~~

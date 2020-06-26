@@ -1,8 +1,8 @@
 import { Meta, Preview, Story } from "@storybook/addon-docs/blocks";
 
-<Meta title="Utilidades/Prueba" />
+<Meta title="Utilidades/Aligns" />
 
-## Aligns
+# Vertical Align
 
 Cambie fácilmente la alineación vertical de los elementos en línea, 
 Tenga en cuenta que la alineación vertical solo afecta a los elementos en línea, 
@@ -17,10 +17,11 @@ bloque en línea, tabla en línea y celda de tabla.
 - **align-text-top**
 - **align-text-bottom**
 
+## Con Tablas:
+
 <Preview>
-    <Story name="Align" height="">
-        {`<h2 class="mb-30">Con celdas de tabla:</h2>
-        <div class="bd p-10 d-block mb-10" style="background: #e0e0e0;">
+    <Story name="Tablas" height="180px">
+        {`<div class="bd p-10 d-block mb-10" style="background: #e0e0e0;">
             <table style="height: 100px;">
                 <tbody>
                     <tr>
@@ -33,6 +34,21 @@ bloque en línea, tabla en línea y celda de tabla.
                     </tr>
                 </tbody>
             </table>
+        </div>`}
+    </Story>
+</Preview>
+
+## Con elementos en línea:
+
+<Preview>
+    <Story name="En linea" height="100px">
+        {`<div class="bd p-20 d-block" style="background: #e0e0e0;line-height: 1.5">
+            <span class="align-baseline"><font style="vertical-align: inherit;">línea de base </font></span>
+            <span class="align-top"><font style="vertical-align: inherit;">superior </font></span>
+            <span class="align-middle"><font style="vertical-align: inherit;">medio </font></span>
+            <span class="align-bottom"><font style="vertical-align: inherit;">inferior </font></span>
+            <span class="align-text-top"><font style="vertical-align: inherit;">text-top </font></span>
+            <span class="align-text-bottom"><font style="vertical-align: inherit;">text-bottom</font></span>
         </div>`}
     </Story>
 </Preview>
