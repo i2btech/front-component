@@ -6,9 +6,9 @@
   "license": "MIT",
   "scripts": {
     "start": "gulp",
-    "build-gulp": "gulp build",
+    "build": "gulp build",
     "prod": "gulp prod",
-    "build": "build-storybook",
+    "build-storybook": "build-storybook",
     "storybook": "start-storybook",
     "docker:start": "cd ./docker && sh app.sh up",
     "docker:container": "docker exec -ti i2btech-fc-build bash",
