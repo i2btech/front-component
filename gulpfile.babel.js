@@ -13,12 +13,9 @@ import htmlmin from 'gulp-htmlmin';
 import htmlbeautify from 'gulp-html-beautify';
 import uglify from 'gulp-uglify';
 import del from 'del';
-//import autoprefixer from 'gulp-autoprefixer';
 import webpack from 'webpack';
-//import gulpWebpack from 'webpack-stream';
 import webpackConfig from './webpack.config.js';
 
-//Variables de Templates
 let server_port = 8080;
 findPort(server_port, server_port + 10, function(ports) {
 	server_port = ports[0];
@@ -32,7 +29,6 @@ const bases = {
 	assets: 'assets/'
 };
 
-//Directorios de sistema
 const paths = {
 	styles: ['scss/**/*.scss', 'scss/*.scss'],
 	css: ['css/**/*.css', 'css/*.css'],
@@ -40,12 +36,10 @@ const paths = {
 	ts: ['ts/**/*.ts', 'ts/*.ts'],
 	js: ['js/**/*.js', 'js/*.js'],
 	jslibs: ['js/libs/**/*.js'],
-	img: ['img/**/*.+(png|jpg|gif|svg)' /*, '!img/sprites/*'*/],
-	//sprites: [bases.src + 'img/sprites/*.*'],
+	img: ['img/**/*.+(png|jpg|gif|svg)'],	
 	fonts: ['fonts/*.*']
 };
 
-//Livereload - Watch Taks HTML - CSS
 export function connect_server() {
 	return connect.server({
 		root: bases.dist,
@@ -54,33 +48,15 @@ export function connect_server() {
 	});
 }
 
-// Reload Server Function
-/*export function reload_server() {
-	setTimeout(function() {
-		return gulp.src(bases.dev).pipe(connect.reload()).on('end', function() {
-			console.log('******* NAVEGADOR ACTUALIZADO ********');
-		});
-	}, 768);
-}*/
-
-//SASS
 export function sass_task() {
-	return gulp.src(paths.styles, { cwd: bases.src })
-		//.pipe(autoprefixer({ browsers: ['last 2 versions'] }))
+	return gulp.src(paths.styles, { cwd: bases.src })	
 		.pipe(sass().on('error', sass.logError))
 		.pipe(sourcemaps.init())
 		.pipe(sourcemaps.write('./maps'))
 		.pipe(gulp.dest(bases.dist + bases.assets + 'css/'))
-		.pipe(browserSync.reload({ stream: true }))
-		//.pipe(connect.reload())
-		.pipe(plumber())
-		// Autoprefixer
-		//.pipe(sourcemaps.init({loadMaps: true}))
-		//.pipe(autoprefixer({ browsers: ['last 2 versions'] }))
-		//.pipe(sourcemaps.write('./'))
-		//.pipe(gulp.dest(bases.dist + bases.assets + 'css/'))
+		.pipe(browserSync.reload({ stream: true }))		
+		.pipe(plumber())		
 }
-//SASS
 
 export function css_min() {
 	return gulp.src(paths.css, { cwd: bases.dist })
@@ -88,7 +64,6 @@ export function css_min() {
 		.pipe(gulp.dest(bases.prod + 'css/'));
 }
 
-//PUG
 export function pug_task() {
 	return gulp.src(paths.pugs, { cwd: bases.src })
 		.pipe(plumber())
@@ -96,7 +71,6 @@ export function pug_task() {
 		.pipe(gulp.dest(bases.dist))
 		.pipe(browserSync.reload({ stream: true }))
 }
-//PUG
 
 export function html() {
   const options = {
@@ -128,28 +102,20 @@ export function scripts() {
 				resolve()
 		})
 	});
-	/*return gulp.src(bases.src + paths.js)
-		.pipe(gulpWebpack(webpackConfig, webpack))
-		.pipe(gulp.dest(bases.dist + paths.portalFiles));*/
 }
 
-//JS MIN
 export function script_min() {
 	return gulp.src(paths.js, { cwd: bases.dist })
 		.pipe(uglify())
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest(bases.prod + bases.assets + 'js/'));
 }
-//JS MIN
 
-//IMAGES
 export function images() {
 	return gulp.src(paths.img, { cwd: bases.src })
 		.pipe(plumber())
 		.pipe(imagemin([
-			//imagemin.gifsicle({interlaced: true}),
-			imagemin.mozjpeg({progressive: true}), //quality: 75,
-			//imagemin.optipng({optimizationLevel: 5}),
+			imagemin.mozjpeg({progressive: true}),			
 			imagemin.svgo({
 				plugins: [
 					{removeViewBox: true},
@@ -159,18 +125,14 @@ export function images() {
 		]))
 		.pipe(gulp.dest(bases.dist + bases.assets + 'img/'))
 }
-//IMAGES
 
-//IMAGES
 export function image_prod() {
 	return gulp.src(paths.img, { cwd: bases.dist })
 		.pipe(plumber())
 		.pipe(imagemin({ progressive: true, interlaced: true, svgoPlugins: [{ cleanupIDs: false }] }))
 		.pipe(gulp.dest(bases.prod + 'img/'))
 }
-//IMAGES
 
-//Browser Sync Dev
 export function browser_sync() {
 	return browserSync({
 		server: {
@@ -179,7 +141,6 @@ export function browser_sync() {
 	});
 }
 
-//Browser Sync Prod
 export function browser_sync_prod() {
 	return browserSync({
 		server: {
@@ -189,10 +150,10 @@ export function browser_sync_prod() {
 }
 
 export function watch_task() {
-	watch(bases.src + paths.styles[0], series('sass_task')); // , series('reload_server')
-	watch(bases.src + paths.pugs[0], series('pug_task')); // , 'reload_server'
-	watch(bases.src + paths.js[0], series('scripts')); // , 'reload_server'
-	watch(bases.src + paths.img[0], series('images')); //, 'reload_server'
+	watch(bases.src + paths.styles[0], series('sass_task'));
+	watch(bases.src + paths.pugs[0], series('pug_task'));
+	watch(bases.src + paths.js[0], series('scripts'));
+	watch(bases.src + paths.img[0], series('images'));
 }
 
 export function fonts_copy() {

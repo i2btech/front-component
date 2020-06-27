@@ -8,8 +8,7 @@
 
 extends ./inc/_layout
 
-block wStyles
-	link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.0/styles/vs2015.min.css')
+block wStyles	
 
 block variables
 	- var title = 'Home | ' + siteTitle
@@ -18,80 +17,11 @@ block wBody
 	main#home.home
 		.container-fluid
 			.row
-				.col-mnv.position-static.bg-gray-900(class="md:col-2 md:position-fixed")
-					//- Menú Navegación
-					include _menu.pug
-				
-				.p-20(class="md:col-10 md:offset-2")
-					h1 Componentes basicos
+				.p-20(class="col-12")
+					h1 Bienvenido al repositorio de componentes Front-end I2B
+					
+					section.mt-50.pb-30 Para conocer más sobre la utilización de esto componentes ingrese a la documentación 
+						a(href="https://i2btech-components.netlify.app/" target="_blank") haciendo clic aquí.
+						
 
-					//- Botones
-					section#buttons.mt-50.pb-30.bd-bottom
-						include ./components/_buttons
-
-					//- Paneles
-					section#panels.mt-50.pb-30.bd-bottom
-						include ./components/_panels
-
-					//- Cards
-					section#cards.mt-50.pb-30.bd-bottom
-						include ./components/_cards
-
-					//- Grillas
-					section#grids.mt-50.pb-30.bd-bottom
-						include ./components/_grids
-
-					//- Responsive
-					section#responsive.mt-50.pb-30.bd-bottom
-						include ./components/_responsive
-
-					//- Alertas
-					section#alerts.mt-50.pb-30.bd-bottom
-						include ./components/_alerts
-
-					//- Tabs
-					section#tabs.mt-50.pb-30.bd-bottom
-						include ./components/_tabs
-
-					//- Barra de progreso
-					section#progress-bar.mt-50.pb-30.bd-bottom
-						include ./components/_progress-bar
-
-					//- Tablas
-					section#tables.mt-50.-mb30.bd-bottom
-						include ./components/_tables
-
-					//- Tooltips
-					section#tooltips.mt-50.pb-30.bd-bottom
-						include ./components/_tooltips
-
-					//- Navegación
-					section#navigation.mt-50.pb-30.bd-bottom
-						include ./components/_navigation
-
-					//- Paginación
-					section#pagination.mt-50.pb-30.bd-bottom
-						include ./components/_pagination
-
-					//- Camino de migas
-					section#breadcrumb.mt-50.pb-30.bd-bottom
-						include ./components/_breadcrumb
-
-					//- Collapse
-					section#collapse.mt-50.pb-30.bd-bottom
-						include ./components/_collapse
-
-					//- Dropdown
-					section#dropdown.mt-50.pb-30.bd-bottom
-						include ./components/_dropdown
-
-					//- Modals
-					section#modal.mt-50.pb-30.bd-bottom
-						include ./components/_modal
-
-					//- Formulario
-					section#form.mt-50.pb-30.bd-bottom
-						include ./components/_forms
-
-block wScripts
-	script(src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.0/highlight.min.js')
+block wScripts	

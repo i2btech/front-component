@@ -7,12 +7,8 @@ Desarrollo Web Frontend
 
 Bienvenido a la guía de desarrollo Frontend:
 
-### Descarga
-En la siguiente ruta encontrarás el repositorio de desarrollo frontend I2b https://github.com/I2BLab/front-component
-
-Los *.scss, *.pug y *.js son el código fuente de nuestros CSS, html y JavaScript. El directorio dev contiene los archivos css, html, js compilados.
-
-A continuación la url para clonar el repositorio con git: https://github.com/I2BLab/front-component.git
+### Documentación
+Encuentra la documentación de los componentes en la siguiente ruta: https://i2btech-components.netlify.app
 
 ### Instalación:
 Paso 1: Abra la terminal de comandos.
@@ -22,4 +18,4 @@ Paso 2: Diríjase a /front-component/docker.
 Paso 3: Ejecute la siguiente línea de comando para construir los contenedores y levantar el sistema: sh app.sh up
 
 ### Demo y documentación
-Después de descargar e instalar puede ver la documentación de forma local ingresando a: http://localhost:65200
+Finalmente ingrese la siguiente url si la página principal no carga automaticamente: http://localhost:3000
