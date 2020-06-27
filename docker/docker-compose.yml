@@ -12,14 +12,3 @@ services:
     ports:
       - 3000:3000
       - 3001:3001
-  storybook:
-    container_name: i2btech-storybook
-    image: node:14.4
-    working_dir: /app
-    volumes:
-      - ../:/app
-    command: [ "/bin/bash", "-c", "docker/bin/wait-for-it.sh -t 360 i2btech-fc-build:3000 -- npm run docker:storybook"]
-    ports:
-      - 65200:65200
-    depends_on: 
-      - gulp
