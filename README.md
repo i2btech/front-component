@@ -17,5 +17,5 @@ Paso 2: Diríjase a /front-component/docker.
 
 Paso 3: Ejecute la siguiente línea de comando para construir los contenedores y levantar el sistema: sh app.sh up
 
-### Demo y documentación
+### Inciando
 Finalmente ingrese la siguiente url si la página principal no carga automaticamente: http://localhost:3000
