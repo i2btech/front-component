@@ -1,48 +1,29 @@
 {
-  "name": "Desarrollo_Web_I2B",
-  "version": "4.0.0",
-  "description": "Estrucura base",
-  "author": "I2B Team",
-  "license": "MIT",
+  "name": "i2b",
+  "version": "1.0.0",
+  "description": "Documentación de componentes front-end",
+  "main": "index.js",
   "scripts": {
-    "start": "gulp",
-    "build": "gulp build",
-    "prod": "gulp prod",
     "build-storybook": "build-storybook",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook",
-    "docker:start": "cd ./docker && sh app.sh up",
-    "docker:container": "docker exec -ti i2btech-fc-build bash",
     "docker:storybook": "start-storybook -p 65200 --ci -s ./.storybook/images"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/I2BLab/front-component.git"
+  },
+  "author": "I2B",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/I2BLab/front-component/issues"
+  },
+  "homepage": "https://github.com/I2BLab/front-component#readme",
   "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
-    "@babel/register": "^7.9.0",
-    "@mdx-js/loader": "^1.6.5",
+    "@babel/core": "^7.10.3",
     "@storybook/addon-docs": "^5.3.19",
     "@storybook/html": "^5.3.19",
     "@storybook/theming": "^5.3.19",
-    "babel-loader": "^8.1.0",
-    "browser-sync": "^2.26.7",
-    "del": "^5.1.0",
-    "find-port": "^2.0.1",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-connect": "^5.7.0",
-    "gulp-copy": "^4.0.1",
-    "gulp-html-beautify": "^1.0.1",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^7.1.0",
-    "gulp-plumber": "^1.2.1",
-    "gulp-pug": "^4.0.1",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.1.0",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.2",
-    "highlight.js": "^10.0.3",
-    "jquery": "^2.2.4",
-    "jquery-validation": "^1.19.2",
-    "webpack": "^4.43.0"
+    "babel-loader": "^8.1.0"
   }
 }
