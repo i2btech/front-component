@@ -1,4 +1,4 @@
-import path    from 'path'
+import path    from 'path';
 
 let config = {
   entry: './src/js/main.js',
