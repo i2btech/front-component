@@ -1,9 +1,12 @@
 import path    from 'path';
 
 let config = {
-  entry: './src/js/main.js',
+  entry: {
+		main: './src/js/main.js',
+		//demo: './src/js/demo.js',
+	},
   output: {
-		filename: './main.js',
+		filename: './[name].js',
 		path: path.resolve(__dirname, './dev/assets/js/')
   },
   module: {

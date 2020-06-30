@@ -8,7 +8,7 @@
 
 extends ./inc/_layout
 
-block wStyles	
+block wStyles
 
 block variables
 	- var title = 'Home | ' + siteTitle
@@ -19,9 +19,10 @@ block wBody
 			.row
 				.p-20(class="col-12")
 					h1 Bienvenido al repositorio de componentes Front-end I2B
-					
-					section.mt-50.pb-30 Para conocer más sobre la utilización de esto componentes ingrese a la documentación 
-						a(href="https://i2btech-components.netlify.app/" target="_blank") haciendo clic aquí.
-						
 
-block wScripts	
+					section.mt-50.pb-30 Para conocer más sobre la utilización de esto componentes ingrese a la documentación
+						a(href="https://i2btech-components.netlify.app/" target="_blank") haciendo clic aquí.
+
+
+block wScripts
+	script(src='assets/js/main.js')
