@@ -4090,6 +4090,9 @@ h2 {
 .fz-default {
   font-size: 14px !important; }
 
+.fz-0 {
+  font-size: 0 !important; }
+
 .fz-11 {
   font-size: 11px !important; }
 
@@ -4252,6 +4255,8 @@ a.text-red-400:hover, a.text-red-400:focus {
 		*/
   .sm\:fz-default {
     font-size: 14px !important; }
+  .sm\:fz-0 {
+    font-size: 0 !important; }
   .sm\:fz-11 {
     font-size: 11px !important; }
   .sm\:fz-12 {
@@ -4367,6 +4372,8 @@ a.text-red-400:hover, a.text-red-400:focus {
 		*/
   .md\:fz-default {
     font-size: 14px !important; }
+  .md\:fz-0 {
+    font-size: 0 !important; }
   .md\:fz-11 {
     font-size: 11px !important; }
   .md\:fz-12 {
@@ -4482,6 +4489,8 @@ a.text-red-400:hover, a.text-red-400:focus {
 		*/
   .lg\:fz-default {
     font-size: 14px !important; }
+  .lg\:fz-0 {
+    font-size: 0 !important; }
   .lg\:fz-11 {
     font-size: 11px !important; }
   .lg\:fz-12 {
@@ -4597,6 +4606,8 @@ a.text-red-400:hover, a.text-red-400:focus {
 		*/
   .xl\:fz-default {
     font-size: 14px !important; }
+  .xl\:fz-0 {
+    font-size: 0 !important; }
   .xl\:fz-11 {
     font-size: 11px !important; }
   .xl\:fz-12 {
