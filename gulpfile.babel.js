@@ -7,14 +7,13 @@ import sourcemaps from 'gulp-sourcemaps';
 import sass from 'gulp-sass';
 import cleanCSS from 'gulp-clean-css';
 import pug from 'gulp-pug';
-import rename from 'gulp-rename';
 import imagemin from 'gulp-imagemin';
 import htmlmin from 'gulp-htmlmin';
 import htmlbeautify from 'gulp-html-beautify';
-import uglify from 'gulp-uglify';
 import del from 'del';
 import webpack from 'webpack';
-import webpackConfig from './webpack.config.js';
+import webpackConfigDev from './webpack.dev.js';
+import webpackConfigProd from './webpack.prod.js';
 
 let server_port = 8080;
 findPort(server_port, server_port + 10, function(ports) {
@@ -35,8 +34,7 @@ const paths = {
 	pugs: ['pug/**/*.pug', '!pug/**/_*.pug', '!pug/_*.pug'],
 	ts: ['ts/**/*.ts', 'ts/*.ts'],
 	js: ['js/**/*.js', 'js/*.js'],
-	jslibs: ['js/libs/**/*.js'],
-	img: ['img/**/*.+(png|jpg|gif|svg)'],	
+	img: ['img/**/*.+(png|jpg|gif|svg)'],
 	fonts: ['fonts/*.*']
 };
 
@@ -49,19 +47,19 @@ export function connect_server() {
 }
 
 export function sass_task() {
-	return gulp.src(paths.styles, { cwd: bases.src })	
+	return gulp.src(paths.styles, { cwd: bases.src })
 		.pipe(sass().on('error', sass.logError))
 		.pipe(sourcemaps.init())
 		.pipe(sourcemaps.write('./maps'))
 		.pipe(gulp.dest(bases.dist + bases.assets + 'css/'))
-		.pipe(browserSync.reload({ stream: true }))		
-		.pipe(plumber())		
+		.pipe(browserSync.reload({ stream: true }))
+		.pipe(plumber())
 }
 
-export function css_min() {
-	return gulp.src(paths.css, { cwd: bases.dist })
+export function css_prod() {
+	return gulp.src(paths.css, { cwd: bases.dist + bases.assets })
 		.pipe(cleanCSS({ compatibility: 'ie8' }))
-		.pipe(gulp.dest(bases.prod + 'css/'));
+		.pipe(gulp.dest(bases.prod + bases.assets + 'css/'));
 }
 
 export function pug_task() {
@@ -69,6 +67,14 @@ export function pug_task() {
 		.pipe(plumber())
 		.pipe(pug())
 		.pipe(gulp.dest(bases.dist))
+		.pipe(browserSync.reload({ stream: true }))
+}
+
+export function pug_prod() {
+	return gulp.src(paths.pugs, { cwd: bases.src })
+		.pipe(plumber())
+		.pipe(pug())
+		.pipe(gulp.dest(bases.prod))
 		.pipe(browserSync.reload({ stream: true }))
 }
 
@@ -91,12 +97,12 @@ export function html_min() {
 
 export function scripts() {
 	return new Promise((resolve, reject) => {
-		webpack(webpackConfig, (err, stats) => {
+		webpack(webpackConfigDev, (err, stats) => {
 				if (err) {
-						return reject(err)
+					return reject(err)
 				}
 				if (stats.hasErrors()) {
-						return reject(new Error(stats.compilation.errors.join('\n')))
+					return reject(new Error(stats.compilation.errors.join('\n')))
 				}
 				browserSync.reload({ stream: true })
 				resolve()
@@ -104,18 +110,25 @@ export function scripts() {
 	});
 }
 
-export function script_min() {
-	return gulp.src(paths.js, { cwd: bases.dist })
-		.pipe(uglify())
-		.pipe(rename({ suffix: '.min' }))
-		.pipe(gulp.dest(bases.prod + bases.assets + 'js/'));
+export function script_prod() {
+	return new Promise((resolve, reject) => {
+		webpack(webpackConfigProd, (err, stats) => {
+				if (err) {
+					return reject(err)
+				}
+				if (stats.hasErrors()) {
+					return reject(new Error(stats.compilation.errors.join('\n')))
+				}
+				resolve()
+		})
+	});
 }
 
 export function images() {
 	return gulp.src(paths.img, { cwd: bases.src })
 		.pipe(plumber())
 		.pipe(imagemin([
-			imagemin.mozjpeg({progressive: true}),			
+			imagemin.mozjpeg({progressive: true}),
 			imagemin.svgo({
 				plugins: [
 					{removeViewBox: true},
@@ -126,11 +139,11 @@ export function images() {
 		.pipe(gulp.dest(bases.dist + bases.assets + 'img/'))
 }
 
-export function image_prod() {
-	return gulp.src(paths.img, { cwd: bases.dist })
+export function images_prod() {
+	return gulp.src(paths.img, { cwd: bases.dist + bases.assets })
 		.pipe(plumber())
 		.pipe(imagemin({ progressive: true, interlaced: true, svgoPlugins: [{ cleanupIDs: false }] }))
-		.pipe(gulp.dest(bases.prod + 'img/'))
+		.pipe(gulp.dest(bases.prod + bases.assets + 'img/'))
 }
 
 export function browser_sync() {
@@ -161,14 +174,16 @@ export function fonts_copy() {
 		.pipe(gulp.dest(bases.dist + bases.assets + '/fonts'));
 }
 
-export function scripts_libs_copy() {
-	return gulp.src(bases.src + paths.jslibs)
-		.pipe(gulp.dest(bases.dist + bases.assets + 'js/libs'));
+export function fonts_copy_prod() {
+  return gulp.src(bases.dist + bases.assets + paths.fonts)
+		.pipe(gulp.dest(bases.prod + bases.assets + '/fonts'));
 }
 
 export const clean = () => del([ bases.dist ]);
 
-export default gulp.series(clean, gulp.parallel(pug_task, sass_task, images, fonts_copy, scripts_libs_copy, scripts, browser_sync, watch_task));
+export const clean_prod = () => del([ bases.prod ]);
+
+export default gulp.series(clean, gulp.parallel(pug_task, sass_task, images, fonts_copy, scripts, browser_sync, watch_task));
 export const start = gulp.series(browser_sync, watch_task);
-export const build = gulp.series(pug_task, sass_task, images, fonts_copy, scripts_libs_copy, scripts);
-export const prod = gulp.series(pug_task, css_min, images, fonts_copy, scripts_libs_copy, script_min);
+export const build = gulp.series(pug_task, sass_task, images, fonts_copy, scripts);
+export const prod = gulp.series(clean_prod, gulp.parallel(pug_prod, css_prod, images_prod, fonts_copy_prod, script_prod));

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 import $ from 'jquery';
 
 /**
@@ -11,3 +11,10 @@ export const priceFormat = (val) => val.toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\
 
 export const findById = (data, id) => data.filter(x => x.id == id);
 export const findIndexById = (data, id) => data.findIndex(x => x.id == id);
+
+export const messageResponse = (status, message) => {
+	return {
+		status,
+		message
+	};
+};

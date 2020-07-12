@@ -1,4 +1,5 @@
-"use strict";
+'use strict';
+import $ from 'jquery';
 
 let apiUrl = '';
 
@@ -49,7 +50,7 @@ const api = {
 };
 
 //Local Storage
-const ls = {
+const storageLocal = {
 	get: (key) => {
 		if(key) {
 			return JSON.parse(localStorage.getItem(key));
@@ -69,7 +70,7 @@ const ls = {
 };
 
 //Session Storage
-const ss = {
+const storageSession = {
 	get: (key) => {
 		if(key) {
 			return JSON.parse(sessionStorage.getItem(key));
@@ -88,4 +89,4 @@ const ss = {
 	del: (key, id) => sessionStorage.removeItem(key)
 };
 
-export { api, ls, ss }
+export { api, storageLocal, storageSession }
