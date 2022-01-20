@@ -1,7 +1,3 @@
-// Container widths
-//
-// Set the container width, and override it for fixed navbars in media queries.
-
 $gutter-width: map-get(map-get($theme, 'gutter'), 'width');
 $container-breakpoints: map-get($theme, 'screens');
 $grid-columns: map-get($theme, 'columns');

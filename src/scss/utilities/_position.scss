@@ -6,14 +6,39 @@
 $grid-breakpoints: map-get($theme, 'screens');
 $positions: map-get($theme, 'positions');
 $z-index: map-get($theme, 'zIndex');
+$right: map-get($theme, 'right');
+$left: map-get($theme, 'left');
+$top: map-get($theme, 'top');
+$bottom: map-get($theme, 'bottom');
 
 @each $bp in map-keys($grid-breakpoints) {
-  @include media-breakpoint-up($bp) {
+	@include media-breakpoint-up($bp) {
 		$infix: breakpoint-infix($bp, $grid-breakpoints);
 
 		@each $attr, $value in $positions {
 			.#{$infix}position-#{$attr} { position: $value !important; }
 		}
+
+		@each $attr, $value in $right {
+			.#{$infix}r-#{$attr} { right: $value !important; }
+		}
+
+		@each $attr, $value in $left {
+			.#{$infix}l-#{$attr} { left: $value !important; }
+		}
+
+		@each $attr, $value in $top {
+			.#{$infix}t-#{$attr} { top: $value !important; }
+		}
+
+		@each $attr, $value in $bottom {
+			.#{$infix}b-#{$attr} { bottom: $value !important; }
+		}
+
+		@each $attr, $value in $z-index {
+			.#{$infix}zi-#{$attr} { z-index: $value !important; }
+		}
+
 	}
 }
 

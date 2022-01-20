@@ -1,0 +1,28 @@
+
+.scroll_style::-webkit-scrollbar {
+  width: 2px;
+}
+
+.scroll_style::-webkit-scrollbar-thumb {
+  background: $primaryColor;
+  border-radius: 4px;
+}
+
+.scroll_style::-webkit-scrollbar-thumb:active {
+  background-color: $white;
+}
+
+.scroll_style::-webkit-scrollbar-thumb:hover {
+  background: $lightColor;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.scroll_style::-webkit-scrollbar-track {
+  background: $lightColor;
+  border-radius: 4px;
+}
+
+.scroll_style::-webkit-scrollbar-track:hover,
+.scroll_style::-webkit-scrollbar-track:active {
+  background: #d4d4d4;
+}

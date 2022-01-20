@@ -1,18 +1,22 @@
 $colors: map-get($theme, 'colors');
 $color-white: map-get($theme, 'white');
 $color-red: map-get($theme, 'red');
+$color-primary: map-get($theme, 'primary');
+$fontWeight: map-get($theme, 'fontWeight');
+
+$bold: map-get($fontWeight, 'bold');
+$regular: map-get($fontWeight, 'regular');
 
 .nav {
 	&__item {
 		display: inline-block;
 		width: auto;
-		padding: 8px 16px;
 		border: none;
 		outline: none;
-
+		font-weight: $regular;
 		&--active {
-			color: $color-white;
-			background-color: $color-red;
+			border-bottom: solid 4px $color-primary !important;
+			font-weight: $bold;
 		}
 	}
 
@@ -20,7 +24,6 @@ $color-red: map-get($theme, 'red');
 		border: none;
 		display: inline-block;
 		outline: 0;
-		padding: 8px 16px;
 		vertical-align: middle;
 		overflow: hidden;
 		text-decoration: none;
@@ -37,8 +40,7 @@ $color-red: map-get($theme, 'red');
 		user-select: none;
 
 		&:hover {
-			color: #000 !important;
-			background-color: #ccc !important;
+			border-bottom: solid 4px $color-primary;
 		}
 	}
 

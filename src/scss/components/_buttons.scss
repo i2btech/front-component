@@ -1,73 +1,146 @@
 $btn-colors: map-get($theme, 'colors');
-$btn-color-default: map-get($btn-colors, 'white');
+$btn-color-default: map-get($btn-colors, 'default');
 
-//-
-//- Buttons
-//-
+$buttons: map-get($components, 'buttons');
+
+$links: map-get($components, 'link');
+$link-color: map-get($links, 'link-color');
+$hover-color: map-get($links, 'hover-color');
+$active-color: map-get($links, 'active-color');
+$visited-color: map-get($links, 'visited-color');
+$disabled-color: map-get($links, 'disabled-color');
+
 .btn,
 .btn-link {
-  border: none;
-  display: inline-block;
-  padding: 8px 15px;
-  font-size: 13px;
-  color: inherit;
-  text-decoration: none;
-  outline: 0;
-  vertical-align: middle;
-  overflow: hidden;
-  background-color: inherit;
-  text-align: center;
-  cursor: pointer;
-  white-space: nowrap;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+	border: none;
+	display: inline-block;
+	padding: 8px 15px;
+	font-size: 13px;
+	color: inherit;
+	text-decoration: none;
+	outline: 0;
+	vertical-align: middle;
+	overflow: hidden;
+	background-color: inherit;
+	cursor: pointer;
+	white-space: nowrap;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 	transition: all .5s ease;
 
-  &:hover {
-    opacity: .7;
-    background-color: #CCC;
-  }
+	&.btn--disabled,
+	&:disabled {
+		cursor: not-allowed;
 
-  &.btn--disabled,
-  &:disabled {
-    cursor: not-allowed;
-    opacity: .3;
-    & * {
-      pointer-events: none
+		& * {
+			pointer-events: none
 		}
 
-    &:hover,
-    &:hover {
-      box-shadow: none
-    }
-  }
+		&:hover,
+		&:hover {
+			box-shadow: none
+		}
+	}
 
-  &--sm  { font-size: 11px; }
-  &--md  { font-size: 15px; }
-  &--lg  { font-size: 18px; }
-  &--xlg { font-size: 22px; }
+	&--sm {
+		font-size: 11px;
+	}
+
+	&--md {
+		font-size: 15px;
+	}
+
+	&--lg {
+		font-size: 18px;
+	}
+
+	&--xlg {
+		font-size: 22px;
+	}
 }
 
 .btn {
-	color: #FFF; //$btn-color-default;
+	color: $btn-color-default;
+
+	i {
+		vertical-align: middle;
+	}
+
+	&.txt-hover span {
+		display: none;
+	}
+
+	&.txt-hover:hover span {
+		display: inline-block;
+	}
 }
 
 .btn-link {
 	padding: 0;
+	color: $link-color;
 
-  &:hover {
-    opacity: .7;
-    background-color: transparent;
+	i {
+		vertical-align: middle;
 	}
 
-  &.btn-link--disabled,
-  &:disabled {
-    opacity: .3;
-  }
+	&:hover {
+		color: $hover-color !important;
+	}
+
+	&:active {
+		color: $active-color !important;
+	}
+
+	&.link--disabled,
+	&:disabled {
+		color: $disabled-color !important;
+	}
+}
+
+@each $attr, $value in $buttons {
+	$buttonAll: map-get($buttons, #{$attr});
+	$color: '';
+	.btn-#{$attr} {
+		@each $property, $valueProperty in $buttonAll {
+			@if $property == 'background-hover' {
+				&:hover {
+					background: #{$valueProperty} !important;
+				}
+			} @else if $property == 'background-disabled' {
+				&:disabled,
+				&[disabled] {
+					background: #{$valueProperty} !important;
+				}
+			} @else if $property == 'text-color-disabled' {
+				&:disabled,
+				&[disabled] {
+					color: #{$valueProperty} !important;
+				}
+			} @else if $property == 'border-color-disabled' {
+				&:disabled,
+				&[disabled] {
+					border-color: #{$valueProperty} !important;
+				}
+			} @else if $property == 'color-hover' {
+				&:hover {
+					color: #{$valueProperty} !important;
+				}
+			} @else {
+				#{$property} : #{$valueProperty};
+			}
+			@if $property == 'color' {
+				$color: #{$valueProperty};
+			}
+		}
+
+		&:visited {
+			color: #{$color};
+		}
+	}
 }
 
 .btn-close {

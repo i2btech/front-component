@@ -1,0 +1,20 @@
+.mini__cart {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .2s ease, visibility .2s ease, -webkit-transform .2s ease;
+  transition: opacity .2s ease, visibility .2s ease, transform .2s ease;
+  transition: opacity .2s ease, visibility .2s ease, transform .2s ease, -webkit-transform .2s ease;
+  -webkit-transform: translateY(15px) translateZ(0);
+  transform: translateY(15px) translateZ(0);
+}
+
+.minicart--wrapper {
+  &:hover > div > .mini__cart {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+    pointer-events: visible;
+    pointer-events: unset;
+  }
+}

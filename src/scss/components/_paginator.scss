@@ -1,0 +1,32 @@
+.paginador {
+  li a.page-numbers {
+    padding: 1px 9px;
+    background: #fff;
+    border-radius: 30px;
+    display: block;
+    text-align: center;
+    color: $tertiaryColor;
+    margin: 0 4px;
+    &.current {
+      background: $grayColor;
+      color: $primaryColor;
+    }
+  }
+
+  .page-prev, .page-next {
+    padding: 6px 2px;
+    @media (min-width: $lg) {
+      padding: 0;
+    }
+  }
+  .btn-prev, .btn-next {
+    display: block;
+    padding: 5px 4px;
+  }
+  .btn-prev {
+   /*background: url(../images/svg/page-prev.svg) no-repeat center center;*/
+  }
+  .btn-next {
+    /*background: url(../images/svg/page-next.svg) no-repeat center center;*/
+  }
+}

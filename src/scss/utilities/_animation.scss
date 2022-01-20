@@ -1,25 +1,138 @@
-.line-1{
-    position: relative;
-    top: 50%;  
-    width: 24em;
-    margin: 0 auto;
-    border-right: 2px solid rgba(255,255,255,.75);
-    font-size: 180%;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    transform: translateY(-50%);    
+$grid-breakpoints: map-get($theme, "screens");
+
+$animation: map-get($theme, "animation");
+$transitions: map-get($animation, "transitions");
+$opacity: map-get($animation, "opacity");
+
+$slide: map-get($animation, "slide");
+$position: map-get($slide, "position");
+$delay: map-get($slide, "delay");
+$width: map-get($slide, "width");
+
+$box-shadow: map-get($animation, "shadow");
+
+@each $bp in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($bp) {
+		$infix: breakpoint-infix($bp, $grid-breakpoints);
+
+		@each $attr, $value in $transitions {
+			.#{$infix}#{$attr} {
+				transition: $value !important;
+			}
+		}
+
+		@each $attr, $value in $box-shadow {
+			.#{$infix}shadow-#{$attr} {
+				box-shadow: $value !important;
+			}
+		}
+
+		@each $attr, $value in $opacity {
+			.#{$infix}opacity-#{$attr} {
+				opacity: $value !important;
+			}
+		}
+
+	}
 }
 
-.anim-typewriter{
-    animation: typewriter 4s steps(44) 1s 1 normal both,
-    blinkTextCursor 500ms steps(44) infinite normal;
+//- Slider
+.slide {
+	#{$position}: -$width;
 }
-@keyframes typewriter{
-    from{width: 0;}
-    to{width: 24em;}
+
+.slide-in {
+	animation: slide-in $delay forwards;
+	-webkit-animation: slide-in $delay forwards;
 }
-@keyframes blinkTextCursor{
-    from{border-right-color: rgba(255,255,255,.75);}
-    to{border-right-color: transparent;}
+
+.slide-out {
+	animation: slide-out $delay forwards;
+	-webkit-animation: slide-out $delay forwards;
 }
+
+@-webkit-keyframes slide-in {
+	100% {
+		#{$position}: 0;
+	}
+}
+
+@keyframes slide-in {
+	100% {
+		#{$position}: 0;
+	}
+}
+
+@-webkit-keyframes slide-out {
+	0% {
+		#{$position}: 0;
+	}
+	100% {
+		#{$position}: -$width;
+	}
+}
+
+@keyframes slide-out {
+	0% {
+		#{$position}: 0;
+	}
+	100% {
+		#{$position}: -$width;
+	}
+}
+
+.line-1 {
+	position: relative;
+	top: 50%;
+	width: 24em;
+	margin: 0 auto;
+	border-right: 2px solid rgba(255, 255, 255, .75);
+	font-size: 180%;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	transform: translateY(-50%);
+}
+
+.anim-typewriter {
+	animation: typewriter 4s steps(44) 1s 1 normal both,
+	blinkTextCursor 500ms steps(44) infinite normal;
+}
+
+.link_img__size__hover {
+	overflow: hidden;
+	display: inline-block;
+	img {
+		transition: all .3s;
+	}
+	&:hover {
+		img:not(.play) {
+			transition: all 500ms;
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+			transform: scale(1.2);
+			opacity: .8;
+		}
+	}
+}
+
+
+@keyframes typewriter {
+	from {
+		width: 0;
+	}
+	to {
+		width: 24em;
+	}
+}
+
+@keyframes blinkTextCursor {
+	from {
+		border-right-color: rgba(255, 255, 255, .75);
+	}
+	to {
+		border-right-color: transparent;
+	}
+}
+
+

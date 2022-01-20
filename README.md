@@ -15,7 +15,14 @@ Paso 1: Abra la terminal de comandos.
 
 Paso 2: Diríjase a /front-component/docker.
 
-Paso 3: Ejecute la siguiente línea de comando para construir los contenedores y levantar el sistema: sh app.sh up
+
+Paro 3: Cree un archivo con variable de entorno para configurar los servicios
+
+```
+cp common-sample.env common.env
+```
+
+Paso 4: Ejecute la siguiente línea de comando para construir los contenedores y levantar el sistema: app.sh up
 
 ### Iniciando
 Finalmente ingrese la siguiente url si la página principal no carga automaticamente: http://localhost:3000

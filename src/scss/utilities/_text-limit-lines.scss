@@ -1,0 +1,22 @@
+$maxLines: map-get($theme, 'maxLines');
+
+
+@each $attr, $value in $maxLines {
+
+  $font-size: map-get($value, 'font-size');
+  $line-height: map-get($value, 'line-height');
+	$height: map-get($value, 'height');
+  $lines: map-get($value, 'numMaxLines');
+
+  .#{$attr} {
+    display: block;
+    display: -webkit-box;
+    height: $font-size * $height * $lines;
+    font-size: $font-size;
+    line-height: #{$line-height}px;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

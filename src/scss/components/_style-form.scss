@@ -1,0 +1,18 @@
+input {
+  border: none;
+}
+::placeholder {
+  color: $grayColor;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: $grayColor;
+}
+
+::-ms-input-placeholder {
+  color: $grayColor;
+}
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}

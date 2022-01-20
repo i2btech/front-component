@@ -5,25 +5,24 @@ $line-heights: map-get($theme, 'lineHeights');
 $font-weights: map-get($theme, 'fontWeight');
 $h: map-get($theme, 'h');
 
+$body: map-get($theme, 'body');
+$otherText: map-get($theme, 'otherText');
+
 .text {
 	font-size: map-get($font-sizes, 'default');
 	line-height: map-get($line-heights, 'default');
 	//color: map-get($colors, 'default');
 }
 
-@each $attr, $value in $h {
-	h#{$attr} { font-size: $value; }
-}
-
 @each $breakpoint in map-keys($grid-breakpoints) {
-  @include media-breakpoint-up($breakpoint) {
-    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
 		/*
 		* Sizes
 		*/
-    @each $attr, $value in $font-sizes {
-      .#{$infix}fz-#{$attr} { font-size: #{$value} !important; }
+		@each $attr, $value in $font-sizes {
+			.#{$infix}fz-#{$attr} { font-size: #{$value} !important; }
 		}
 
 		/*
@@ -54,7 +53,34 @@ $h: map-get($theme, 'h');
 		@each $attr, $value in $font-weights {
 			.#{$infix}fw-#{$attr} { font-weight: $value !important; }
 		}
-  }
+
+		@each $attr, $value in $otherText {
+			$otherAll: map-get($otherText, #{$attr});
+			.#{$infix}text-#{$attr} {
+				@each $property, $valueProperty in $otherAll {
+					#{$property} : #{$valueProperty}
+				}
+			}
+		}
+	}
+}
+
+@each $attr, $value in $h {
+	$hAll: map-get($h, #{$attr});
+	#{$attr} {
+		@each $property, $valueProperty in $hAll {
+			#{$property} : #{$valueProperty}
+		}
+	}
+}
+
+/*
+* Body
+*/
+body {
+	@each $attr, $value in $body {
+		#{$attr} : #{$value}
+	}
 }
 
 .text-dn { text-decoration: none !important; }
@@ -68,5 +94,9 @@ $h: map-get($theme, 'h');
 .text-lowercase  { text-transform: lowercase !important; }
 .text-uppercase  { text-transform: uppercase !important; }
 .text-capitalize { text-transform: capitalize !important; }
+.text-linethrough   { text-decoration: line-through; }
 
 .text-hide { @include text-hide(); }
+.text-error, .error{
+	color: $dangerColor;
+}

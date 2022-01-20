@@ -1,38 +1,62 @@
+$xs: 0;
+$sm: 375px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1272px;
+
+$defaultColor: #D71F26;
+$primaryColor: #767676;
+$secondaryColor: #4CAF50;
+$white: #FFFFFF;
+$black: #000;
+
+$dangerColor: #721c24;
+$success: green;
+
+$gray100: #f6f8fa;
+$gray800: #464646;
+$gray900: #222;
+
+$light: 300;
+$bold: 700;
+$medium: 500;
+$regular: 400;
+$normal: normal;
+
 $theme: (
 	screens: (
-		xs: 0,
-		sm: 640px,
-		md: 768px,
-		lg: 1024px,
-		xl: 1280px,
+		xs: $xs,
+		sm: $sm,
+		md: $md,
+		lg: $lg,
+		xl: $xl,
 	),
 	gutter: (
 		width: 20px
 	),
 	columns: 12,
-  colors: (
-		default: #D71F26,
-    	primary: #767676,
-		secondary: #4CAF50,
-		danger: #721c24,
-		black: #000,
-		white: #FFF,
+	colors: (
+		default: $defaultColor,
+		primary: $primaryColor,
+		secondary: $secondaryColor,
+		danger: $dangerColor,
+		black: $black,
+		white: $white,
 		transparent: transparent,
 		muted: #AAA,
-
-		gray-100: #f6f8fa,
-		gray-800: #464646,
-		gray-900: #222,
+		gray-100: $gray100,
+		gray-800: $gray800,
+		gray-900: $gray900,
 		red-400: lighten(#D71F26, 20%)
-  ),
+	),
 	fontSizes: (
 		default: 14px,
 		0: 0,
 		11: 11px,
 		12: 12px,
 		14: 14px,
-    15: 15px,
-    16: 16px,
+		15: 15px,
+		16: 16px,
 		18: 18px,
 		20: 20px,
 		22: 22px,
@@ -69,12 +93,34 @@ $theme: (
 		screen: 100vh,
 		50: 50px
 	),
+	maxWidth: (
+		none: none,
+		0: 0,
+		200: 200px,
+		228: 228px,
+		270: 270px,
+		284: 284px,
+		388: 388px,
+		544: 544px,
+	),
+	maxHeight: (
+		none: none,
+		0: 0,
+		212: 212px,
+		422:422px,
+	),
+	minWidth: (
+		0: 0,
+	),
+	minHeight: (
+		0: 0,
+	),
 	margin: (
 		auto: auto,
 		0: 0,
 		5: 5px,
-    10: 10px,
-    15: 15px,
+		10: 10px,
+		15: 15px,
 		20: 20px,
 		30: 30px,
 		50: 50px
@@ -82,8 +128,8 @@ $theme: (
 	padding: (
 		0: 0,
 		5: 5px,
-    10: 10px,
-    15: 15px,
+		10: 10px,
+		15: 15px,
 		20: 20px,
 		30: 30px
 	),
@@ -96,6 +142,24 @@ $theme: (
 		30: 30,
 		40: 40,
 		50: 50,
+	),
+	maxLines: (
+		h2-2l: (
+			font-size: 28px,
+			line-height: 38,
+			height: 1.5,
+			numMaxLines: 2,
+		),
+	),
+	flex: (
+		1: 1,
+		2: 2,
+		3: 3,
+		4: 4,
+		5: 5,
+		6: 6,
+		7: 7,
+		8: 8,
 	),
 	displays: (
 		none: none,
@@ -114,6 +178,29 @@ $theme: (
 		absolute: absolute,
 		fixed: fixed,
 		sticky: sticky
+	),
+	right: (
+		-30:-30px,
+		-11:-11px,
+		0: 0,
+		5:5px,
+	),
+	left: (
+		-255: -255px,
+		-210:-210px,
+		0: 0,
+	),
+	top: (
+		-38:-38px,
+		-11:-11px,
+		0: 0,
+		12: 12px,
+		16: 16px,
+		38: 38px,
+		40: 40px,
+	),
+	bottom: (
+		0: 0,
 	),
 	floats: (
 		none: none,
@@ -136,11 +223,109 @@ $theme: (
 		4: 4px,
 		5: 5px
 	),
+	borderRadius: (
+		0:0,
+		10:10px,
+		11:11px,
+	),
+	borderStyles: (
+		solid : solid,
+		dashed: dashed
+	),
 	h:(
-		1: 30px,
-		2: 28px
-	) 
+		h1: (
+			font-size: 50px,
+			font-weight: $bold,
+			line-height: 68px,
+		),
+		h2: (
+			font-size: 40px,
+			font-weight: $bold,
+			line-height: 68px,
+		),
+		h4: (
+			font-size: 16px,
+			font-weight: $regular,
+			line-height: 16px,
+		),
+		h5: (
+			font-size: 18px,
+			font-weight: $bold,
+			line-height: 18px,
+		),
+	),
+	body: (
+		font-size: 14px,
+		font-weight: $normal,
+		line-height: 24px,
+		font-family: "'Roboto', sans-serif",
+	),
+	otherText: (
+		bajada: (
+			font-size: 22px,
+			font-weight: $regular,
+			line-height: 34px
+		),
+		list: (
+			font-size: 14px,
+			font-weight: $regular,
+			line-height: 28px
+		),
+		caption: (
+			font-size: 12px,
+			font-weight: $regular,
+			line-height: 18px
+		),
+		alt: (
+			font-size: 10px,
+			font-weight: $medium,
+			line-height: 18px,
+			letter-spacing: 0.2em,
+			text-transform: uppercase,
+		),
+		tiny: (
+			font-size: 13px,
+			font-weight: $regular,
+			line-height: 20px
+		),
+		body2:(
+			font-style: $normal,
+			font-weight: $normal,
+			font-size: 18px,
+			line-height: 32px !important,
+		),
+		link:(
+			font-style: normal,
+			font-weight: 500,
+			font-size: 14px,
+			line-height: 24px !important,
+			text-decoration: underline,
+		)
+	),
+	animation: (
+		transitions: (
+			transition-br: border-bottom 0.2s linear,
+			transition-bgc: background-color 0.5s ease-in-out,
+		),
+		slide: (
+			position: right,
+			delay: 0.5s,
+			width: 350px,
+		),
+		shadow: (
+			1: 0px 7px 9px -3px rgba(0, 0, 0, 0.160784),
+			2: 0px 0px 22px rgba(0, 0, 0, 0.25),
+			3: 0px 4px 12px rgba(0, 0, 0, 0.25),
+			4: 0px 0px 32px rgba(0, 0, 0, 0.12),
+		),
+		opacity: (
+			pto1:.1,
+			pto5:.2
+		)
+	)
 );
+
+$grid-breakpoints: map-get($theme, 'screens');
 
 // Components
 $components: (
@@ -163,8 +348,10 @@ $components: (
 			color: #0C5460,
 		)
 	),
-
 	form: (
+		label: (
+			color-danger: $dangerColor,
+		),
 		input: (
 			color: #999,
 			color-danger: #D71F26,
@@ -184,18 +371,39 @@ $components: (
 			border-color: #555,
 			arrow-color: #444,
 			border-color-error: #D71F26,
-
 			option-background: #FFF,
 			option-hover-background: lighten(#D71F26, 20%),
 			option-hover-color: #FFF,
 		)
 	),
-
 	link: (
 		link-color: #D71F26,
 		hover-color: #D71F26,
 		active-color: #D71F26,
 		visited-color: #D71F26,
-		text-decoration: 	underline	
+		text-decoration: underline
+	),
+	buttons: (
+		primary: (
+			background: $primaryColor,
+			color: $white,
+			color-hover: $white,
+			border-color: $primaryColor,
+			cursor:pointer,
+			border-radius: 4px,
+			box-shadow: 0px 8px 16px rgba(17, 17, 17, 0.04),
+			font-style: normal,
+			font-weight: 500,
+			font-size: 14px,
+			text-align:center,
+			line-height: 20px,
+			border: 0px,
+		),
+		secundary:(
+			border-radius:10px,
+			border: 2px solid #FFFFFF,
+			text-tranform:uppercase,
+			color: $white,
+		)
 	)
 )

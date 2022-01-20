@@ -1,6 +1,8 @@
 $grid-breakpoints: map-get($theme, 'screens');
 $colors: map-get($theme, 'colors');
 $borders: map-get($theme, 'borders');
+$borderStyles: map-get($theme, 'borderStyles');
+$border-radius: map-get($theme, 'borderRadius');
 
 .bd {
 	border: 1px solid #CCC !important;
@@ -23,8 +25,62 @@ $borders: map-get($theme, 'borders');
 }
 
 @each $bp in map-keys($grid-breakpoints) {
-  @include media-breakpoint-up($bp) {
-    $infix: breakpoint-infix($bp, $grid-breakpoints);
+	@include media-breakpoint-up($bp) {
+		$infix: breakpoint-infix($bp, $grid-breakpoints);
+		.#{$infix}bd {
+			border: 1px solid #CCC !important;
+			&-y {
+				border-top: 1px solid #CCC !important;
+				border-bottom: 1px solid #CCC !important;
+			}
+			&-x {
+				border-left: 1px solid #CCC !important;
+				border-right: 1px solid #CCC !important;
+			}
+			&-left {
+				border-left: 1px solid #CCC !important;
+			}
+			&-right {
+				border-right: 1px solid #CCC !important;
+			}
+			&-top {
+				border-top: 1px solid #CCC !important;
+			}
+			&-bottom {
+				border-bottom: 1px solid #CCC !important;
+			}
+			&-y,
+			&-top {
+				&-none {
+					border-top: none !important;
+				}
+			}
+			&-y,
+			&-bottom {
+				&-none {
+					border-bottom: none !important;
+				}
+			}
+			&-x,
+			&-left {
+				&-none {
+					border-left: none !important;
+				}
+			}
+			&-x,
+			&-right {
+				&-none {
+					border-right: none !important;
+				}
+			}
+		}
+	}
+}
+
+
+@each $bp in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($bp) {
+		$infix: breakpoint-infix($bp, $grid-breakpoints);
 
 		@each $attr, $value in $borders {
 			.#{$infix}bd-#{$attr} { border-width: $value !important; }
@@ -32,6 +88,74 @@ $borders: map-get($theme, 'borders');
 
 		@each $attr, $value in $colors {
 			.#{$infix}bd-#{$attr} { border-color: $value !important; }
+		}
+		@each $attr, $value in $borderStyles {
+			.#{$infix}bd-#{$attr} { border-style: $value !important; }
+		}
+	}
+}
+
+@each $bp in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($bp) {
+		$infix: breakpoint-infix($bp, $grid-breakpoints);
+		@each $attr, $value in $borderStyles {
+			.#{$infix}bd-#{$attr} {
+				border-style: $value !important;
+				&-left {
+					border-left-style: $value !important;
+				}
+
+				&-top {
+					border-top-style: $value !important;
+				}
+
+				&-bottom {
+					border-bottom-style: $value !important;
+				}
+				&-right {
+					border-right-style: $value !important;
+				}
+			}
+		}
+	}
+}
+
+@each $bp in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($bp) {
+		$infix: breakpoint-infix($bp, $grid-breakpoints);
+
+		@each $attr, $value in $border-radius {
+			.#{$infix}brd-#{$attr} {
+				border-radius: $value;
+				&-left{
+					border-top-left-radius: $value !important;
+					border-bottom-left-radius: $value !important;
+				}
+				&-top {
+					border-top-left-radius: $value !important;
+					border-top-right-radius: $value !important;
+				}
+				&-bottom {
+					border-bottom-left-radius: $value !important;
+					border-bottom-right-radius: $value !important;
+				}
+				&-right {
+					border-top-right-radius: $value !important;
+					border-bottom-right-radius: $value !important;
+				}
+				&-top-left{
+					border-top-left-radius: $value !important;
+				}
+				&-top-right{
+					border-top-right-radius: $value !important;
+				}
+				&-bottom-left{
+					border-bottom-left-radius: $value !important;
+				}
+				&-bottom-right{
+					border-bottom-right-radius: $value !important;
+				}
+			}
 		}
 	}
 }

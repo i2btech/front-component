@@ -6,38 +6,40 @@ $alert-warning: map-get($alert, 'warning');
 $alert-info: map-get($alert, 'info');
 
 .alert {
-  display: block;
-  position: relative;
-  padding: 10px 35px 10px 10px;
-  font-size: $alert-text-size;
+	display: block;
+	position: relative;
+	padding: 10px 35px 10px 10px;
+	font-size: $alert-text-size;
 
-  &--xs {
-    padding: 5px 10px;
-    font-size: $alert-text-size - 1;
-  }
+	&--xs {
+		padding: 5px 10px;
+		font-size: $alert-text-size - 1;
+	}
 
-  &--success {
+	&--success {
 		background-color: map-get($alert-success, 'background');
-    color: map-get($alert-success, 'color');
-  }
-  &--danger {
+		color: map-get($alert-success, 'color');
+	}
+
+	&--danger {
 		background-color: map-get($alert-danger, 'background');
-    color: map-get($alert-danger, 'color');
-  }
-  &--warning {
+		color: map-get($alert-danger, 'color');
+	}
+
+	&--warning {
 		background-color: map-get($alert-warning, 'background');
-    color: map-get($alert-warning, 'color');
-  }
-  &--info {
+		color: map-get($alert-warning, 'color');
+	}
+
+	&--info {
 		background-color: map-get($alert-info, 'background');
-    color: map-get($alert-info, 'color');
-  }
+		color: map-get($alert-info, 'color');
+	}
 
-  .alert__btn-close {
-    position: absolute;
-    top: 5px;
+	.alert__btn-close {
+		position: absolute;
+		top: 5px;
 		right: 8px;
-
 		padding: 5px;
 		font-size: 21px;
 		font-weight: 700;
@@ -50,5 +52,5 @@ $alert-info: map-get($alert, 'info');
 		text-decoration: none;
 		cursor: pointer;
 		outline: none;
-  }
+	}
 }

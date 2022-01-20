@@ -1,0 +1,423 @@
+/*--HEADER--*/
+.js-menuContainer:not(.active) .closeMenu,
+.js-menuContainer:not(.active) .nav__menu {
+  display: none !important;
+}
+
+.tabMenu {
+  display: none;
+}
+
+.closeMenu {
+  position: fixed;
+  font-size: 30px;
+  z-index: 999999999999;
+  top: 26px;
+  left: 20px;
+}
+
+@media (min-width: 1024px) {
+  body.opacity::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 99;
+  }
+  header {
+    .nav__menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      top: 0;
+      width: 400px;
+      height: 100vh;
+      display: block;
+      padding: 60px 0px;
+      background-color: $white;
+      z-index: 999;
+
+      > .menu-item {
+        display: flex;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      > .menu-item {
+        &:not(.contact):not(.alert) {
+          &:hover {
+            > .menu_title {
+              a {
+                color: $primaryColor !important;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+
+      > .menu-item-has-children {
+        &:hover {
+          > .menutab {
+            display: block;
+            position: absolute;
+            width: 503px;
+            top: 55px;
+            left: 0;
+            padding: 20px 20px 0px 20px;
+            overflow: auto;
+          }
+        }
+      }
+    }
+  }
+  .nav_primary_btn {
+    display: flex;
+    align-items: center;
+  }
+  .nav__menu {
+    > .menu-item {
+      .menu_title {
+        a {
+
+          font-style: normal;
+          font-weight: 300;
+          font-size: 13px;
+          line-height: 19px;
+          color: #000000;
+        }
+      }
+    }
+
+    > .menu-item-has-children {
+      > .menutab {
+        display: none;
+      }
+
+      &:hover {
+        > .menutab {
+          &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            background-color: $white;
+          }
+        }
+      }
+    }
+
+    .menutab_ul {
+      display: flex;
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, .10);
+    }
+
+    .menutab_li {
+
+      font-style: normal;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 19px;
+      color: $white !important;
+      margin-right: 25px;
+      padding-bottom: 10px;
+      cursor: pointer;
+      text-transform: uppercase;
+
+      &:hover {
+        color: #868a8c !important;
+      }
+    }
+
+    .menutab_li.active {
+      border-bottom: 1px solid $white;
+      font-weight: bold;
+    }
+
+    .menu_cc_item {
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .menu_cc_title {
+      margin-bottom: 8px;
+
+      a {
+        font-weight: 600;
+        font-size: 14px;
+        color: $white;
+      }
+    }
+
+    .menu_cc_subsubitems {
+      display: none;
+    }
+
+    .menu_cc_subsubitems.active {
+      display: block;
+      padding-left: 10px;
+      padding-top: 10px;
+
+      .menu-item {
+        padding-right: 0 !important;
+      }
+    }
+
+    .menu_cc_subitems {
+      display: flex;
+      flex-wrap: wrap;
+
+      .menu-item {
+        padding-right: 10px;
+
+        .menu_title {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          a {
+            color: $white;
+            font-weight: 300;
+            transition: all 0.25s ease-in-out;
+            font-size: 14px;
+
+            &:hover {
+              color: #868a8c;
+            }
+          }
+
+          i {
+            &::after {
+              content: "\f078";
+              font-family: 'Font Awesome 5 Free';
+              font-weight: 900;
+              font-style: normal;
+              font-size: 10px;
+              line-height: 18px;
+              margin-left: 5px;
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+  header {
+    .nav_primary_content {
+      justify-content: flex-start;
+    }
+    .nav__menu {
+      > .menu-item-has-children {
+        &:hover {
+          > .menutab {
+            display: block;
+            position: absolute;
+            width: 503px;
+            background-color: $black;
+            top: 0;
+            left: 400px;
+            padding: 60px 50px 0 50px;
+            height: calc(100vh);
+            overflow: auto;
+            padding-bottom: 80px;
+
+            &::after {
+              content: '';
+              height: 51px;
+              width: 100%;
+              background: transparent linear-gradient(180deg, #333333d1 0, #333333de 100%) 0% 0% no-repeat padding-box;
+              position: absolute;
+              bottom: 0px;
+              left: 0;
+            }
+          }
+        }
+      }
+
+      > li {
+        &:hover {
+          background-color: $lightColor;
+
+          > .menu_title {
+            &::after {
+              content: '';
+              background-color: $primaryColor;
+              height: 100%;
+              width: 3px;
+              position: absolute;
+              left: 0;
+              top: 0;
+            }
+          }
+        }
+
+        > .menu_title {
+          width: 100%;
+          position: relative;
+          padding: 0 70px;
+          height: 45px;
+          display: flex;
+          align-items: center;
+          margin-bottom: 5px;
+        }
+      }
+    }
+    .nav_primary {
+      .nav__menu {
+        display: none;
+      }
+    }
+    .nav__menu {
+      > li {
+        .menu_title {
+          a {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+  .nav-menu {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .closeMenu {
+    display: none !important;
+  }
+  .nav__menu {
+    display: none !important;
+  }
+
+  .js-menuContainer.active {
+    .nav-menu {
+      display: block !important;
+    }
+  }
+  .nav-menu {
+    position: fixed;
+    top: 200px;
+    left: 0;
+    width: 100%;
+    background-color: $white;
+    padding: 10px;
+    height: calc(100vh - 200px);
+    z-index: 9999999999;
+    width: 100%;
+    display: none;
+    a {
+      display: block;
+      padding: 10px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: $tertiaryColor;
+    }
+
+    > .menu-item {
+      .sub-menu {
+        padding: 0px 0 0px 20px;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.25s ease-in-out;
+      }
+
+      .sub-menu.active {
+        padding: 5px 0 5px 20px;
+        height: auto;
+      }
+
+      > .menu-title {
+        > a {
+          display: flex;
+          align-items: center;
+        }
+
+        i {
+          &::before {
+            content: none;
+          }
+        }
+      }
+
+      margin: 7px 0;
+
+      ul {
+        li {
+          a {
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            text-transform: initial;
+          }
+        }
+      }
+    }
+
+    .menu-item:not(.menu-item-has-children) {
+      .menu-title {
+        i {
+          &::before {
+            content: none !important;
+          }
+        }
+      }
+    }
+
+    .menu-item-has-children {
+      .menu-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        i {
+          width: 30px;
+          text-align: right;
+
+          &::before {
+            margin-left: 5px;
+            color: $tertiaryColor;
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            font-style: normal;
+            content: "\f078";
+          }
+        }
+
+        i.active {
+          &::before {
+            content: "\f054";
+          }
+        }
+      }
+
+      .menu-title.active {
+        a {
+          color: $primaryColor;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-menu {
+    top: 199px;
+    height: calc(100vh - 199px);
+  }
+}
